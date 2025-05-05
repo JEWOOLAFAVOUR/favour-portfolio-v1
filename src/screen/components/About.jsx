@@ -76,7 +76,7 @@ const About = () => {
                     <div className="relative rounded-md overflow-hidden w-full max-w-[300px] mx-auto">
                         <div className="absolute inset-0 bg-green/20 z-10 group-hover:bg-transparent transition-colors duration-300"></div>
                         <img
-                            src="/placeholder.svg?height=300&width=300"
+                            src="/profile_pic.jpg"
                             alt="Jewoola Favour"
                             className="grayscale group-hover:grayscale-0 transition-all duration-300"
                         />
