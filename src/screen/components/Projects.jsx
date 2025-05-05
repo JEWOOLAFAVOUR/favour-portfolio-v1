@@ -197,7 +197,7 @@ const Projects = () => {
                 {otherProjects.map((project, i) => (
                     <div
                         key={i}
-                        className={`project-card flex flex-col h-full transition-all duration-500 ${isMounted ? "opacity-100" : "opacity-0 translate-y-4"}`}
+                        className={`cursor-pointer project-card flex flex-col h-full transition-all duration-500 ${isMounted ? "opacity-100" : "opacity-0 translate-y-4"}`}
                         style={{ transitionDelay: isMounted ? `${i * 100 + 500}ms` : "0ms" }}
                     >
                         <div className="flex justify-between items-center mb-6">
