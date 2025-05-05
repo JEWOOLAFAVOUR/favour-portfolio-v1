@@ -27,7 +27,7 @@ const Navbar = () => {
         >
             <nav className="flex justify-between items-center max-w-screen-xl mx-auto">
                 <a href="#" className="text-green text-3xl font-bold">
-                    F
+                    JF
                 </a>
 
                 {/* Desktop Navigation */}

@@ -16,16 +16,16 @@ const Experience = () => {
     const jobs = [
         {
             company: "Cephas Digital Technology",
-            title: "Mobile App Developer",
+            title: "Software Developer",
             range: "March 2022 - Present",
             duties: [
                 "Spearheaded the design and maintenance of various mobile applications utilizing React Native.",
                 "Conducted workshops and training sessions for professionals and students, emphasizing Mobile app development techniques.",
-                "Developed customized training programs to address specific skill requirements and learning objectives in Mobile App Development.",
-                "Delivered engaging sessions with real-world examples and practical exercises to enhance understanding and application of React Native concepts.",
-                "Stayed abreast of the latest trends and advancements in Mobile app development, incorporating industry best practices into training materials.",
+                "Designed and implemented RESTful APIs and backend services using Node.js, Express, MongoDB.",
+                "I designed and developed web applications using React, ensuring a seamless user experience and performance.",
                 "Collaborated with clients to understand their needs, contributing to the design and development of tailored Mobile App solutions.",
             ],
+            link: "www.cephasict.com"
         },
         {
             company: "Compellers Digital",
@@ -36,8 +36,8 @@ const Experience = () => {
                 "Utilized React Native to design and develop a feature-rich mobile app, ensuring a seamless and user-friendly experience.",
                 "Successfully managed the end-to-end process of uploading the app to the Google Play Store, including the necessary optimizations and configurations.",
                 "Implemented rigorous testing procedures to guarantee the app's functionality, performance, and security met high standards.",
-                "Maintained open communication channels with the client, incorporating feedback and ensuring the final product aligned with their vision.",
             ],
+            link: "",
         },
         {
             company: "Versecog Farm Enterprise",
@@ -47,22 +47,21 @@ const Experience = () => {
                 "Worked closely with a freelance client to understand their project requirements and coding needs for a mobile application.",
                 "Took an active role in coding a substantial portion of the application screens, ensuring alignment with the client's vision and functional requirements.",
                 "Utilized React Native to implement the client's design concepts into fully functional and responsive screens.",
-                "Engaged in an iterative coding process, incorporating client feedback to refine and enhance the functionality of the coded screens.",
-                "Collaborated with the client to address challenges, proposing effective solutions and ensuring a smooth coding process.",
                 "Attained high levels of client satisfaction by delivering coded screens that met both the design aesthetics and functional objectives.",
             ],
+            link: "",
         },
         {
             company: "LAUTECH",
             title: "Mobile App Developer",
             range: "June 2023 - November 2023",
             duties: [
-                "Initiated and actively contributed to the development of LauHub, a comprehensive project aimed at providing valuable resources to students within LauTech University.",
+                "Initiated and actively contributed to the development of StudyPadi, a comprehensive project aimed at providing valuable resources to students within LauTech University.",
                 "Leveraged React Native to create a mobile application as part of the LauHub project, ensuring cross-platform compatibility and optimal user experience.",
                 "Engineered a platform within LauHub to grant students access to free CBTs and past questions, enhancing their academic preparation.",
-                "Successfully deployed LauHub to the Google Play Store, making it accessible to the university community and beyond.",
                 "Actively collected and incorporated user feedback, ensuring continuous improvement and alignment with the evolving needs of LauTech students.",
             ],
+            link: "studypadi.com.ng"
         },
     ]
 
@@ -95,7 +94,14 @@ const Experience = () => {
                 <div className="md:col-span-3">
                     <div className="min-h-[320px]">
                         <h3 className="text-xl text-lightest-slate mb-1">
-                            {jobs[activeTab].title} <span className="text-green">@ {jobs[activeTab].company}</span>
+                            {jobs[activeTab].title}
+                            {jobs[activeTab].link ? (
+                                <a href={`https://${jobs[activeTab].link}`} className="text-green" target="_blank" rel="noopener noreferrer">
+                                    @ {jobs[activeTab].company}
+                                </a>
+                            ) : (
+                                <span className="text-green"> @ {jobs[activeTab].company}</span>
+                            )}
                         </h3>
                         <p className="font-mono text-sm mb-4">{jobs[activeTab].range}</p>
                         <ul className="space-y-2.5">

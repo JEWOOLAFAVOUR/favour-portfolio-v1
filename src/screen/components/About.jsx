@@ -17,14 +17,16 @@ const About = () => {
         "React",
         "JavaScript",
         "TypeScript",
-        "Redux",
-        "Redux Toolkit",
+        "Redux/Redux Toolkit",
+        "Nodejs",
         "TanStack",
-        "Firebase",
+        "Firebase/Supabase",
         "MongoDB",
         "REST APIs",
-        "HTML & CSS",
         "Git",
+        "System Design",
+        "DevOps",
+        "Kotlin"
     ]
 
     return (
@@ -41,24 +43,21 @@ const About = () => {
             >
                 <div className="md:col-span-2 text-slate">
                     <p className="mb-4">
-                        Favour is an Intern Mobile App Developer at Cephas ICT Hub and the founder of Studypadi. As an intern,
-                        Favour is responsible for developing innovative mobile applications that enhance user experience and
-                        engagement. He has a proven track record of creating seamless and efficient applications using React Native,
-                        and has a strong background in backend development with Node.js, MongoDB, and Express.
+                        Hi! I’m Favour, a Software Developer who enjoys building meaningful digital experiences. I currently intern at{" "}
+                        <strong
+                            className="green"
+                            onClick={() => window.open("https://www.cephasict.com", "_blank")}
+                            style={{ cursor: "pointer" }}
+                        >
+                            Cephas ICT Hub
+                        </strong>, where I build mobile and web apps that are fast, clean, and user-friendly.
+                    </p>
+
+                    <p className="mb-4">
+                        I’m also the creator of <strong>Studypadi</strong> (formerly LauHub), a growing education software helping over 1000+ students access free CBTs and past questions.
                     </p>
                     <p className="mb-4">
-                        Favour is the driving force behind Studypadi, an educational platform that provides students with access to
-                        free CBT and past questions. Originally launched as LauHub and now available on the Web with over 800+
-                        users, Studypadi features a leaderboard to encourage healthy competition among students.
-                    </p>
-                    <p className="mb-4">
-                        In addition to his technical skills, Favour is passionate about mentoring junior developers and helping them
-                        achieve their career goals. He is currently a 400 Level Computer Science student at Ladoke Akintola
-                        University of Technology, where he continues to expand his knowledge and skills in software development.
-                    </p>
-                    <p>
-                        As the Library Unit Coordinator of his student church, Favour is also actively engaged in community service
-                        and support.
+                        Outside of code, I love mentoring junior devs and I'm a 500-level Computer Science student at LAUTECH. You’ll also find me serving in my student church, organizing resources as a Library Unit Member.
                     </p>
 
                     <p className="mt-4">Here are a few technologies I've been working with recently:</p>
@@ -73,7 +72,7 @@ const About = () => {
                 </div>
 
                 <div className="relative group">
-                    <div className="relative rounded-md overflow-hidden w-full max-w-[300px] mx-auto">
+                    <div className="relative rounded-md overflow-hidden w-full max-w-[300px] mx-auto cursor-pointer">
                         <div className="absolute inset-0 bg-green/20 z-10 group-hover:bg-transparent transition-colors duration-300"></div>
                         <img
                             src="/profile_pic.jpg"

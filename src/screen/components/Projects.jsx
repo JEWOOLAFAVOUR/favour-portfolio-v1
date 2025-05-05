@@ -1,11 +1,12 @@
 import { useState, useEffect, useRef } from "react"
 import { useInView } from "../../hooks/useInView"
-import { ExternalLink, Folder, Github } from "lucide-react"
+import { ExternalLink, Folder, Github, X } from "lucide-react"
 
 const Projects = () => {
     const ref = useRef(null)
     const isInView = useInView(ref, { threshold: 0.1 })
     const [isMounted, setIsMounted] = useState(false)
+    const [showPrivateRepoModal, setShowPrivateRepoModal] = useState(false)
 
     useEffect(() => {
         if (isInView && !isMounted) {
@@ -15,21 +16,22 @@ const Projects = () => {
 
     const featuredProjects = [
         {
+            title: "StudyPadi Website",
+            description:
+                "An educational platform that provides students with free CBT practice, past questions, and performance tracking tools.",
+            tech: ["React", "Shadcn", "Tailwind CSS", "Vercel"],
+            link: "https://study-padi.vercel.app/",
+            github: "#",
+            image: "/slide1.jpeg",
+        },
+        {
             title: "JTB Website",
             description:
                 "A comprehensive website developed for a state government, featuring modern design and user-friendly interface.",
-            tech: ["React", "Next.js", "Tailwind CSS", "Vercel"],
+            tech: ["React", "Supabase", "Tailwind CSS", "Vercel"],
             link: "https://jtb-website.vercel.app/",
-            github: "#",
-            image: "/placeholder.svg?height=400&width=600",
-        },
-        {
-            title: "CAC Chapel LAUTECH",
-            description: "A church website with features for sermons, events, and community engagement.",
-            tech: ["React", "Next.js", "Tailwind CSS", "Vercel"],
-            link: "https://cac-chapel-lautech.vercel.app/",
-            github: "#",
-            image: "/placeholder.svg?height=400&width=600",
+            github: "https://github.com/JEWOOLAFAVOUR/JTB-Website.git",
+            image: "/slide2.jpeg",
         },
     ]
 
@@ -37,49 +39,83 @@ const Projects = () => {
         {
             title: "HonourWorld",
             description: "A client project at Cephas ICT Hub offering VTU services with 10k+ downloads.",
-            tech: ["React Native", "Firebase", "Redux"],
+            tech: ["React Native", "Tanstack", "Redux", "API-Integration"],
             link: "https://play.google.com/store/apps/details?id=com.ng.honourworld&pcampaignid=web_share",
             github: "#",
         },
         {
-            title: "Africart",
-            description: "E-commerce app for seamless product access.",
-            tech: ["React Native", "Redux", "Node.js"],
-            link: "https://play.google.com/store/apps/details?id=com.africartzng.com&pcampaignid=web_share",
+            title: "VickyBest Telecom",
+            description: "A client project at Cephas ICT Hub offering VTU services with 1k+ downloads.",
+            tech: ["React Native", "Tanstack", "Redux", "API-Integration"],
+            link: "https://play.google.com/store/apps/details?id=com.vickybest&pcampaignid=web_share",
             github: "#",
         },
         {
-            title: "Screen Class",
-            description: "Educational app for quizzes and classroom learning with 5k+ downloads.",
-            tech: ["React Native", "Firebase", "Redux"],
-            link: "https://play.google.com/store/apps/details?id=com.screenclass&pcampaignid=web_share",
-            github: "#",
-        },
-        {
-            title: "Suru",
-            description: "Food ordering app with seamless user experience.",
-            tech: ["React Native", "Redux", "Node.js"],
-            link: "https://play.google.com/store/apps/details?id=com.compellersdigitals.suruts&pcampaignid=web_share",
-            github: "#",
-        },
-        {
-            title: "LauHub",
-            description: "University app for academic resources and features.",
-            tech: ["React Native", "Firebase", "Redux"],
-            link: "https://play.google.com/store/apps/details?id=com.lauhub&pcampaignid=web_share",
+            title: "CAC Chapel LAUTECH",
+            description: "A church website with features for sermons, events, and community engagement.",
+            tech: ["React", "Tailwind CSS", "Vercel"],
+            link: "https://cac-chapel-lautech.vercel.app/",
             github: "#",
         },
         {
             title: "Skill Remit",
-            description: "Freelancer-focused app for Ghana and Nigeria.",
+            description: "Freelancer-focused mobile app for Ghana and Nigeria.",
             tech: ["React Native", "Redux", "Node.js"],
-            link: "#",
+            link: "https://play.google.com/store/apps/details?id=com.skillremitartisan&pcampaignid=web_share",
             github: "#",
+        },
+        {
+            title: "Virtual R",
+            description: "A quick landing page with React.",
+            tech: ["React Native", "Firebase", "Redux"],
+            link: "https://virtual-r-six-taupe.vercel.app/",
+            github: "https://github.com/JEWOOLAFAVOUR/VirtualR-React-Project.git",
         },
     ]
 
+    const handleGithubClick = (e, githubUrl) => {
+        if (githubUrl === "#") {
+            e.preventDefault()
+            setShowPrivateRepoModal(true)
+        }
+    }
+
     return (
         <section id="projects" className="section" ref={ref}>
+            {/* Private Repository Modal */}
+            {showPrivateRepoModal && (
+                <div className="fixed inset-0 flex items-center justify-center z-50 bg-navy/80 backdrop-blur-sm">
+                    <div className="bg-light-navy p-8 rounded-lg shadow-xl max-w-md w-full relative border border-green/20">
+                        <button
+                            onClick={() => setShowPrivateRepoModal(false)}
+                            className="absolute top-4 right-4 text-light-slate hover:text-green"
+                        >
+                            <X size={20} />
+                        </button>
+                        <div className="flex flex-col items-center text-center">
+                            <Github className="text-green mb-4" size={48} />
+                            <h3 className="text-lightest-slate text-xl font-semibold mb-2">Private Repository</h3>
+                            <p className="text-slate mb-6">
+                                This project's source code is in a private repository due to client confidentiality or proprietary code.
+                            </p>
+                            <div className="w-full h-px bg-lightest-navy mb-6"></div>
+                            <p className="text-light-slate text-sm">
+                                Feel free to check out my public repositories on{" "}
+                                <a
+                                    href="https://github.com/JEWOOLAFAVOUR"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-green hover:underline"
+                                >
+                                    GitHub
+                                </a>
+                                .
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            )}
+
             <h2
                 className={`numbered-heading text-2xl mb-10 transition-all duration-500 ${isMounted ? "opacity-100" : "opacity-0 translate-y-4"}`}
             >
@@ -132,6 +168,7 @@ const Projects = () => {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-lightest-slate hover:text-green transition-colors duration-200"
+                                    onClick={(e) => handleGithubClick(e, project.github)}
                                 >
                                     <Github size={20} />
                                 </a>
@@ -172,6 +209,7 @@ const Projects = () => {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="text-lightest-slate hover:text-green transition-colors duration-200"
+                                        onClick={(e) => handleGithubClick(e, project.github)}
                                     >
                                         <Github size={20} />
                                     </a>
@@ -215,3 +253,4 @@ const Projects = () => {
 }
 
 export default Projects
+
