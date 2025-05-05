@@ -1,12 +1,8 @@
 import React, { useEffect } from 'react';
 import { createBrowserRouter, RouterProvider, useLocation, Navigate } from "react-router-dom";
-import HomePage from '../screen/Auth/HomePage';
+import HomePage from '../screen/HomePage';
 import ProtectedRoute from './protectedRoute';
-// import DashboardLayout from '../screen/Dashboard/components/DashboardLayout';
-import DashboardLayout from "../screen/Dashboard/components/DashboardLayout";
-import Dashboard from '../screen/Dashboard/dashboard/Dashboard';
 import useAuthStore from '../store/useAuthStore';
-import LoginPage from '../screen/Auth/LoginPage';
 
 
 
@@ -46,37 +42,14 @@ const Routes = () => {
         {
             path: "",
             element: <RouteWrapper Component={RootRouteHandler} />,
-        }, {
-            path: "/login",
-            element: <RouteWrapper Component={LoginPage} />,
         },
 
     ];
 
-    const dashboardRoutes = [
-        {
-            path: "dashboard",
-            element: <ProtectedRoute />,
-            children: [
-                {
-                    element: <DashboardLayout />,
-                    children: [
-                        {
-                            path: "",
-                            element: <Dashboard />,
-                        },
-                        // Add other dashboard routes here
 
-
-                    ]
-                }
-            ],
-        },
-    ]
 
     const router = createBrowserRouter([
         ...pageRoutes,
-        ...dashboardRoutes,
     ]);
 
     return <RouterProvider router={router} />;
