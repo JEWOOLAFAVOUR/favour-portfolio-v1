@@ -25,11 +25,30 @@ const Footer = () => {
                     Email
                 </a>
             </div>
-            <p>
-                <a href="https://github.com/JEWOOLAFAVOUR" target="_blank" rel="noopener noreferrer" className="green-link">
-                    Designed & Built by Jewoola Favour
-                </a>
-            </p>
+
+            <div className="space-y-3">
+                <p>
+                    <a href="https://github.com/JEWOOLAFAVOUR" target="_blank" rel="noopener noreferrer" className="green-link">
+                        Designed & Built by Jewoola Favour
+                    </a>
+                </p>
+
+                <p className="text-light-slate text-xs">
+                    Inspired by{" "}
+                    <a
+                        href="https://v4.brittanychiang.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-green hover:text-green/80 transition-colors duration-200"
+                    >
+                        Brittany Chiang
+                    </a>
+                </p>
+
+                <p className="text-light-slate text-xs">
+                    &copy; {new Date().getFullYear()} Jewoola Favour. All Rights Reserved.
+                </p>
+            </div>
         </footer>
     )
 }
