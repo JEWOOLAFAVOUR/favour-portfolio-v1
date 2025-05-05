@@ -4,6 +4,71 @@
 
 @layer base {
   :root {
+    --navy: #0a192f;
+    --light-navy: #112240;
+    --lightest-navy: #233554;
+    --slate: #8892b0;
+    --light-slate: #a8b2d1;
+    --lightest-slate: #ccd6f6;
+    --white: #e6f1ff;
+    --green: #64ffda;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-navy text-slate font-sans;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-lightest-slate font-semibold;
+  }
+
+  .numbered-heading {
+    @apply flex items-center w-full whitespace-nowrap text-lightest-slate font-semibold;
+  }
+
+  .numbered-heading:after {
+    @apply content-[''] w-full h-px ml-4 bg-lightest-navy;
+  }
+
+  .section {
+    @apply mb-24 md:mb-32;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply text-light-slate hover:text-green transition-colors duration-200;
+  }
+
+  .green-link {
+    @apply text-green hover:text-green/80 transition-colors duration-200;
+  }
+
+  .project-card {
+    @apply bg-light-navy rounded-md p-6 transition-transform duration-200 hover:-translate-y-2;
+  }
+
+  .button {
+    @apply border border-green text-green px-4 py-2 rounded hover:bg-green/10 transition-colors duration-200;
+  }
+}
+
+
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
@@ -110,4 +175,4 @@
   .invisible {
     visibility: hidden;
   }
-}
+} */
