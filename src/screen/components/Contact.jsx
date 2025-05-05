@@ -211,15 +211,6 @@ const Contact = () => {
                                             disabled={isSubmitting}
                                         ></textarea>
                                     </div>
-
-                                    {/* Hidden recipient field - For developers who fork this project */}
-                                    {/* 
-                    NOTE FOR DEVELOPERS:
-                    The 'recipient' field specifies where the contact form messages will be sent.
-                    When implementing this in your own project, replace the default value with your
-                    own email address where you want to receive messages from the contact form.
-                  */}
-
                                     {submitError && (
                                         <div className="bg-red-900/20 border border-red-500/50 text-red-200 px-4 py-3 rounded-md text-sm">
                                             {submitError}
@@ -282,55 +273,3 @@ const Contact = () => {
 }
 
 export default Contact
-
-
-
-// import { useState, useEffect, useRef } from "react"
-// import { useInView } from "../../hooks/useInView"
-
-// const Contact = () => {
-//     const ref = useRef(null)
-//     const isInView = useInView(ref, { threshold: 0.25 })
-//     const [isMounted, setIsMounted] = useState(false)
-
-//     useEffect(() => {
-//         if (isInView && !isMounted) {
-//             setIsMounted(true)
-//         }
-//     }, [isInView, isMounted])
-
-//     return (
-//         <section id="contact" className="section text-center" ref={ref}>
-//             <h2
-//                 className={`numbered-heading text-2xl mb-6 transition-all duration-500 ${isMounted ? "opacity-100" : "opacity-0 translate-y-4"}`}
-//             >
-//                 <span className="text-green font-mono mr-2">04.</span> What's Next?
-//             </h2>
-
-//             <h3
-//                 className={`text-lightest-slate text-4xl font-semibold mb-4 transition-all duration-500 ${isMounted ? "opacity-100" : "opacity-0 translate-y-4"}`}
-//                 style={{ transitionDelay: isMounted ? "200ms" : "0ms" }}
-//             >
-//                 Get In Touch
-//             </h3>
-
-//             <p
-//                 className={`text-slate max-w-md mx-auto mb-10 transition-all duration-500 ${isMounted ? "opacity-100" : "opacity-0 translate-y-4"}`}
-//                 style={{ transitionDelay: isMounted ? "300ms" : "0ms" }}
-//             >
-//                 I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my
-//                 best to get back to you!
-//             </p>
-
-//             <a
-//                 href="mailto:jewoolafavour2020@gmail.com"
-//                 className={`button inline-block text-lg px-7 py-4 transition-all duration-500 ${isMounted ? "opacity-100" : "opacity-0 translate-y-4"}`}
-//                 style={{ transitionDelay: isMounted ? "400ms" : "0ms" }}
-//             >
-//                 Say Hello
-//             </a>
-//         </section>
-//     )
-// }
-
-// export default Contact
