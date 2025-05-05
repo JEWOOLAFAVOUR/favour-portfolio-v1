@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react",
+    "module": "ESNext",
+    "moduleResolution": "Node"
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/components/app-sidebar.jsx",
+    "src/components/ui/carousel.jsx",
+    "src/screen/Dashboard/leaderboard/LeaderboardSkeleton.jsx",
+    "src/components/data.js",
+    "src/components/utilis.jsx"
+  ]
+}
