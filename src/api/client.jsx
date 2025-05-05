@@ -1,5 +1,4 @@
 import axios from "axios";
-import useAuthStore from "../store/useAuthStore";
 
 
 const BASE_URL = 'https://chapel-backend-8233dc7a7600.herokuapp.com/api/v1';
