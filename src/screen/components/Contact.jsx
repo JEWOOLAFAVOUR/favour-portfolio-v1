@@ -1,6 +1,14 @@
 import { useState, useEffect, useRef } from "react"
 import { useInView } from "../../hooks/useInView"
 import { Mail, Phone, X, Send } from "lucide-react"
+import { sendEmail } from "../../api/auth"
+
+/**
+ * NOTE FOR DEVELOPERS:
+ * - Replace the `recipient` value with your own email address before deploying.
+ * - Ensure proper input validation and error handling are implemented for security and reliability.
+ */
+
 
 const Contact = () => {
     const ref = useRef(null)
@@ -11,9 +19,11 @@ const Contact = () => {
         name: "",
         email: "",
         message: "",
+        recipient: "jewoolafavour2020@gmail.com", // Default recipient email
     })
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [submitSuccess, setSubmitSuccess] = useState(false)
+    const [submitError, setSubmitError] = useState(null)
 
     useEffect(() => {
         if (isInView && !isMounted) {
@@ -29,26 +39,41 @@ const Contact = () => {
         }))
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
         setIsSubmitting(true)
+        setSubmitError(null)
 
-        // Simulate form submission
-        setTimeout(() => {
+        try {
+            // Send the form data to the API
+            const response = await sendEmail(formData)
+
+            // Check if the API call was successful
+            if (response.data && response.data.success) {
+                setSubmitSuccess(true)
+
+                // Reset form after showing success message
+                setTimeout(() => {
+                    setShowModal(false)
+                    setSubmitSuccess(false)
+                    setFormData({
+                        name: "",
+                        email: "",
+                        message: "",
+                        recipient: "jewoolafavour2020@gmail.com", // Reset to default recipient
+                    })
+                }, 2000)
+            } else {
+                // Handle API error
+                setSubmitError(response.data?.message || "Failed to send message. Please try again.")
+            }
+        } catch (error) {
+            // Handle network or other errors
+            setSubmitError("An error occurred. Please try again later.")
+            console.error("Error sending email:", error)
+        } finally {
             setIsSubmitting(false)
-            setSubmitSuccess(true)
-
-            // Reset form after showing success message
-            setTimeout(() => {
-                setShowModal(false)
-                setSubmitSuccess(false)
-                setFormData({
-                    name: "",
-                    email: "",
-                    message: "",
-                })
-            }, 2000)
-        }, 1500)
+        }
     }
 
     return (
@@ -95,14 +120,6 @@ const Contact = () => {
             </div>
 
             <div className="flex justify-center gap-4">
-                <a
-                    href="mailto:jewoolafavour2020@gmail.com"
-                    className={`button inline-block text-lg px-7 py-4 transition-all duration-500 ${isMounted ? "opacity-100" : "opacity-0 translate-y-4"}`}
-                    style={{ transitionDelay: isMounted ? "400ms" : "0ms" }}
-                >
-                    Say Hello
-                </a>
-
                 <button
                     onClick={() => setShowModal(true)}
                     className={`button inline-block text-lg px-7 py-4 transition-all duration-500 ${isMounted ? "opacity-100" : "opacity-0 translate-y-4"}`}
@@ -195,6 +212,20 @@ const Contact = () => {
                                         ></textarea>
                                     </div>
 
+                                    {/* Hidden recipient field - For developers who fork this project */}
+                                    {/* 
+                    NOTE FOR DEVELOPERS:
+                    The 'recipient' field specifies where the contact form messages will be sent.
+                    When implementing this in your own project, replace the default value with your
+                    own email address where you want to receive messages from the contact form.
+                  */}
+
+                                    {submitError && (
+                                        <div className="bg-red-900/20 border border-red-500/50 text-red-200 px-4 py-3 rounded-md text-sm">
+                                            {submitError}
+                                        </div>
+                                    )}
+
                                     <button
                                         type="submit"
                                         disabled={isSubmitting}
@@ -251,6 +282,7 @@ const Contact = () => {
 }
 
 export default Contact
+
 
 
 // import { useState, useEffect, useRef } from "react"
