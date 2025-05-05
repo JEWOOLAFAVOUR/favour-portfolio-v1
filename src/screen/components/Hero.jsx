@@ -28,7 +28,7 @@ const Hero = () => {
         {
             id: 4,
             content:
-                "I'm a Mobile App Developer specializing in building exceptional digital experiences. Currently, I'm focused on building accessible, human-centered products at Cephas ICT Hub.",
+                "I'm a Software Developer specializing in building exceptional, human-centered digital experiences. Currently, I'm focused on crafting accessible products at Cephas ICT Hub.",
             className: "text-slate max-w-xl mb-12 opacity-0 translate-y-4",
             delay: 400,
         },
