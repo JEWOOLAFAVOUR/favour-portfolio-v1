@@ -46,6 +46,7 @@ module.exports = {
 				"lightest-slate": "#ccd6f6",
 				white: "#e6f1ff",
 				green: "#64ffda",
+
 			},
 			borderRadius: {
 				lg: "var(--radius)",
