@@ -1,59 +1,70 @@
-import { useEffect } from "react"
-import { createBrowserRouter, RouterProvider, useLocation } from "react-router-dom"
-import HomePage from "../screen/HomePage"
-import NotFound from "../screen/NotFound" // Import the NotFound component
+import { useEffect } from "react";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  useLocation,
+} from "react-router-dom";
+import HomePage from "../screen/HomePage";
+import ChallengePage from "../screen/ChallengePage";
+import PDFViewerPage from "../screen/PDFViewerPage";
+import NotFound from "../screen/NotFound"; // Import the NotFound component
 
 const ScrollToTop = () => {
-    const { pathname } = useLocation()
+  const { pathname } = useLocation();
 
-    useEffect(() => {
-        window.scrollTo(0, 0)
-    }, [pathname])
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
-    return null
-}
+  return null;
+};
 
 const RouteWrapper = ({ Component }) => (
-    <>
-        <ScrollToTop />
-        <Component />
-    </>
-)
+  <>
+    <ScrollToTop />
+    <Component />
+  </>
+);
 
 const RootRouteHandler = () => {
-    return <HomePage />
-}
+  return <HomePage />;
+};
 
 const Routes = () => {
-    const pageRoutes = [
-        {
-            path: "/",
-            element: <RouteWrapper Component={RootRouteHandler} />,
-        },
-        // Add your other routes here
+  const pageRoutes = [
+    {
+      path: "/",
+      element: <RouteWrapper Component={RootRouteHandler} />,
+    },
+    {
+      path: "/challenge",
+      element: <RouteWrapper Component={ChallengePage} />,
+    },
+    {
+      path: "/challenge/:pdfName",
+      element: <RouteWrapper Component={PDFViewerPage} />,
+    },
+    // Add your other routes here
 
-        // Add the 404 route as the last route to catch all unmatched paths
-        {
-            path: "*",
-            element: <RouteWrapper Component={NotFound} />,
-        },
-    ]
+    // Add the 404 route as the last route to catch all unmatched paths
+    {
+      path: "*",
+      element: <RouteWrapper Component={NotFound} />,
+    },
+  ];
 
-    const router = createBrowserRouter([...pageRoutes])
+  const router = createBrowserRouter([...pageRoutes]);
 
-    return <RouterProvider router={router} />
-}
+  return <RouterProvider router={router} />;
+};
 
-export default Routes
-
+export default Routes;
 
 // import React, { useEffect } from 'react';
 // import { createBrowserRouter, RouterProvider, useLocation, Navigate } from "react-router-dom";
 // import HomePage from '../screen/HomePage';
 // import ProtectedRoute from './protectedRoute';
 // import useAuthStore from '../store/useAuthStore';
-
-
 
 // const ScrollToTop = () => {
 //     const { pathname } = useLocation();
@@ -77,8 +88,6 @@ export default Routes
 //     return <HomePage />;
 // };
 
-
-
 // const Routes = () => {
 //     const pageRoutes = [
 //         {
@@ -88,8 +97,6 @@ export default Routes
 
 //     ];
 
-
-
 //     const router = createBrowserRouter([
 //         ...pageRoutes,
 //     ]);
@@ -98,4 +105,3 @@ export default Routes
 // };
 
 // export default Routes;
-

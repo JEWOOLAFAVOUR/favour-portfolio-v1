@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useInView } from "../../hooks/useInView";
-import { ExternalLink, Folder, Github, X } from "lucide-react";
+import { ExternalLink, Folder, Github, X, Code2 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Projects = () => {
   const ref = useRef(null);
@@ -281,6 +282,32 @@ const Projects = () => {
             </ul>
           </div>
         ))}
+      </div>
+
+      {/* Challenge Section */}
+      <div
+        className={`mt-16 text-center transition-all duration-500 ${
+          isMounted ? "opacity-100" : "opacity-0 translate-y-4"
+        }`}
+        style={{ transitionDelay: isMounted ? "800ms" : "0ms" }}
+      >
+        <div className="bg-light-navy p-8 rounded-lg shadow-xl border border-lightest-navy/30">
+          <Code2 className="text-green mx-auto mb-4" size={48} />
+          <h3 className="text-lightest-slate text-2xl font-semibold mb-4">
+            Ready for a Challenge?
+          </h3>
+          <p className="text-slate mb-6 max-w-2xl mx-auto">
+            Take your coding skills to the next level with hands-on development
+            challenges. Build real projects and level up your expertise.
+          </p>
+          <Link
+            to="/challenge"
+            className="button inline-flex items-center gap-2"
+          >
+            <Code2 size={18} />
+            View Challenges
+          </Link>
+        </div>
       </div>
     </section>
   );
