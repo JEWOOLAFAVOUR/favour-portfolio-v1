@@ -15,7 +15,7 @@ const Hero = () => {
         { id: 1, content: "Hi, my name is", className: "text-green font-mono mb-4 opacity-0 translate-y-4", delay: 100 },
         {
             id: 2,
-            content: "Jewoola Favour.",
+            content: "Jewoola Favourrr.",
             className: "text-lightest-slate text-5xl sm:text-6xl md:text-7xl font-bold mb-2 opacity-0 translate-y-4",
             delay: 200,
         },
