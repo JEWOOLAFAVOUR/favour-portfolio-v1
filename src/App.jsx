@@ -26,7 +26,7 @@ export default function App() {
         }}
       />
 
-      <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0">
+      <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:px-10 lg:py-0">
         <div className="lg:flex lg:justify-between lg:gap-4">
           {/* Left Sidebar - Sticky Header */}
           <Navigation />
@@ -39,28 +39,17 @@ export default function App() {
 
             {/* Footer */}
             <footer className="max-w-md pb-16 text-sm text-slate sm:pb-0">
+              <p className="mb-4">
+                Designed & Built by Jewoola Favour
+              </p>
+              <p className="mb-4">
+                Inspired by{" "}
+                <a href="https://brittanychiang.com/" className="font-medium text-slate-lightest hover:text-teal" target="_blank" rel="noreferrer">
+                  Brittany Chiang
+                </a>
+              </p>
               <p>
-                Loosely designed in{" "}
-                <a href="https://www.figma.com/" className="font-medium text-slate-lightest hover:text-teal" target="_blank" rel="noreferrer">
-                  Figma
-                </a>{" "}
-                and coded in{" "}
-                <a href="https://code.visualstudio.com/" className="font-medium text-slate-lightest hover:text-teal" target="_blank" rel="noreferrer">
-                  Visual Studio Code
-                </a>{" "}
-                by yours truly. Built with{" "}
-                <a href="https://nextjs.org/" className="font-medium text-slate-lightest hover:text-teal" target="_blank" rel="noreferrer">
-                  React
-                </a>{" "}
-                and{" "}
-                <a href="https://tailwindcss.com/" className="font-medium text-slate-lightest hover:text-teal" target="_blank" rel="noreferrer">
-                  Tailwind CSS
-                </a>
-                , deployed with{" "}
-                <a href="https://vercel.com/" className="font-medium text-slate-lightest hover:text-teal" target="_blank" rel="noreferrer">
-                  Vercel
-                </a>
-                .
+                © 2026 Jewoola Favour. All Rights Reserved.
               </p>
             </footer>
           </main>

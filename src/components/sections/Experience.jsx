@@ -4,31 +4,40 @@ import { ArrowUpRight } from "lucide-react";
 export default function Experience() {
     const experiences = [
         {
-            duration: "2024 — PRESENT",
-            title: "Senior Frontend Engineer, Accessibility",
-            company: "Klaviyo",
-            url: "https://www.klaviyo.com/",
+            duration: "OCT 2025 — PRESENT",
+            title: "Software Developer",
+            company: "Ennovate Lab",
+            url: "https://www.ennovatelab.com/",
             description:
-                "Build and maintain critical components used to construct Klaviyo's frontend, across the whole product. Work closely with cross-functional teams, including developers, designers, and product managers, to implement and advocate for best practices in web accessibility.",
-            skills: ["JavaScript", "TypeScript", "React", "Storybook"],
+                "Designing and developing scalable full-stack applications with a focus on clean architecture and robust performance. Implementing backend services and collaborating with cross-functional teams to deliver high-quality solutions. Practicing software engineering best practices and contributing to technical excellence.",
+            skills: ["React Native", "React", "Tailwind", "Node.js", "TypeScript", "PostgreSQL", "System Design"],
         },
         {
-            duration: "2018 — 2024",
-            title: "Lead Engineer",
-            company: "Upstatement",
-            url: "https://upstatement.com/",
+            duration: "MAR 2022 — SEP 2025",
+            title: "Software Developer",
+            company: "Cephas Digital Technology",
+            url: "https://www.cephasict.com/",
             description:
-                "Build, style, and ship high-quality websites, design systems, mobile apps, and digital experiences for a diverse array of projects for clients including Harvard Business School, Everytown for Gun Safety, Pratt Institute, Koala Health, Vanderbilt University, The 19th News, and more.",
-            skills: ["JavaScript", "TypeScript", "HTML & SCSS", "React", "Next.js", "React Native", "WordPress", "Node.js"],
+                "Spearheaded the design and maintenance of various mobile applications utilizing React Native. Conducted workshops and training sessions for professionals and students. Designed and implemented RESTful APIs and backend services using Node.js, Express, MongoDB. Collaborated with clients to understand their needs, contributing to the design and development of tailored Mobile App solutions.",
+            skills: ["React Native", "React", "Node.js", "Express", "MongoDB", "Cloud", "REST APIs"],
         },
         {
-            duration: "JULY — DEC 2017",
-            title: "UI Engineer Co-op",
-            company: "Apple",
-            url: "https://www.apple.com/apple-music/",
+            duration: "NOV 2024 — JAN 2025",
+            title: "Freelance Mobile App Developer",
+            company: "Versecog Farm Enterprise",
+            url: null,
             description:
-                "Developed and styled interactive web apps for Apple Music, including the user interface of Apple Music's embeddable web player widget for in-browser user authorization and full song playback.",
-            skills: ["Ember", "SCSS", "JavaScript", "MusicKit.js"],
+                "Built mobile applications as a freelance developer to support e-commerce operations and improve business processes.",
+            skills: ["React Native", "JavaScript", "Mobile Development"],
+        },
+        {
+            duration: "AUG 2024 — NOV 2024",
+            title: "Freelance Mobile Developer",
+            company: "Compellers Digital",
+            url: "https://www.instagram.com/compellers_digitals/",
+            description:
+                "Developed mobile applications as a freelance developer, delivering user-friendly food ordering app solutions for clients. Collaborated with design teams to implement clean interfaces and optimize app performance.",
+            skills: ["React Native", "JavaScript", "Firebase"],
         },
     ];
 
@@ -47,10 +56,10 @@ export default function Experience() {
                 <ol className="group/list">
                     {experiences.map((exp, index) => (
                         <li key={index} className="mb-12">
-                            <div className="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+                            <div className="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-10 md:gap-8 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
                                 <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-navy-light/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
 
-                                <header className="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate sm:col-span-2">
+                                <header className="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate sm:col-span-2 whitespace-nowrap pr-6 mr-4">
                                     {exp.duration}
                                 </header>
 

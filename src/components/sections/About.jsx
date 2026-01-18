@@ -1,10 +1,32 @@
 import React from "react";
 
 export default function About() {
+    const skills = [
+        "React Native",
+        "React",
+        "JavaScript",
+        "TypeScript",
+        "Redux/Redux Toolkit/Zustand",
+        "TanStack",
+        "Node.js",
+        "Golang",
+        "Firebase/Supabase",
+        "MongoDB",
+        "PostgreSQL",
+        "REST APIs",
+        "Docker",
+        "Linux",
+        "AWS",
+        "Azure",
+        "DevOps",
+        "Git",
+        "System Design",
+    ];
+
     return (
         <section
             id="about"
-            className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
+            className="mb-12 scroll-mt-16 md:mb-16 lg:mb-20 lg:scroll-mt-24"
         >
             <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-navy/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
                 <h2 className="text-sm font-bold uppercase tracking-widest text-slate-lightest lg:sr-only">
@@ -14,54 +36,44 @@ export default function About() {
 
             <div className="space-y-4 text-slate leading-relaxed">
                 <p>
-                    I'm a frontend engineer with a specialty in web accessibility, focused on
-                    building pixel-perfect, intuitive user interfaces. I enjoy working at the
-                    intersection of design and engineering, where great user experience meets
-                    robust, clean, and scalable code.
+                    Hi! I'm Favour, a Software Engineer who enjoys building meaningful digital
+                    experiences. I currently work at{" "}
+                    <a href="https://www.ennovatelab.com/" target="_blank" rel="noopener noreferrer" className="font-medium text-slate-lightest hover:text-teal transition-colors">
+                        Ennovate Lab
+                    </a>
+                    , where I build mobile and web apps that are fast, clean, and user-friendly.
                 </p>
 
                 <p>
-                    Currently, I'm a senior frontend engineer at{" "}
-                    <a href="#" className="font-medium text-slate-lightest hover:text-teal transition-colors">
-                        Klaviyo
-                    </a>
-                    , where I work on the component library team to help maintain and evolve our
-                    design system. In this role, I lead accessibility efforts across components,
-                    tooling, and patterns, partnering closely with designers and engineers to ensure
-                    accessibility is part of our core architecture.
-                </p>
-
-                <p>
-                    Previously, I've worked across a wide range of environments, from product
-                    studios to startups and large tech companies, including{" "}
-                    <a href="#" className="font-medium text-slate-lightest hover:text-teal transition-colors">
-                        Apple
-                    </a>
-                    ,{" "}
-                    <a href="#" className="font-medium text-slate-lightest hover:text-teal transition-colors">
-                        Starry Internet
-                    </a>
-                    , and{" "}
-                    <a href="#" className="font-medium text-slate-lightest hover:text-teal transition-colors">
-                        Upstatement
-                    </a>
-                    . Alongside my professional work, I also created an{" "}
-                    <a href="#" className="font-medium text-slate-lightest hover:text-teal transition-colors">
-                        online video course
+                    I'm also the creator of{" "}
+                    <a href="https://www.studypady.com.ng/" target="_blank" rel="noopener noreferrer" className="font-medium text-slate-lightest hover:text-teal transition-colors">
+                        Studypadi
                     </a>{" "}
-                    a few years ago which walks through building a real-world, API-driven
-                    application from scratch. These experiences have shaped how I think about building
-                    products that are both well-crafted and widely usable.
+                    (formerly LauHub), a growing education software helping over 2000+ students
+                    access free CBTs and past questions.
                 </p>
 
                 <p>
-                    Outside of work, you can usually find me climbing, playing tennis, hanging out
-                    with my wife and two cats, or running around Hyrule searching for{" "}
-                    <a href="#" className="font-medium text-slate-lightest hover:text-teal transition-colors">
-                        Korok seeds
+                    Outside of code, I love mentoring junior devs and I'm a Computer Science graduate from{" "}
+                    <a href="https://www.lautech.edu.ng/" target="_blank" rel="noopener noreferrer" className="font-medium text-slate-lightest hover:text-teal transition-colors">
+                        LAUTECH
                     </a>
-                    .
+                    . You'll also find me serving in my student church, organizing resources as
+                    a Library Unit Member.
                 </p>
+
+                <p className="text-sm text-slate-light">
+                    Here are a few technologies I've been working with recently:
+                </p>
+
+                <ul className="grid grid-cols-3 gap-x-4 gap-y-2 text-sm">
+                    {skills.map((skill) => (
+                        <li key={skill} className="flex items-center gap-2">
+                            <span className="text-teal">▹</span>
+                            {skill}
+                        </li>
+                    ))}
+                </ul>
             </div>
         </section>
     );

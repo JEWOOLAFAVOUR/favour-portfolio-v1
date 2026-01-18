@@ -4,32 +4,64 @@ import { ArrowUpRight, Star } from "lucide-react";
 export default function Projects() {
     const projects = [
         {
-            title: "Build a Spotify Connected App",
+            title: "StudyPadi",
             description:
-                "Video course that teaches how to build a web app with the Spotify Web API. Topics covered include the principles of REST APIs, user auth flows, Node, Express, React, Styled Components, and more.",
-            url: "https://www.newline.co/courses/build-a-spotify-connected-app",
-            skills: ["React", "Express", "Spotify API", "Heroku"],
+                "An educational platform that provides students with free CBT practice, past questions, and performance tracking tools. Helping over 1000+ students access quality education resources.",
+            url: "https://www.studypady.com.ng/",
+            image: "/studypady_screenshot.png",
+            skills: ["React", "Shadcn", "Tailwind CSS", "Vercel"],
             stars: null,
-            image: null,
+            featured: true,
         },
         {
-            title: "Spotify Profile",
+            title: "HonourWorld",
             description:
-                "Web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.",
-            url: "https://spotify-profile.herokuapp.com/",
-            skills: ["React", "Express", "Spotify API", "Heroku"],
-            stars: 706,
-            image: null,
+                "A client project at Cephas ICT Hub offering VTU services with 10k+ downloads on the Play Store.",
+            url: "#",
+            image: "/honour_world_screenshot.png",
+            skills: ["React Native", "TanStack", "Redux", "API Integration"],
+            stars: null,
+            featured: true,
         },
         {
-            title: "Halcyon Theme",
+            title: "VickyBest Telecom",
             description:
-                "Minimal dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more.",
-            url: "https://halcyon-theme.netlify.app/",
-            skills: ["VS Code", "Sublime Text", "Atom", "iTerm2"],
+                "A client project at Cephas ICT Hub offering VTU services with 1k+ downloads.",
+            url: "#",
+            image: "/vicky_best_screenshot.png",
+            skills: ["React Native", "TanStack", "Redux", "API Integration"],
             stars: null,
-            image: null,
+            featured: true,
         },
+        {
+            title: "JTB Website",
+            description:
+                "A comprehensive website developed for a state government, featuring modern design and user-friendly interface.",
+            url: "#",
+            image: "/jtb_screenshot.png",
+            skills: ["React", "Supabase", "Tailwind CSS", "Vercel"],
+            stars: null,
+            featured: true,
+        },
+        {
+            title: "Skill Remit",
+            description:
+                "Freelancer-focused mobile app for Ghana and Nigeria markets.",
+            url: "#",
+            image: "/skill_remit_screenshot.png",
+            skills: ["React Native", "Redux", "Node.js"],
+            stars: null,
+            featured: true,
+        },
+        // {
+        //     title: "CAC Chapel LAUTECH",
+        //     description:
+        //         "A church website with features for sermons, events, and community engagement.",
+        //     url: "#",
+        //     skills: ["React", "Tailwind CSS", "Vercel"],
+        //     stars: null,
+        //     featured: false,
+        // },
     ];
 
     return (
@@ -92,7 +124,13 @@ export default function Projects() {
                                 </div>
 
                                 <div className="sm:order-1 sm:col-span-2">
-                                    <div className="aspect-video rounded border-2 border-navy-light bg-navy-light/50"></div>
+                                    <div className="aspect-video rounded border-2 border-navy-light bg-navy-light/50 overflow-hidden">
+                                        <img
+                                            src={project.image}
+                                            alt={project.title}
+                                            className="w-full h-full object-cover"
+                                        />
+                                    </div>
                                 </div>
                             </div>
                         </li>
