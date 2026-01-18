@@ -1,7 +1,9 @@
 import React from "react";
 import { ArrowUpRight, Star } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function Projects() {
+    const navigate = useNavigate();
     const projects = [
         {
             title: "StudyPadi",
@@ -138,15 +140,15 @@ export default function Projects() {
                 </ul>
 
                 <div className="mt-12">
-                    <a
-                        href="/archive"
-                        className="group inline-flex items-center font-medium leading-tight text-slate-lightest"
+                    <button
+                        onClick={() => navigate("/archive")}
+                        className="group inline-flex items-center font-medium leading-tight text-slate-lightest hover:text-teal transition-colors cursor-pointer bg-none border-none p-0"
                     >
                         <span className="border-b border-transparent pb-px transition group-hover:border-teal motion-reduce:transition-none">
                             View Full Project Archive
                         </span>
                         <ArrowUpRight className="ml-1 h-4 w-4 shrink-0 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 group-focus-visible:-translate-y-1 group-focus-visible:translate-x-1 motion-reduce:transition-none" />
-                    </a>
+                    </button>
                 </div>
             </div>
         </section>
