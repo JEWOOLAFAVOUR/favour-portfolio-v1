@@ -4,10 +4,11 @@ import {
   RouterProvider,
   useLocation,
 } from "react-router-dom";
-import HomePage from "../screen/HomePage";
+import App from "../App";
 import ChallengePage from "../screen/ChallengePage";
 import PDFViewerPage from "../screen/PDFViewerPage";
 import NotFound from "../screen/NotFound"; // Import the NotFound component
+import ArchivePage from "../screen/ArchivePage"; // Import the ArchivePage component
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -27,7 +28,7 @@ const RouteWrapper = ({ Component }) => (
 );
 
 const RootRouteHandler = () => {
-  return <HomePage />;
+  return <App />;
 };
 
 const Routes = () => {
@@ -43,6 +44,10 @@ const Routes = () => {
     {
       path: "/challenge/:pdfName",
       element: <RouteWrapper Component={PDFViewerPage} />,
+    },
+    {
+      path: "/archive",
+      element: <RouteWrapper Component={ArchivePage} />,
     },
     // Add your other routes here
 
