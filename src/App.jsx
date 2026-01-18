@@ -40,7 +40,9 @@ export default function App() {
             {/* Footer */}
             <footer className="max-w-md pb-16 text-sm text-slate sm:pb-0">
               <p className="mb-4">
-                Designed & Built by Jewoola Favour
+                <a href="https://github.com/JEWOOLAFAVOUR/favour-portfolio-v1" target="_blank" rel="noopener noreferrer" className="font-medium text-slate-lightest hover:text-teal transition-colors">
+                  Designed & Built by Jewoola Favour
+                </a>
               </p>
               <p className="mb-4">
                 Inspired by{" "}
@@ -48,6 +50,7 @@ export default function App() {
                   Brittany Chiang
                 </a>
               </p>
+
               <p>
                 © 2026 Jewoola Favour. All Rights Reserved.
               </p>

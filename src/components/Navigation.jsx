@@ -13,8 +13,8 @@ export default function Navigation() {
     const socialLinks = [
         { name: "GitHub", href: "https://github.com/JEWOOLAFAVOUR", icon: Github },
         { name: "LinkedIn", href: "https://linkedin.com/in/jewoolafavour", icon: Linkedin },
-        { name: "Instagram", href: "https://instagram.com", icon: Instagram },
-        { name: "Twitter", href: "https://twitter.com", icon: Twitter },
+        { name: "Instagram", href: "https://www.instagram.com/jewoolafavourgbemi/", icon: Instagram },
+        { name: "Twitter", href: "https://x.com/favourlop", icon: Twitter },
     ];
 
     useEffect(() => {
