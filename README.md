@@ -1,7 +1,7 @@
 # Personal Portfolio Website
 
 <p align="center">
-  <img src="https://github.com/JEWOOLAFAVOUR/favour-portfolio-v1/blob/main/public/preview.jpeg?raw=true" alt="Website Preview" width="100%" />
+  <img src="https://github.com/JEWOOLAFAVOUR/favour-portfolio-v1/blob/main/public/website_preview.png?raw=true" alt="Website Preview" width="100%" />
 </p>
 
 Welcome to the source code for my personal portfolio website. Built with **React**, **Tailwind CSS**, and **Lucide React**, this site highlights my projects, skills, and experience as a developer.
