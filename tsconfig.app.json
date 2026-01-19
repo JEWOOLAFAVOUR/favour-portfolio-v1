@@ -1,17 +1,17 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "jsx": "react",
+    "jsx": "react-jsx",
     "module": "ESNext",
-    "moduleResolution": "Node"
+    "moduleResolution": "Node",
+    "strict": false,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true
   },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "src/components/app-sidebar.jsx",
-    "src/components/ui/carousel.jsx",
-    "src/screen/Dashboard/leaderboard/LeaderboardSkeleton.jsx",
-    "src/components/data.js",
-    "src/components/utilis.jsx"
-  ]
+  "include": ["src/**/*.ts", "src/**/*.tsx"]
 }

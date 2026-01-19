@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, ComponentType } from "react";
 import {
   createBrowserRouter,
   RouterProvider,
@@ -7,7 +7,11 @@ import {
 import App from "../App";
 import ArchivePage from "../screen/ArchivePage";
 
-const ScrollToTop = () => {
+interface RouteWrapperProps {
+  Component: ComponentType;
+}
+
+const ScrollToTop = (): null => {
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -17,18 +21,18 @@ const ScrollToTop = () => {
   return null;
 };
 
-const RouteWrapper = ({ Component }) => (
+const RouteWrapper = ({ Component }: RouteWrapperProps): JSX.Element => (
   <>
     <ScrollToTop />
     <Component />
   </>
 );
 
-const RootRouteHandler = () => {
+const RootRouteHandler = (): JSX.Element => {
   return <App />;
 };
 
-const Routes = () => {
+const Routes = (): JSX.Element => {
   const pageRoutes = [
     {
       path: "/",

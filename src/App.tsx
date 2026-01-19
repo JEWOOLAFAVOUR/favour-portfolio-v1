@@ -1,14 +1,18 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Navigation from "./components/Navigation";
 import About from "./components/sections/About";
 import Experience from "./components/sections/Experience";
 import Projects from "./components/sections/Projects";
+import type { MousePosition } from "./types";
 
-export default function App() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+export default function App(): JSX.Element {
+  const [mousePosition, setMousePosition] = useState<MousePosition>({
+    x: 0,
+    y: 0,
+  });
 
   useEffect(() => {
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: MouseEvent): void => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
 
@@ -40,20 +44,28 @@ export default function App() {
             {/* Footer */}
             <footer className="max-w-md pb-16 text-sm text-slate sm:pb-0">
               <p className="mb-4">
-                <a href="https://github.com/JEWOOLAFAVOUR/favour-portfolio-v1" target="_blank" rel="noopener noreferrer" className="font-medium text-slate-lightest hover:text-teal transition-colors">
+                <a
+                  href="https://github.com/JEWOOLAFAVOUR/favour-portfolio-v1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-slate-lightest hover:text-teal transition-colors"
+                >
                   Designed & Built by Jewoola Favour
                 </a>
               </p>
               <p className="mb-4">
                 Inspired by{" "}
-                <a href="https://brittanychiang.com/" className="font-medium text-slate-lightest hover:text-teal" target="_blank" rel="noreferrer">
+                <a
+                  href="https://brittanychiang.com/"
+                  className="font-medium text-slate-lightest hover:text-teal"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Brittany Chiang
                 </a>
               </p>
 
-              <p>
-                © 2026 Jewoola Favour. All Rights Reserved.
-              </p>
+              <p>© 2026 Jewoola Favour. All Rights Reserved.</p>
             </footer>
           </main>
         </div>
