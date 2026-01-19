@@ -10,7 +10,7 @@ Welcome to the source code for my personal portfolio website. Built with **React
 
 ---
 
-## 🚨 Forking This Repo (Please Read!)
+## Forking This Repo (Please Read!)
 
 Many people have contacted me asking if they can use this code for their own website, and the answer is **yes — with attribution**.
 
@@ -20,7 +20,7 @@ I value keeping this project open source, but plagiarism is wrong. It's disheart
 
 ---
 
-## 📦 Installation & Setup
+## Installation & Setup
 
 To run this project locally, follow these steps:
 
@@ -32,16 +32,23 @@ cd favour-portfolio-v1
 ```
 
 ### 2. Installation
+
 ```bash
 npm install
 ```
-### 3. Start Development Server 
+
+### 3. Start Development Server
+
 ```bash
-npm run dev 
+npm run dev
 ```
-running on port  http://localhost:5173/
+
+running on port http://localhost:5173/
+
 ### 4. Building and Running for Production
+
 ```bash
 npm run build
 ```
+
 Thanks
