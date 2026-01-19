@@ -32,6 +32,22 @@ export default function ArchivePage() {
             linkText: "ennovatelab.com",
         },
         {
+            year: "2025",
+            title: "JTB Website",
+            madeAt: "Cephas ICT Hub",
+            builtWith: ["React", "Supabase", "Tailwind CSS", "Vercel"],
+            link: "#",
+            linkText: "",
+        },
+        {
+            year: "2025",
+            title: "CAC Chapel LAUTECH Website",
+            madeAt: "Personal",
+            builtWith: ["React", "Tailwind CSS", "Vercel"],
+            link: "#",
+            linkText: "",
+        },
+        {
             year: "2024",
             title: "HonourWorld",
             madeAt: "Cephas ICT Hub",
@@ -71,22 +87,7 @@ export default function ArchivePage() {
             link: "#",
             linkText: "",
         },
-        {
-            year: "2023",
-            title: "JTB Website",
-            madeAt: "Cephas ICT Hub",
-            builtWith: ["React", "Supabase", "Tailwind CSS", "Vercel"],
-            link: "#",
-            linkText: "",
-        },
-        {
-            year: "2023",
-            title: "CAC Chapel LAUTECH Website",
-            madeAt: "Personal",
-            builtWith: ["React", "Tailwind CSS", "Vercel"],
-            link: "#",
-            linkText: "",
-        },
+
         {
             year: "2022",
             title: "Mobile App Development Projects",

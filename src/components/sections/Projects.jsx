@@ -5,16 +5,7 @@ import { useNavigate } from "react-router-dom";
 export default function Projects() {
     const navigate = useNavigate();
     const projects = [
-        {
-            title: "StudyPadi",
-            description:
-                "An educational platform that provides students with free CBT practice, past questions, and performance tracking tools. Helping over 1000+ students access quality education resources.",
-            url: "https://www.studypady.com.ng/",
-            image: "/studypady_screenshot.png",
-            skills: ["React", "Shadcn", "Tailwind CSS", "Vercel"],
-            stars: null,
-            featured: true,
-        },
+
         {
             title: "HonourWorld",
             description:
@@ -22,6 +13,16 @@ export default function Projects() {
             url: "#",
             image: "/honour_world_screenshot.png",
             skills: ["React Native", "TanStack", "Redux", "API Integration"],
+            stars: null,
+            featured: true,
+        },
+        {
+            title: "Skill Remit",
+            description:
+                "Freelancer-focused mobile app for Ghana and Nigeria markets.",
+            url: "#",
+            image: "/skill_remit_screenshot.png",
+            skills: ["React Native", "Redux", "Node.js"],
             stars: null,
             featured: true,
         },
@@ -36,6 +37,16 @@ export default function Projects() {
             featured: true,
         },
         {
+            title: "StudyPadi",
+            description:
+                "An educational platform that provides students with free CBT practice, past questions, and performance tracking tools. Helping over 1000+ students access quality education resources.",
+            url: "https://www.studypady.com.ng/",
+            image: "/studypady_screenshot.png",
+            skills: ["React", "Shadcn", "Tailwind CSS", "Vercel"],
+            stars: null,
+            featured: true,
+        },
+        {
             title: "JTB Website",
             description:
                 "A comprehensive website developed for a state government, featuring modern design and user-friendly interface.",
@@ -45,16 +56,7 @@ export default function Projects() {
             stars: null,
             featured: true,
         },
-        {
-            title: "Skill Remit",
-            description:
-                "Freelancer-focused mobile app for Ghana and Nigeria markets.",
-            url: "#",
-            image: "/skill_remit_screenshot.png",
-            skills: ["React Native", "Redux", "Node.js"],
-            stars: null,
-            featured: true,
-        },
+
         // {
         //     title: "CAC Chapel LAUTECH",
         //     description:

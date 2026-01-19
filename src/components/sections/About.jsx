@@ -20,7 +20,8 @@ export default function About() {
         "Azure",
         "DevOps",
         "Git",
-        "System Design",
+        "Microservices",
+        // "System Design",
     ];
 
     return (
@@ -36,13 +37,15 @@ export default function About() {
 
             <div className="space-y-4 text-slate leading-relaxed">
                 <p>
-                    Hi! I'm Favour, a Software Engineer who enjoys building meaningful digital
+                    Hi! I'm Favour, a Full-Stack Software Developer who enjoys building meaningful digital
                     experiences. I currently work at{" "}
                     <a href="https://www.ennovatelab.com/" target="_blank" rel="noopener noreferrer" className="font-medium text-slate-lightest hover:text-teal transition-colors">
                         Ennovate Lab
                     </a>
-                    , where I build mobile and web apps that are fast, clean, and user-friendly.
+                    , where I design and build end-to-end mobile and web applications, focusing on
+                    clean architecture, reliable backend systems, and smooth user experiences.
                 </p>
+
 
                 <p>
                     I'm also the creator of{" "}

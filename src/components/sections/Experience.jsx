@@ -10,7 +10,7 @@ export default function Experience() {
             url: "https://www.ennovatelab.com/",
             description:
                 "Designing and developing scalable full-stack applications with a focus on clean architecture and robust performance. Implementing backend services and collaborating with cross-functional teams to deliver high-quality solutions. Practicing software engineering best practices and contributing to technical excellence.",
-            skills: ["React Native", "React", "Tailwind", "Node.js", "TypeScript", "PostgreSQL", "System Design"],
+            skills: ["React Native", "React", "Tailwind", "Node.js", "TypeScript", "PostgreSQL", "Golang", "Docker", "Azure"],
         },
         {
             duration: "MAR 2022 — SEP 2025",
@@ -28,7 +28,7 @@ export default function Experience() {
             url: null,
             description:
                 "Built mobile applications as a freelance developer to support e-commerce operations and improve business processes.",
-            skills: ["React Native", "JavaScript", "Mobile Development"],
+            skills: ["React Native", "React", "Typescript", "Mobile Development"],
         },
         {
             duration: "AUG 2024 — NOV 2024",
@@ -37,7 +37,7 @@ export default function Experience() {
             url: "https://www.instagram.com/compellers_digitals/",
             description:
                 "Developed mobile applications as a freelance developer, delivering user-friendly food ordering app solutions for clients. Collaborated with design teams to implement clean interfaces and optimize app performance.",
-            skills: ["React Native", "JavaScript", "Firebase"],
+            skills: ["React Native", "Typescript", "Node.js"],
         },
     ];
 

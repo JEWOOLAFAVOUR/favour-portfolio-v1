@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Github, Linkedin, Instagram, Twitter } from "lucide-react";
+import { Github, Linkedin, Instagram, Twitter, Youtube } from "lucide-react";
 
 export default function Navigation() {
     const [activeSection, setActiveSection] = useState("about");
@@ -13,8 +13,9 @@ export default function Navigation() {
     const socialLinks = [
         { name: "GitHub", href: "https://github.com/JEWOOLAFAVOUR", icon: Github },
         { name: "LinkedIn", href: "https://linkedin.com/in/jewoolafavour", icon: Linkedin },
-        { name: "Instagram", href: "https://www.instagram.com/jewoolafavourgbemi/", icon: Instagram },
+        { name: "YouTube", href: "https://www.youtube.com/@lacademos982", icon: Youtube },
         { name: "Twitter", href: "https://x.com/favourlop", icon: Twitter },
+        { name: "Instagram", href: "https://www.instagram.com/jewoolafavourgbemi/", icon: Instagram },
     ];
 
     useEffect(() => {
@@ -44,10 +45,11 @@ export default function Navigation() {
                     <a href="/">Jewoola Favour</a>
                 </h1>
                 <h2 className="mt-3 text-lg font-medium tracking-tight text-slate-lightest sm:text-xl">
-                    Software Engineer
+                    Full-Stack Software Developer
                 </h2>
                 <p className="mt-4 max-w-xs leading-normal">
-                    I build things for mobile and web — exceptional, human-centered digital experiences.
+                    I build end-to-end mobile and web products, handling frontend and backend,
+                    and turning real problems into simple, reliable software people actually use.
                 </p>
 
                 <nav className="nav hidden lg:block" aria-label="In-page jump links">
@@ -80,16 +82,16 @@ export default function Navigation() {
                 </nav>
             </div>
 
-            <ul className="ml-1 mt-8 flex items-center" aria-label="Social media">
+            <ul className="ml-1 mt-8 flex items-center gap-3" aria-label="Social media">
                 {socialLinks.map((link) => {
                     const Icon = link.icon;
                     return (
-                        <li key={link.name} className="mr-5 text-xs shrink-0">
+                        <li key={link.name} className="shrink-0">
                             <a
                                 href={link.href}
                                 target="_blank"
                                 rel="noreferrer noopener"
-                                className="block hover:text-slate-lightest"
+                                className="block hover:text-slate-lightest transition-colors"
                                 title={link.name}
                             >
                                 <span className="sr-only">{link.name}</span>
