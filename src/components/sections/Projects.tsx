@@ -36,7 +36,7 @@ export default function Projects(): JSX.Element {
       featured: true,
     },
     {
-      title: "StudyPadi",
+      title: "StudyPady",
       description:
         "An educational platform that provides students with free CBT practice, past questions, and performance tracking tools. Helping over 1000+ students access quality education resources.",
       url: "https://www.studypady.com.ng/",
