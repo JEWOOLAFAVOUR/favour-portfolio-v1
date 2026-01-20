@@ -9,7 +9,7 @@ export default function Projects(): JSX.Element {
       title: "HonourWorld",
       description:
         "A client project at Cephas ICT Hub offering VTU services with 10k+ downloads on the Play Store.",
-      url: "#",
+      url: "https://play.google.com/store/apps/details?id=com.ng.honourworld",
       image: "/honour_world_screenshot.png",
       skills: ["React Native", "TanStack", "Redux", "API Integration"],
       stars: null,
@@ -19,7 +19,7 @@ export default function Projects(): JSX.Element {
       title: "Skill Remit",
       description:
         "Freelancer-focused mobile app for Ghana and Nigeria markets.",
-      url: "#",
+      url: "https://play.google.com/store/apps/details?id=com.skillremitartisan",
       image: "/skill_remit_screenshot.png",
       skills: ["React Native", "Redux", "Node.js"],
       stars: null,
@@ -29,7 +29,7 @@ export default function Projects(): JSX.Element {
       title: "VickyBest Telecom",
       description:
         "A client project at Cephas ICT Hub offering VTU services with 1k+ downloads.",
-      url: "#",
+      url: "https://play.google.com/store/apps/details?id=com.vickybest",
       image: "/vicky_best_screenshot.png",
       skills: ["React Native", "TanStack", "Redux", "API Integration"],
       stars: null,
@@ -49,7 +49,7 @@ export default function Projects(): JSX.Element {
       title: "JTB Website",
       description:
         "A comprehensive website developed for a state government, featuring modern design and user-friendly interface.",
-      url: "#",
+      url: "https://jtb-website-01.gilgal.tech/",
       image: "/jtb_screenshot.png",
       skills: ["React", "Supabase", "Tailwind CSS", "Vercel"],
       stars: null,
