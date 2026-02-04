@@ -26,7 +26,7 @@ export default function App(): JSX.Element {
 
     const deltaX = (e.clientX - centerX) / 8;
     const deltaY = (e.clientY - centerY) / 8;
-    
+
     // Calculate distance for squeeze intensity
     const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
     const squeeze = Math.min(distance / 20, 0.3);

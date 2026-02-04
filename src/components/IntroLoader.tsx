@@ -44,9 +44,7 @@ export default function IntroLoader({
     <div ref={containerRef} className="fixed inset-0 z-50 bg-black">
       {/* Progress counter at top right */}
       <div className="absolute top-8 right-8 md:top-12 md:right-12 lg:top-16 lg:right-16">
-        <span
-          className="text-[100px] md:text-[150px] lg:text-[200px] font-bold leading-none tracking-tighter text-white"
-        >
+        <span className="text-[100px] md:text-[150px] lg:text-[200px] font-bold leading-none tracking-tighter text-white">
           {progress}%
         </span>
       </div>
