@@ -1,23 +1,8 @@
-import { useEffect, useState } from "react";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
-import { Link } from "react-router-dom";
-import type { ArchiveProject, MousePosition } from "../types";
-
 export default function ArchivePage(): JSX.Element {
-  const [mousePosition, setMousePosition] = useState<MousePosition>({
-    x: 0,
-    y: 0,
-  });
+  return null;
+}
 
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent): void => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
-
+/*
   const allProjects: ArchiveProject[] = [
     {
       year: "2025",

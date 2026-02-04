@@ -5,17 +5,17 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				navy: "#0e172a",
-				"navy-light": "#112240",
-				slate: "#8892b0",
-				"slate-light": "#a8b2d1",
-				"slate-lightest": "#ccd6f6",
-				teal: "#64ffda",
-				white: "#e6f1ff",
+				black: "#000000",
+				white: "#ffffff",
+				purple: "#8B5CF6",
+				gray: {
+					DEFAULT: "#4A4A4A",
+					light: "#6B6B6B",
+					dark: "#1A1A1A",
+				},
 			},
 			fontFamily: {
-				sans: ["Inter", "system-ui", "sans-serif"],
-				mono: ["SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", "monospace"],
+				sans: ["Neue Haas Grotesk Display", "system-ui", "sans-serif"],
 			},
 		},
 	},

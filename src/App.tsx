@@ -1,75 +1,121 @@
-import { useEffect, useState } from "react";
-import Navigation from "./components/Navigation";
-import About from "./components/sections/About";
-import Experience from "./components/sections/Experience";
-import Projects from "./components/sections/Projects";
-import type { MousePosition } from "./types";
+import { useState, useRef, useEffect } from "react";
+import gsap from "gsap";
+import IntroLoader from "./components/IntroLoader";
 
 export default function App(): JSX.Element {
-  const [mousePosition, setMousePosition] = useState<MousePosition>({
-    x: 0,
-    y: 0,
-  });
+  const [isLoading, setIsLoading] = useState(true);
+  const textRef = useRef<HTMLDivElement>(null);
+  const lettersRef = useRef<(HTMLSpanElement | null)[]>([]);
 
+  const handleLoadComplete = () => {
+    setIsLoading(false);
+  };
+
+  // Split text into individual letters for animation
+  const text = "Jewoola Favour";
+  const letters = text.split("");
+
+  // Handle mouse move for squeeze/distortion effect
+  const handleMouseMove = (e: React.MouseEvent, index: number) => {
+    const letter = lettersRef.current[index];
+    if (!letter) return;
+
+    const rect = letter.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+
+    const deltaX = (e.clientX - centerX) / 8;
+    const deltaY = (e.clientY - centerY) / 8;
+    
+    // Calculate distance for squeeze intensity
+    const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+    const squeeze = Math.min(distance / 20, 0.3);
+
+    gsap.to(letter, {
+      x: deltaX * 1.5,
+      y: deltaY * 1.5,
+      scaleX: 1 - squeeze,
+      scaleY: 1 + squeeze * 0.5,
+      skewX: deltaX * 0.8,
+      skewY: deltaY * 0.4,
+      duration: 0.2,
+      ease: "power2.out",
+    });
+  };
+
+  const handleMouseLeave = (index: number) => {
+    const letter = lettersRef.current[index];
+    if (!letter) return;
+
+    gsap.to(letter, {
+      x: 0,
+      y: 0,
+      scaleX: 1,
+      scaleY: 1,
+      skewX: 0,
+      skewY: 0,
+      duration: 0.6,
+      ease: "elastic.out(1, 0.4)",
+    });
+  };
+
+  // Animate letters on load
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent): void => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
+    if (!isLoading && lettersRef.current.length > 0) {
+      gsap.fromTo(
+        lettersRef.current,
+        {
+          y: 100,
+          opacity: 0,
+          rotateX: -90,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          rotateX: 0,
+          duration: 1,
+          ease: "power3.out",
+          stagger: 0.05,
+          delay: 0.2,
+        },
+      );
+    }
+  }, [isLoading]);
 
   return (
-    <div className="relative min-h-screen bg-navy antialiased selection:bg-teal/30 selection:text-teal">
-      {/* Mouse follower gradient */}
-      <div
-        className="pointer-events-none fixed inset-0 z-30 transition duration-300"
-        style={{
-          background: `radial-gradient(600px at ${mousePosition.x}px ${mousePosition.y}px, rgba(29, 78, 216, 0.15), transparent 80%)`,
-        }}
-      />
+    <>
+      {isLoading && <IntroLoader onComplete={handleLoadComplete} />}
 
-      <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:px-10 lg:py-0">
-        <div className="lg:flex lg:justify-between lg:gap-4">
-          {/* Left Sidebar - Sticky Header */}
-          <Navigation />
+      <div className="min-h-screen bg-[#e8e8e8] flex items-center justify-center overflow-hidden">
+        <div ref={textRef} className="relative px-4">
+          {/* Main text container */}
+          <h1
+            className="text-[8vw] md:text-[9vw] lg:text-[10vw] font-bold leading-[0.9] tracking-[-0.03em] text-[#1a1a1a] cursor-default select-none whitespace-nowrap"
+            style={{ fontFamily: "'Neue Haas Grotesk Display', sans-serif" }}
+          >
+            {letters.map((letter, index) => (
+              <span
+                key={index}
+                ref={(el) => (lettersRef.current[index] = el)}
+                className="inline-block"
+                onMouseMove={(e) => handleMouseMove(e, index)}
+                onMouseLeave={() => handleMouseLeave(index)}
+                style={{
+                  display: letter === " " ? "inline" : "inline-block",
+                  minWidth: letter === " " ? "0.3em" : "auto",
+                }}
+              >
+                {letter === " " ? "\u00A0" : letter}
+              </span>
+            ))}
+          </h1>
 
-          {/* Right Content - Scrollable */}
-          <main id="content" className="pt-24 lg:w-1/2 lg:py-24">
-            <About />
-            <Experience />
-            <Projects />
-
-            {/* Footer */}
-            <footer className="max-w-md pb-16 text-sm text-slate sm:pb-0">
-              <p className="mb-4">
-                <a
-                  href="https://github.com/JEWOOLAFAVOUR/favour-portfolio-v1"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-medium text-slate-lightest hover:text-teal transition-colors"
-                >
-                  Designed & Built by Jewoola Favour
-                </a>
-              </p>
-              <p className="mb-4">
-                Inspired by{" "}
-                <a
-                  href="https://brittanychiang.com/"
-                  className="font-medium text-slate-lightest hover:text-teal"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Brittany Chiang
-                </a>
-              </p>
-
-              <p>© 2026 Jewoola Favour. All Rights Reserved.</p>
-            </footer>
-          </main>
+          {/* Registered trademark symbol */}
+          <span className="absolute -right-8 top-0 text-2xl md:text-4xl text-[#1a1a1a]">
+            ®
+          </span>
         </div>
       </div>
-    </div>
+    </>
   );
 }

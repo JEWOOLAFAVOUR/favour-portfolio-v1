@@ -1,3 +1,8 @@
+export default function Projects(): JSX.Element {
+  return null;
+}
+
+/*
 import { ArrowUpRight, Star } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import type { Project } from "../../types";
@@ -11,7 +16,13 @@ export default function Projects(): JSX.Element {
         "A client project at Cephas ICT Hub offering VTU services with 10k+ downloads on the Play Store.",
       url: "https://play.google.com/store/apps/details?id=com.ng.honourworld",
       image: "/honour_world_screenshot.png",
-      skills: ["React Native", "TanStack", "Redux", "API Integration"],
+      skills: [
+        "React Native",
+        "TanStack",
+        "Redux",
+        "API Integration",
+        "Performance Optimization",
+      ],
       stars: null,
       featured: true,
     },
