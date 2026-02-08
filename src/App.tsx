@@ -109,11 +109,6 @@ export default function App(): JSX.Element {
               </span>
             ))}
           </h1>
-
-          {/* Registered trademark symbol */}
-          <span className="absolute -right-8 top-0 text-2xl md:text-4xl text-[#1a1a1a]">
-            ®
-          </span>
         </div>
       </div>
     </>
