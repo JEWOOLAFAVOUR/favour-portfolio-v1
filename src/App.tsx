@@ -59,26 +59,24 @@ export default function App(): JSX.Element {
     });
   };
 
-  // Animate letters on load
+  // Animate letters on load - drop one at a time
   useEffect(() => {
     if (!isLoading && lettersRef.current.length > 0) {
-      gsap.fromTo(
-        lettersRef.current,
-        {
-          y: 100,
-          opacity: 0,
-          rotateX: -90,
-        },
-        {
-          y: 0,
-          opacity: 1,
-          rotateX: 0,
-          duration: 1,
-          ease: "power3.out",
-          stagger: 0.05,
-          delay: 0.2,
-        },
-      );
+      // Set initial state
+      gsap.set(lettersRef.current, {
+        y: -150,
+        opacity: 0,
+      });
+
+      // Animate each letter dropping one at a time
+      gsap.to(lettersRef.current, {
+        y: 0,
+        opacity: 1,
+        duration: 0.6,
+        ease: "bounce.out",
+        stagger: 0.08,
+        delay: 0.3,
+      });
     }
   }, [isLoading]);
 
@@ -86,11 +84,23 @@ export default function App(): JSX.Element {
     <>
       {isLoading && <IntroLoader onComplete={handleLoadComplete} />}
 
-      <div className="min-h-screen bg-[#e8e8e8] flex items-center justify-center overflow-hidden">
-        <div ref={textRef} className="relative px-4">
+      <div className="min-h-screen bg-[#e8e8e8] overflow-hidden relative">
+        {/* Left sidebar line */}
+        <div className="absolute left-6 md:left-10 top-0 bottom-0 w-[1px] bg-black/20 pointer-events-none z-20" />
+
+        {/* Top horizontal line */}
+        <div className="absolute left-0 right-0 top-16 md:top-20 h-[1px] bg-black/20 pointer-events-none z-20" />
+
+        {/* Intersection dot */}
+        <div className="absolute left-6 md:left-10 top-16 md:top-20 w-2 h-2 rounded-full bg-black/40 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-30" />
+
+        <div
+          ref={textRef}
+          className="relative w-full h-[40vh] flex items-center justify-center pt-24 md:pt-28 z-10 overflow-hidden"
+        >
           {/* Main text container */}
           <h1
-            className="text-[8vw] md:text-[9vw] lg:text-[10vw] font-bold leading-[0.9] tracking-[-0.03em] text-[#1a1a1a] cursor-default select-none whitespace-nowrap"
+            className="text-[8vw] md:text-[9vw] lg:text-[10vw] font-bold leading-[0.9] tracking-[-0.03em] text-[#1a1a1a] cursor-default select-none whitespace-nowrap w-full text-center"
             style={{ fontFamily: "'Neue Haas Grotesk Display', sans-serif" }}
           >
             {letters.map((letter, index) => (
