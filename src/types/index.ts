@@ -32,6 +32,7 @@ export interface Project {
   skills: string[];
   stars: number | null;
   featured: boolean;
+  platform: "web" | "mobile";
 }
 
 // Archive Project Types

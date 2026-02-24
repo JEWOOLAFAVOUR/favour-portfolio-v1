@@ -1,10 +1,21 @@
-import { ArrowUpRight, Star } from "lucide-react";
+import { ArrowUpRight, Star, Monitor, Smartphone } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import type { Project } from "../../types";
 
 export default function Projects(): JSX.Element {
   const navigate = useNavigate();
   const projects: Project[] = [
+    {
+      title: "Oreno",
+      description:
+        "Your daily standup companion. Track progress, manage tasks, and walk into every meeting prepared. Features real-time collaboration and smart auto-linking of completed tasks to standup reports.",
+      url: "https://oreno.vercel.app/",
+      image: "/oreno_screenshot.app.jpeg",
+      skills: ["Next.js", "Redis", "Pusher", "PostgreSQL", "Prisma", "Tailwind CSS", "WebSocket", "OAuth 2.0"],
+      stars: null,
+      featured: true,
+      platform: "web",
+    },
     {
       title: "HonourWorld",
       description:
@@ -14,6 +25,7 @@ export default function Projects(): JSX.Element {
       skills: ["React Native", "TanStack", "Redux", "API Integration"],
       stars: null,
       featured: true,
+      platform: "mobile",
     },
     {
       title: "Skill Remit",
@@ -24,6 +36,7 @@ export default function Projects(): JSX.Element {
       skills: ["React Native", "Redux", "Node.js"],
       stars: null,
       featured: true,
+      platform: "mobile",
     },
     {
       title: "VickyBest Telecom",
@@ -34,6 +47,7 @@ export default function Projects(): JSX.Element {
       skills: ["React Native", "TanStack", "Redux", "API Integration"],
       stars: null,
       featured: true,
+      platform: "mobile",
     },
     {
       title: "StudyPady",
@@ -44,6 +58,7 @@ export default function Projects(): JSX.Element {
       skills: ["React", "Shadcn", "Tailwind CSS", "Vercel"],
       stars: null,
       featured: true,
+      platform: "web",
     },
     {
       title: "JTB Website",
@@ -54,6 +69,7 @@ export default function Projects(): JSX.Element {
       skills: ["React", "Supabase", "Tailwind CSS", "Vercel"],
       stars: null,
       featured: true,
+      platform: "web",
     },
 
     // {
@@ -94,8 +110,21 @@ export default function Projects(): JSX.Element {
                       className="group/link inline-flex items-baseline text-base font-medium leading-tight text-slate-lightest hover:text-teal focus-visible:text-teal"
                     >
                       <span className="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
-                      <span>
+                      <span className="flex items-center gap-2">
                         {project.title}
+                        <div className="flex items-center gap-1 text-xs text-slate">
+                          {project.platform === "web" ? (
+                            <>
+                              <Monitor className="h-3 w-3" />
+                              <span>Web</span>
+                            </>
+                          ) : (
+                            <>
+                              <Smartphone className="h-3 w-3" />
+                              <span>Mobile</span>
+                            </>
+                          )}
+                        </div>
                         <ArrowUpRight className="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1" />
                       </span>
                     </a>
