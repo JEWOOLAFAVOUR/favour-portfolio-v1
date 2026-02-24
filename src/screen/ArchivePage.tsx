@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Monitor, Smartphone } from "lucide-react";
 import { Link } from "react-router-dom";
 import type { ArchiveProject, MousePosition } from "../types";
 
@@ -20,12 +20,58 @@ export default function ArchivePage(): JSX.Element {
 
   const allProjects: ArchiveProject[] = [
     {
+      year: "2026",
+      title: "Oreno",
+      madeAt: "Personal",
+      builtWith: ["Next.js", "Redis", "Pusher", "PostgreSQL", "Prisma", "Tailwind CSS", "WebSocket", "OAuth 2.0"],
+      link: "https://oreno.vercel.app/",
+      linkText: "oreno.vercel.app",
+      platform: "web",
+    },
+    {
+      year: "2026",
+      title: "Loop Chat",
+      madeAt: "Personal",
+      builtWith: ["React", "Node.js", "Socket.io", "Express", "MongoDB", "JWT"],
+      link: "https://github.com/JEWOOLAFAVOUR/Loop-Chat",
+      linkText: "github.com/JEWOOLAFAVOUR/Loop-Chat",
+      platform: "web",
+    },
+    {
+      year: "2026",
+      title: "Gilgal Tech",
+      madeAt: "Personal",
+      builtWith: ["React", "Node.js", "Docker", "Azure", "PostgreSQL", "CI/CD"],
+      link: "http://gilgal.tech/",
+      linkText: "gilgal.tech",
+      platform: "web",
+    },
+    {
+      year: "2026",
+      title: "Irisi Fashion",
+      madeAt: "Personal",
+      builtWith: ["React", "Tailwind CSS", "Vercel"],
+      link: "https://irisi-fashion.vercel.app/",
+      linkText: "irisi-fashion.vercel.app",
+      platform: "web",
+    },
+    {
+      year: "2026",
+      title: "Iwadii Lab",
+      madeAt: "Personal",
+      builtWith: ["React", "Tailwind CSS", "Vercel"],
+      link: "https://iwadii-lab.vercel.app/",
+      linkText: "iwadii-lab.vercel.app",
+      platform: "web",
+    },
+    {
       year: "2025",
       title: "StudyPadi",
       madeAt: "Personal",
       builtWith: ["React", "Shadcn", "Tailwind CSS", "Vercel"],
       link: "https://www.studypady.com.ng/",
       linkText: "studypady.com.ng",
+      platform: "web",
     },
     {
       year: "2025",
@@ -34,14 +80,16 @@ export default function ArchivePage(): JSX.Element {
       builtWith: ["React", "Node.js", "TypeScript", "AWS", "PostgreSQL"],
       link: "https://www.ennovatelab.com/",
       linkText: "ennovatelab.com",
+      platform: "web",
     },
     {
       year: "2025",
       title: "JTB Website",
       madeAt: "Cephas ICT Hub",
       builtWith: ["React", "Supabase", "Tailwind CSS", "Vercel"],
-      link: "#",
-      linkText: "",
+      link: "https://jtb-website-01.gilgal.tech/",
+      linkText: "jtb-website-01.gilgal.tech",
+      platform: "web",
     },
     {
       year: "2025",
@@ -50,22 +98,25 @@ export default function ArchivePage(): JSX.Element {
       builtWith: ["React", "Tailwind CSS", "Vercel"],
       link: "#",
       linkText: "",
+      platform: "web",
     },
     {
       year: "2024",
       title: "HonourWorld",
       madeAt: "Cephas ICT Hub",
       builtWith: ["React Native", "TanStack", "Redux", "API Integration"],
-      link: "#",
-      linkText: "",
+      link: "https://play.google.com/store/apps/details?id=com.ng.honourworld",
+      linkText: "play.google.com/store/apps",
+      platform: "mobile",
     },
     {
       year: "2024",
       title: "VickyBest Telecom",
       madeAt: "Cephas ICT Hub",
       builtWith: ["React Native", "TanStack", "Redux", "API Integration"],
-      link: "#",
-      linkText: "",
+      link: "https://play.google.com/store/apps/details?id=com.vickybest",
+      linkText: "play.google.com/store/apps",
+      platform: "mobile",
     },
     {
       year: "2024",
@@ -74,6 +125,7 @@ export default function ArchivePage(): JSX.Element {
       builtWith: ["React Native", "JavaScript", "Mobile Development"],
       link: null,
       linkText: "",
+      platform: "mobile",
     },
     {
       year: "2024",
@@ -82,14 +134,16 @@ export default function ArchivePage(): JSX.Element {
       builtWith: ["React Native", "JavaScript", "Firebase"],
       link: "https://www.instagram.com/compellers_digitals/",
       linkText: "Instagram",
+      platform: "mobile",
     },
     {
       year: "2024",
       title: "Skill Remit",
       madeAt: "Cephas ICT Hub",
       builtWith: ["React Native", "Redux", "Node.js"],
-      link: "#",
-      linkText: "",
+      link: "https://play.google.com/store/apps/details?id=com.skillremitartisan",
+      linkText: "play.google.com/store/apps",
+      platform: "mobile",
     },
 
     {
@@ -99,6 +153,7 @@ export default function ArchivePage(): JSX.Element {
       builtWith: ["React Native", "Node.js", "Express", "MongoDB"],
       link: "https://www.cephasict.com/",
       linkText: "cephasict.com",
+      platform: "mobile",
     },
   ];
 
@@ -131,19 +186,22 @@ export default function ArchivePage(): JSX.Element {
           <table className="mt-12 w-full border-collapse text-left">
             <thead className="sticky top-0 z-10 border-b border-slate/30 bg-navy/75 px-6 py-5 backdrop-blur">
               <tr>
-                <th className="py-4 pr-8 text-sm font-semibold text-slate-lightest">
+                <th className="py-4 pr-6 text-sm font-semibold text-slate-lightest">
                   Year
                 </th>
-                <th className="py-4 pr-8 text-sm font-semibold text-slate-lightest">
+                <th className="py-4 pr-6 text-sm font-semibold text-slate-lightest">
                   Project
                 </th>
-                <th className="hidden py-4 pr-8 text-sm font-semibold text-slate-lightest lg:table-cell">
+                <th className="hidden py-4 pr-6 text-sm font-semibold text-slate-lightest lg:table-cell">
                   Made at
                 </th>
-                <th className="hidden py-4 pr-8 text-sm font-semibold text-slate-lightest lg:table-cell">
+                <th className="hidden py-4 pr-6 text-sm font-semibold text-slate-lightest lg:table-cell w-80">
                   Built with
                 </th>
-                <th className="hidden py-4 text-sm font-semibold text-slate-lightest sm:table-cell">
+                <th className="hidden py-4 pr-8 text-sm font-semibold text-slate-lightest sm:table-cell w-24">
+                  Platform
+                </th>
+                <th className="hidden py-4 text-sm font-semibold text-slate-lightest sm:table-cell w-32">
                   Link
                 </th>
               </tr>
@@ -154,10 +212,10 @@ export default function ArchivePage(): JSX.Element {
                   key={index}
                   className="border-b border-slate/10 last:border-none"
                 >
-                  <td className="py-4 pr-8 align-top text-sm text-slate">
+                  <td className="py-4 pr-6 align-top text-sm text-slate">
                     {project.year}
                   </td>
-                  <td className="py-4 pr-8 align-top font-semibold leading-snug text-slate-lightest">
+                  <td className="py-4 pr-6 align-top font-semibold leading-snug text-slate-lightest">
                     <div className="block sm:hidden">
                       {project.link && project.link !== "#" ? (
                         <a
@@ -177,10 +235,10 @@ export default function ArchivePage(): JSX.Element {
                       <span>{project.title}</span>
                     </div>
                   </td>
-                  <td className="hidden py-4 pr-8 align-top text-sm text-slate lg:table-cell">
+                  <td className="hidden py-4 pr-6 align-top text-sm text-slate lg:table-cell">
                     {project.madeAt}
                   </td>
-                  <td className="hidden py-4 pr-8 align-top lg:table-cell">
+                  <td className="hidden py-4 pr-6 align-top lg:table-cell w-80">
                     <ul className="flex -translate-y-1.5 flex-wrap">
                       {project.builtWith.map((tech) => (
                         <li key={tech} className="my-1 mr-1.5">
@@ -191,18 +249,33 @@ export default function ArchivePage(): JSX.Element {
                       ))}
                     </ul>
                   </td>
-                  <td className="hidden py-4 align-top sm:table-cell">
+                  <td className="hidden py-4 pr-6 align-top sm:table-cell w-24">
+                    <div className="flex items-center gap-1 text-xs text-slate">
+                      {project.platform === "web" ? (
+                        <>
+                          <Monitor className="h-3 w-3" />
+                          <span>Web</span>
+                        </>
+                      ) : (
+                        <>
+                          <Smartphone className="h-3 w-3" />
+                          <span>Mobile</span>
+                        </>
+                      )}
+                    </div>
+                  </td>
+                  <td className="hidden py-4 align-top sm:table-cell w-32">
                     {project.link &&
-                      project.link !== "#" &&
-                      project.linkText && (
+                      project.link !== "#" && (
                         <a
                           href={project.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center text-sm font-medium text-slate hover:text-teal focus-visible:text-teal"
+                          className="inline-flex items-center text-sm font-medium text-slate hover:text-teal focus-visible:text-teal truncate max-w-xs"
+                          title={project.linkText || project.link}
                         >
-                          <span>{project.linkText}</span>
-                          <ArrowUpRight className="ml-1 h-4 w-4 shrink-0" />
+                          <span className="truncate">{project.linkText || project.link}</span>
+                          <ArrowUpRight className="ml-1 h-3 w-3 shrink-0" />
                         </a>
                       )}
                   </td>

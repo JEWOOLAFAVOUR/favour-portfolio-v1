@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { Github, Linkedin, Instagram, Twitter, Youtube } from "lucide-react";
+import { Github, Linkedin, Instagram, Twitter, Youtube, FileText, Archive } from "lucide-react";
+import { Link } from "react-router-dom";
 import type { NavLink, SocialLink } from "../types";
 
 export default function Navigation(): JSX.Element {
@@ -9,6 +10,7 @@ export default function Navigation(): JSX.Element {
     { name: "ABOUT", href: "#about", id: "about" },
     { name: "EXPERIENCE", href: "#experience", id: "experience" },
     { name: "PROJECTS", href: "#projects", id: "projects" },
+    { name: "ARCHIVE", href: "#archive", id: "archive" },
   ];
 
   const socialLinks: SocialLink[] = [
@@ -73,31 +75,56 @@ export default function Navigation(): JSX.Element {
           <ul className="mt-16 w-max">
             {navLinks.map((link) => (
               <li key={link.name}>
-                <a
-                  href={link.href}
-                  className={`group flex items-center py-3 ${
-                    activeSection === link.id ? "active" : ""
-                  }`}
-                >
-                  <span
-                    className={`mr-4 h-px transition-all group-hover:w-16 group-hover:bg-slate-lightest group-focus-visible:w-16 group-focus-visible:bg-slate-lightest motion-reduce:transition-none ${
-                      activeSection === link.id
-                        ? "w-16 bg-slate-lightest"
-                        : "w-8 bg-slate"
-                    }`}
-                  ></span>
-                  <span
-                    className={`text-xs font-bold uppercase tracking-widest group-hover:text-slate-lightest group-focus-visible:text-slate-lightest ${
-                      activeSection === link.id
-                        ? "text-slate-lightest"
-                        : "text-slate"
+                {link.name === "ARCHIVE" ? (
+                  <Link
+                    to="/archive"
+                    className="group flex items-center py-3"
+                  >
+                    <span className="mr-4 h-px w-8 bg-slate transition-all group-hover:w-16 group-hover:bg-slate-lightest group-focus-visible:w-16 group-focus-visible:bg-slate-lightest motion-reduce:transition-none"></span>
+                    <span className="text-xs font-bold uppercase tracking-widest text-slate group-hover:text-slate-lightest group-focus-visible:text-slate-lightest">
+                      {link.name}
+                    </span>
+                  </Link>
+                ) : (
+                  <a
+                    href={link.href}
+                    className={`group flex items-center py-3 ${
+                      activeSection === link.id ? "active" : ""
                     }`}
                   >
-                    {link.name}
-                  </span>
-                </a>
+                    <span
+                      className={`mr-4 h-px transition-all group-hover:w-16 group-hover:bg-slate-lightest group-focus-visible:w-16 group-focus-visible:bg-slate-lightest motion-reduce:transition-none ${
+                        activeSection === link.id
+                          ? "w-16 bg-slate-lightest"
+                          : "w-8 bg-slate"
+                      }`}
+                    ></span>
+                    <span
+                      className={`text-xs font-bold uppercase tracking-widest group-hover:text-slate-lightest group-focus-visible:text-slate-lightest ${
+                        activeSection === link.id
+                          ? "text-slate-lightest"
+                          : "text-slate"
+                      }`}
+                    >
+                      {link.name}
+                    </span>
+                  </a>
+                )}
               </li>
             ))}
+            <li>
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center py-3"
+              >
+                <span className="mr-4 h-px w-8 bg-slate transition-all group-hover:w-16 group-hover:bg-slate-lightest group-focus-visible:w-16 group-focus-visible:bg-slate-lightest motion-reduce:transition-none"></span>
+                <span className="text-xs font-bold uppercase tracking-widest text-slate group-hover:text-slate-lightest group-focus-visible:text-slate-lightest">
+                  RESUME
+                </span>
+              </a>
+            </li>
           </ul>
         </nav>
       </div>

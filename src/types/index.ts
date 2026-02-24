@@ -43,6 +43,7 @@ export interface ArchiveProject {
   builtWith: string[];
   link: string | null;
   linkText: string;
+  platform: "web" | "mobile";
 }
 
 // Mouse Position Type

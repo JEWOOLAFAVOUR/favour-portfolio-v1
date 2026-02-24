@@ -11,11 +11,23 @@ export default function Projects(): JSX.Element {
         "Your daily standup companion. Track progress, manage tasks, and walk into every meeting prepared. Features real-time collaboration and smart auto-linking of completed tasks to standup reports.",
       url: "https://oreno.vercel.app/",
       image: "/oreno_screenshot.app.jpeg",
-      skills: ["Next.js", "Redis", "Pusher", "PostgreSQL", "Prisma", "Tailwind CSS", "WebSocket", "OAuth 2.0"],
+      skills: ["Next.js", "Redis", "Pusher", "PostgreSQL", "Prisma", "Tailwind CSS", "WebSocket", "OAuth 2.0", "Zustand"],
       stars: null,
       featured: true,
       platform: "web",
     },
+    {
+      title: "Irisi Fashion",
+      description:
+        "A modern fashion brand website showcasing the latest collections, trends, and style inspiration. Elegant design with seamless shopping experience.",
+      url: "https://irisi-fashion.vercel.app/",
+      image: "/irisi_fashion_screenshot.png",
+      skills: ["Next.js", "Tailwind CSS", "Framer Motion", "Zustand", "Vercel"],
+      stars: null,
+      featured: true,
+      platform: "web",
+    },
+   
     {
       title: "HonourWorld",
       description:
