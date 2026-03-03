@@ -20,7 +20,11 @@ export default function App(): JSX.Element {
   const letters2 = line2.split("");
 
   // Handle mouse move for squeeze/distortion effect
-  const handleMouseMove = (e: React.MouseEvent, ref: React.RefObject<(HTMLSpanElement | null)[]>, index: number) => {
+  const handleMouseMove = (
+    e: React.MouseEvent,
+    ref: React.RefObject<(HTMLSpanElement | null)[]>,
+    index: number,
+  ) => {
     const letter = ref.current?.[index];
     if (!letter) return;
 
@@ -47,7 +51,10 @@ export default function App(): JSX.Element {
     });
   };
 
-  const handleMouseLeave = (ref: React.RefObject<(HTMLSpanElement | null)[]>, index: number) => {
+  const handleMouseLeave = (
+    ref: React.RefObject<(HTMLSpanElement | null)[]>,
+    index: number,
+  ) => {
     const letter = ref.current?.[index];
     if (!letter) return;
 
@@ -99,11 +106,11 @@ export default function App(): JSX.Element {
       {isLoading && <IntroLoader onComplete={handleLoadComplete} />}
 
       <div className="min-h-screen bg-[#f2f0f9] overflow-hidden relative">
-        {/* Resume link at top right */}
-        <a 
-          href="/resume.pdf" 
+        {/* Resume link at top left */}
+        <a
+          href="/resume.pdf"
           target="_blank"
-          className="absolute top-4 right-10 md:right-16 text-sm md:text-base font-medium text-[#1a1a1a] hover:opacity-70 transition-opacity z-40 underline underline-offset-4"
+          className="absolute top-4 left-14 md:left-24 lg:left-32 text-base md:text-lg font-medium text-[#1a1a1a] hover:opacity-70 transition-opacity z-40 underline underline-offset-4"
           style={{ fontFamily: "'Neue Haas Grotesk Display', sans-serif" }}
         >
           Resume
@@ -124,53 +131,101 @@ export default function App(): JSX.Element {
         {/* Intersection dot - right */}
         <div className="absolute right-10 md:right-16 top-10 md:top-16 w-2 h-2 rounded-full bg-black/40 translate-x-1/2 -translate-y-1/2 pointer-events-none z-30" />
 
-        {/* Bottom center navigation */}
-        <nav className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50">
-          <div className="flex items-center gap-1 bg-[#1a1a1a] rounded-full px-2 py-2">
-            <a href="#home" className="px-4 py-2 text-sm font-medium text-white/70 hover:text-white transition-colors rounded-full">Home</a>
-            <a href="#experience" className="px-4 py-2 text-sm font-medium text-white/70 hover:text-white transition-colors rounded-full">Experience</a>
-            <a href="#projects" className="px-4 py-2 text-sm font-medium text-white/70 hover:text-white transition-colors rounded-full">Projects</a>
-            <a href="#about" className="px-4 py-2 text-sm font-medium bg-white text-[#1a1a1a] rounded-full">About</a>
-            <a href="#archive" className="px-4 py-2 text-sm font-medium text-white/70 hover:text-white transition-colors rounded-full">Archive</a>
+        {/* Bottom center navigation - SUPER BIG */}
+        <nav className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50">
+          <div className="flex items-center gap-3 bg-[#1a1a1a] rounded-full px-6 py-4">
+            <a
+              href="#home"
+              className="px-8 py-4 text-xl md:text-2xl font-medium text-white/70 hover:text-white transition-colors rounded-full"
+            >
+              Home
+            </a>
+            <a
+              href="#experience"
+              className="px-8 py-4 text-xl md:text-2xl font-medium text-white/70 hover:text-white transition-colors rounded-full"
+            >
+              Experience
+            </a>
+            <a
+              href="#projects"
+              className="px-8 py-4 text-xl md:text-2xl font-medium text-white/70 hover:text-white transition-colors rounded-full"
+            >
+              Projects
+            </a>
+            <a
+              href="#about"
+              className="px-8 py-4 text-xl md:text-2xl font-medium bg-white text-[#1a1a1a] rounded-full"
+            >
+              About
+            </a>
+            <a
+              href="#archive"
+              className="px-8 py-4 text-xl md:text-2xl font-medium text-white/70 hover:text-white transition-colors rounded-full"
+            >
+              Archive
+            </a>
           </div>
         </nav>
 
         <div
           ref={textRef}
-          className="relative w-full min-h-[50vh] flex flex-col items-start justify-center pt-24 md:pt-32 pl-14 md:pl-24 z-10"
+          className="relative w-full min-h-[70vh] flex flex-col items-start justify-center pt-24 md:pt-32 pl-14 md:pl-24 lg:pl-32 z-10"
         >
-          {/* Main text container */}
-          <h1
-            className="text-[12vw] md:text-[11vw] lg:text-[10vw] font-bold leading-[0.95] tracking-[-0.04em] text-[#1a1a1a] cursor-default select-none"
-            style={{ fontFamily: "'Neue Haas Grotesk Display', sans-serif" }}
+          {/* Main text container - Line 1: Jewoola */}
+          <div
+            className="text-[18vw] md:text-[16vw] lg:text-[14vw] font-extrabold leading-[0.9] tracking-[-0.02em] text-[#1a1a1a] cursor-default select-none"
+            style={{ fontFamily: "'Syne', sans-serif" }}
           >
-            {letters.map((letter, index) => (
+            {letters1.map((letter, index) => (
               <span
                 key={index}
                 className="inline-block overflow-hidden align-bottom"
                 style={{
-                  display: letter === " " ? "inline" : "inline-block",
-                  minWidth: letter === " " ? "0.25em" : "auto",
-                  marginRight: "-0.02em",
+                  marginRight: "0.02em",
                 }}
               >
                 <span
-                  ref={(el) => (lettersRef.current[index] = el)}
+                  ref={(el) => (line1Ref.current[index] = el)}
                   className="inline-block"
-                  onMouseMove={(e) => handleMouseMove(e, index)}
-                  onMouseLeave={() => handleMouseLeave(index)}
+                  onMouseMove={(e) => handleMouseMove(e, line1Ref, index)}
+                  onMouseLeave={() => handleMouseLeave(line1Ref, index)}
                 >
-                  {letter === " " ? "\u00A0" : letter}
+                  {letter}
                 </span>
               </span>
             ))}
-          </h1>
+          </div>
 
-          {/* Tagline */}
-          <div className="overflow-hidden mt-6">
+          {/* Main text container - Line 2: Favour */}
+          <div
+            className="text-[18vw] md:text-[16vw] lg:text-[14vw] font-extrabold leading-[0.9] tracking-[-0.02em] text-[#1a1a1a] cursor-default select-none"
+            style={{ fontFamily: "'Syne', sans-serif" }}
+          >
+            {letters2.map((letter, index) => (
+              <span
+                key={index}
+                className="inline-block overflow-hidden align-bottom"
+                style={{
+                  marginRight: "0.02em",
+                }}
+              >
+                <span
+                  ref={(el) => (line2Ref.current[index] = el)}
+                  className="inline-block"
+                  onMouseMove={(e) => handleMouseMove(e, line2Ref, index)}
+                  onMouseLeave={() => handleMouseLeave(line2Ref, index)}
+                >
+                  {letter}
+                </span>
+              </span>
+            ))}
+          </div>
+
+          {/* Tagline - SUPER BIG */}
+          <div className="overflow-hidden mt-8">
             <p
               ref={taglineRef}
-              className="text-[1rem] md:text-[1.3rem] lg:text-[1.5rem] font-medium tracking-[0.15em] text-[#4a4a4a] uppercase"
+              className="text-[5vw] md:text-[4vw] lg:text-[3vw] font-bold tracking-[-0.02em] text-[#1a1a1a] uppercase"
               style={{ fontFamily: "'Neue Haas Grotesk Display', sans-serif" }}
             >
               Full-Stack Software Developer
