@@ -10,6 +10,7 @@ export default function IntroLoader({
 }: IntroLoaderProps): JSX.Element {
   const [progress, setProgress] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Animate the progress from 0 to 100
@@ -20,7 +21,12 @@ export default function IntroLoader({
         duration: 7,
         ease: "power2.inOut",
         onUpdate: function () {
-          setProgress(Math.round(this.targets()[0].value));
+          const currentProgress = Math.round(this.targets()[0].value);
+          setProgress(currentProgress);
+          // Sync panel width with progress
+          if (panelRef.current) {
+            gsap.set(panelRef.current, { width: `${currentProgress}%` });
+          }
         },
         onComplete: () => {
           // After progress reaches 100, animate out
@@ -41,9 +47,19 @@ export default function IntroLoader({
   }, [onComplete]);
 
   return (
-    <div ref={containerRef} className="fixed inset-0 z-50 bg-black">
+    <div
+      ref={containerRef}
+      className="fixed inset-0 z-50 bg-black overflow-hidden"
+    >
+      {/* Split panel that grows with progress */}
+      <div
+        ref={panelRef}
+        className="absolute top-0 left-0 h-[12vh] bg-[#64B5F6] z-10"
+        style={{ width: "0%" }}
+      />
+
       {/* Progress counter at top right */}
-      <div className="absolute top-8 right-8 md:top-12 md:right-12 lg:top-16 lg:right-16">
+      <div className="absolute top-[15vh] right-8 md:top-[16vh] md:right-12 lg:top-[14vh] lg:right-16">
         <span className="text-[100px] md:text-[150px] lg:text-[200px] font-bold leading-none tracking-tighter text-white">
           {progress}%
         </span>
