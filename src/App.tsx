@@ -4,99 +4,73 @@ import IntroLoader from "./components/IntroLoader";
 
 export default function App(): JSX.Element {
   const [isLoading, setIsLoading] = useState(false); // Disabled intro loader for now
-  const textRef = useRef<HTMLDivElement>(null);
-  const line1Ref = useRef<(HTMLSpanElement | null)[]>([]);
-  const line2Ref = useRef<(HTMLSpanElement | null)[]>([]);
-  const taglineRef = useRef<HTMLParagraphElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const line1Ref = useRef<HTMLDivElement>(null);
+  const line2Ref = useRef<HTMLDivElement>(null);
+  const badgeRef = useRef<HTMLDivElement>(null);
+  const locationRef = useRef<HTMLDivElement>(null);
+  const descRef = useRef<HTMLDivElement>(null);
 
   const handleLoadComplete = () => {
     setIsLoading(false);
   };
 
-  // Split text into two lines
-  const line1 = "Jewoola";
-  const line2 = "Favour";
-  const letters1 = line1.split("");
-  const letters2 = line2.split("");
-
-  // Handle mouse move for squeeze/distortion effect
-  const handleMouseMove = (
-    e: React.MouseEvent,
-    ref: React.RefObject<(HTMLSpanElement | null)[]>,
-    index: number,
-  ) => {
-    const letter = ref.current?.[index];
-    if (!letter) return;
-
-    const rect = letter.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
-
-    const deltaX = (e.clientX - centerX) / 8;
-    const deltaY = (e.clientY - centerY) / 8;
-
-    // Calculate distance for squeeze intensity
-    const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
-    const squeeze = Math.min(distance / 20, 0.3);
-
-    gsap.to(letter, {
-      x: deltaX * 1.5,
-      y: deltaY * 1.5,
-      scaleX: 1 - squeeze,
-      scaleY: 1 + squeeze * 0.5,
-      skewX: deltaX * 0.8,
-      skewY: deltaY * 0.4,
-      duration: 0.2,
-      ease: "power2.out",
-    });
-  };
-
-  const handleMouseLeave = (
-    ref: React.RefObject<(HTMLSpanElement | null)[]>,
-    index: number,
-  ) => {
-    const letter = ref.current?.[index];
-    if (!letter) return;
-
-    gsap.to(letter, {
-      x: 0,
-      y: 0,
-      scaleX: 1,
-      scaleY: 1,
-      skewX: 0,
-      skewY: 0,
-      duration: 0.6,
-      ease: "elastic.out(1, 0.4)",
-    });
-  };
-
-  // Animate letters on load - reveal from bottom (masked)
+  // Animate content on load
   useEffect(() => {
-    if (!isLoading && line1Ref.current.length > 0) {
-      // Set initial state - letters start below the clip mask
-      gsap.set([...line1Ref.current, ...line2Ref.current], {
+    if (!isLoading) {
+      // Set initial states
+      gsap.set([line1Ref.current, line2Ref.current], {
         yPercent: 100,
+        opacity: 0,
+      });
+      gsap.set(badgeRef.current, {
+        scale: 0,
+        opacity: 0,
+      });
+      gsap.set([locationRef.current, descRef.current], {
+        y: 30,
+        opacity: 0,
       });
 
-      // Set tagline initial state
-      gsap.set(taglineRef.current, {
-        yPercent: 100,
-      });
-
-      // Animate all letters rising up together at the same time - slower
-      gsap.to([...line1Ref.current, ...line2Ref.current], {
+      // Animate name lines
+      gsap.to(line1Ref.current, {
         yPercent: 0,
-        duration: 2,
-        ease: "power2.out",
+        opacity: 1,
+        duration: 1.5,
+        ease: "power3.out",
         delay: 0.3,
       });
-
-      // Animate tagline after letters
-      gsap.to(taglineRef.current, {
+      gsap.to(line2Ref.current, {
         yPercent: 0,
+        opacity: 1,
         duration: 1.5,
-        ease: "power2.out",
+        ease: "power3.out",
+        delay: 0.5,
+      });
+
+      // Animate badge
+      gsap.to(badgeRef.current, {
+        scale: 1,
+        opacity: 1,
+        duration: 0.8,
+        ease: "back.out(1.7)",
+        delay: 1.2,
+      });
+
+      // Animate location and description
+      gsap.to(locationRef.current, {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power3.out",
         delay: 1.5,
+      });
+      gsap.to(descRef.current, {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power3.out",
+        delay: 1.8,
       });
     }
   }, [isLoading]);
@@ -105,133 +79,172 @@ export default function App(): JSX.Element {
     <>
       {isLoading && <IntroLoader onComplete={handleLoadComplete} />}
 
-      <div className="min-h-screen bg-[#f2f0f9] overflow-hidden relative">
-        {/* Resume link at top left */}
-        <a
-          href="/resume.pdf"
-          target="_blank"
-          className="absolute top-4 left-14 md:left-24 lg:left-32 text-base md:text-lg font-medium text-[#1a1a1a] hover:opacity-70 transition-opacity z-40 underline underline-offset-4"
-          style={{ fontFamily: "'Neue Haas Grotesk Display', sans-serif" }}
+      <div className="min-h-screen bg-[#0a0a0a] overflow-hidden relative">
+        {/* Background image overlay */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+          style={{
+            backgroundImage:
+              "url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920')",
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30" />
+
+        {/* Main content */}
+        <div
+          ref={contentRef}
+          className="relative z-10 min-h-screen flex flex-col justify-center px-8 md:px-16 lg:px-24 py-20"
         >
-          Resume
-        </a>
+          {/* Name Section */}
+          <div className="mb-8">
+            {/* Line 1: JEWOOLA */}
+            <div className="overflow-hidden">
+              <div
+                ref={line1Ref}
+                className="text-[12vw] md:text-[10vw] lg:text-[9vw] font-extrabold leading-[0.95] tracking-[-0.02em] text-white italic"
+                style={{ fontFamily: "'Syne', sans-serif" }}
+              >
+                JEWOOLA
+              </div>
+            </div>
 
-        {/* Left sidebar line */}
-        <div className="absolute left-10 md:left-16 top-0 bottom-0 w-[1px] bg-black/20 pointer-events-none z-20" />
+            {/* Line 2: FAVOUR with badge */}
+            <div className="flex items-center gap-4 md:gap-6">
+              <div className="overflow-hidden">
+                <div
+                  ref={line2Ref}
+                  className="text-[12vw] md:text-[10vw] lg:text-[9vw] font-extrabold leading-[0.95] tracking-[-0.02em] text-white italic"
+                  style={{ fontFamily: "'Syne', sans-serif" }}
+                >
+                  FAVOUR
+                </div>
+              </div>
 
-        {/* Right sidebar line */}
-        <div className="absolute right-10 md:right-16 top-0 bottom-0 w-[1px] bg-black/20 pointer-events-none z-20" />
+              {/* Curved arrow and badge */}
+              <div ref={badgeRef} className="flex items-center gap-2">
+                {/* Curved arrow SVG */}
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 40 40"
+                  fill="none"
+                  className="text-[#c4b5d4] -mr-1"
+                >
+                  <path
+                    d="M8 32C8 20 16 12 28 12M28 12L22 6M28 12L22 18"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
 
-        {/* Top horizontal line */}
-        <div className="absolute left-0 right-0 top-10 md:top-16 h-[1px] bg-black/20 pointer-events-none z-20" />
+                {/* Role badge */}
+                <span
+                  className="px-5 py-2.5 bg-[#c4b5d4]/90 text-[#1a1a1a] rounded-full text-sm md:text-base font-medium whitespace-nowrap"
+                  style={{ fontFamily: "'Syne', sans-serif" }}
+                >
+                  Software Developer
+                </span>
+              </div>
+            </div>
+          </div>
 
-        {/* Intersection dot - left */}
-        <div className="absolute left-10 md:left-16 top-10 md:top-16 w-2 h-2 rounded-full bg-black/40 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-30" />
+          {/* Location */}
+          <div ref={locationRef} className="flex items-center gap-2 mb-8">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              className="text-white/80"
+            >
+              <circle
+                cx="12"
+                cy="12"
+                r="3"
+                stroke="currentColor"
+                strokeWidth="2"
+              />
+              <circle
+                cx="12"
+                cy="12"
+                r="8"
+                stroke="currentColor"
+                strokeWidth="2"
+              />
+              <path
+                d="M12 2V4M12 20V22M2 12H4M20 12H22"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+            </svg>
+            <span
+              className="text-white/80 text-base md:text-lg"
+              style={{ fontFamily: "'Syne', sans-serif" }}
+            >
+              Lagos, Nigeria.
+            </span>
+          </div>
 
-        {/* Intersection dot - right */}
-        <div className="absolute right-10 md:right-16 top-10 md:top-16 w-2 h-2 rounded-full bg-black/40 translate-x-1/2 -translate-y-1/2 pointer-events-none z-30" />
+          {/* Description */}
+          <div
+            ref={descRef}
+            className="max-w-3xl space-y-6"
+            style={{ fontFamily: "'Syne', sans-serif" }}
+          >
+            <p className="text-white/90 text-lg md:text-xl leading-relaxed">
+              Welcome to my portfolio exhibition. In here, you'll find my
+              process (how I solve real-world problems using code), testimonials
+              from past and/or current clients and a gallery to some of my past
+              work, projects and case studies.
+            </p>
+            <p className="text-white/90 text-lg md:text-xl leading-relaxed">
+              I've always imagined my life to be a movie and so, I decided to
+              make an exhibit of a portfolio. I hope you enjoy.
+            </p>
+          </div>
+        </div>
 
-        {/* Bottom center navigation - SUPER BIG */}
+        {/* Bottom center navigation */}
         <nav className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50">
-          <div className="flex items-center gap-3 bg-[#1a1a1a] rounded-full px-6 py-4">
+          <div
+            className="flex items-center gap-1 bg-white/10 backdrop-blur-md rounded-full px-2 py-2 border border-white/20"
+            style={{ fontFamily: "'Syne', sans-serif" }}
+          >
             <a
               href="#home"
-              className="px-8 py-4 text-xl md:text-2xl font-medium text-white/70 hover:text-white transition-colors rounded-full"
+              className="px-6 py-3 text-base md:text-lg font-medium bg-white text-[#1a1a1a] rounded-full transition-all"
             >
               Home
             </a>
             <a
               href="#experience"
-              className="px-8 py-4 text-xl md:text-2xl font-medium text-white/70 hover:text-white transition-colors rounded-full"
+              className="px-6 py-3 text-base md:text-lg font-medium text-white/70 hover:text-white transition-colors rounded-full"
             >
               Experience
             </a>
             <a
               href="#projects"
-              className="px-8 py-4 text-xl md:text-2xl font-medium text-white/70 hover:text-white transition-colors rounded-full"
+              className="px-6 py-3 text-base md:text-lg font-medium text-white/70 hover:text-white transition-colors rounded-full"
             >
               Projects
             </a>
             <a
               href="#about"
-              className="px-8 py-4 text-xl md:text-2xl font-medium bg-white text-[#1a1a1a] rounded-full"
+              className="px-6 py-3 text-base md:text-lg font-medium text-white/70 hover:text-white transition-colors rounded-full"
             >
               About
             </a>
             <a
               href="#archive"
-              className="px-8 py-4 text-xl md:text-2xl font-medium text-white/70 hover:text-white transition-colors rounded-full"
+              className="px-6 py-3 text-base md:text-lg font-medium text-white/70 hover:text-white transition-colors rounded-full"
             >
               Archive
             </a>
           </div>
         </nav>
-
-        <div
-          ref={textRef}
-          className="relative w-full min-h-[70vh] flex flex-col items-start justify-center pt-24 md:pt-32 pl-14 md:pl-24 lg:pl-32 z-10"
-        >
-          {/* Main text container - Line 1: Jewoola */}
-          <div
-            className="text-[18vw] md:text-[16vw] lg:text-[14vw] font-extrabold leading-[0.9] tracking-[-0.02em] text-[#1a1a1a] cursor-default select-none"
-            style={{ fontFamily: "'Syne', sans-serif" }}
-          >
-            {letters1.map((letter, index) => (
-              <span
-                key={index}
-                className="inline-block overflow-hidden align-bottom"
-                style={{
-                  marginRight: "0.02em",
-                }}
-              >
-                <span
-                  ref={(el) => (line1Ref.current[index] = el)}
-                  className="inline-block"
-                  onMouseMove={(e) => handleMouseMove(e, line1Ref, index)}
-                  onMouseLeave={() => handleMouseLeave(line1Ref, index)}
-                >
-                  {letter}
-                </span>
-              </span>
-            ))}
-          </div>
-
-          {/* Main text container - Line 2: Favour */}
-          <div
-            className="text-[18vw] md:text-[16vw] lg:text-[14vw] font-extrabold leading-[0.9] tracking-[-0.02em] text-[#1a1a1a] cursor-default select-none"
-            style={{ fontFamily: "'Syne', sans-serif" }}
-          >
-            {letters2.map((letter, index) => (
-              <span
-                key={index}
-                className="inline-block overflow-hidden align-bottom"
-                style={{
-                  marginRight: "0.02em",
-                }}
-              >
-                <span
-                  ref={(el) => (line2Ref.current[index] = el)}
-                  className="inline-block"
-                  onMouseMove={(e) => handleMouseMove(e, line2Ref, index)}
-                  onMouseLeave={() => handleMouseLeave(line2Ref, index)}
-                >
-                  {letter}
-                </span>
-              </span>
-            ))}
-          </div>
-
-          {/* Tagline - SUPER BIG */}
-          <div className="overflow-hidden mt-8">
-            <p
-              ref={taglineRef}
-              className="text-[5vw] md:text-[4vw] lg:text-[3vw] font-bold tracking-[-0.02em] text-[#1a1a1a] uppercase"
-              style={{ fontFamily: "'Neue Haas Grotesk Display', sans-serif" }}
-            >
-              Full-Stack Software Developer
-            </p>
-          </div>
-        </div>
       </div>
     </>
   );
