@@ -34,3 +34,23 @@
   transform-origin: top center;
   animation: pendulum 4.5s ease-in-out infinite;
 }
+
+.draw-line {
+  stroke-dasharray: 988;
+  stroke-dashoffset: 988;
+  animation: drawLine 3.5s ease-in-out infinite;
+}
+
+@keyframes drawLine {
+  0% {
+    stroke-dashoffset: 988;
+  }
+
+  70% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
