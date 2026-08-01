@@ -15,3 +15,22 @@
     color: #0f172a;
   }
 }
+
+@keyframes pendulum {
+  0% {
+    transform: rotate(-18deg);
+  }
+
+  50% {
+    transform: rotate(18deg);
+  }
+
+  100% {
+    transform: rotate(-18deg);
+  }
+}
+
+.animate-pendulum {
+  transform-origin: top center;
+  animation: pendulum 4.5s ease-in-out infinite;
+}

@@ -1,3 +1,6 @@
+import CompassDecoration from "./CompassDecoration";
+import Pendulum from "./Pendulum";
+
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-white px-6 pt-24 pb-28 lg:px-4">
@@ -14,22 +17,27 @@ export default function Hero() {
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-24 grid gap-16 lg:grid-cols-12">
-          {/* Right */}
-          <div className="lg:col-span-6">
-            <div className="max-w-xl space-y-8">
-              <p className="text-3xl font-medium leading-tight tracking-[-0.03em] text-zinc-900">
-                I'm Favour, a Full-Stack Software Engineer focused on building
-                thoughtful digital products.
-              </p>
-
-              <p className="text-lg leading-8 text-zinc-500">
-                Currently building modern software at
-                <span className="font-medium text-zinc-900"> Ennovate Lab</span>
-                , creating scalable mobile and web experiences with clean
-                engineering and attention to detail.
-              </p>
+        <div className="mt-44 grid items-start gap-12 lg:grid-cols-12">
+          {/* Left Decoration */}
+          <div className="lg:col-span-3 flex justify-center lg:justify-start">
+            <div className="mt-2 flex items-start gap-4">
+              <Pendulum length={60} duration={3.6} angle={8} delay={0} />
+              <Pendulum length={72} duration={4.0} angle={10} delay={0.2} />
+              <Pendulum length={84} duration={4.4} angle={12} delay={0.4} />
+              <Pendulum length={96} duration={4.8} angle={14} delay={0.6} />
+              <Pendulum length={108} duration={5.2} angle={16} delay={0.8} />
             </div>
+          </div>
+
+          {/* Copy */}
+          <div className="lg:col-span-7 lg:col-start-5">
+            <p className="max-w-4xl text-[50px] font-medium leading-[1.15] tracking-[-0.04em] text-zinc-900">
+              Built products used by 10K+ users.
+              <br />
+              Engineered for real businesses.
+              <br />
+              {/* and leave a lasting impression. */}
+            </p>
           </div>
         </div>
       </div>
