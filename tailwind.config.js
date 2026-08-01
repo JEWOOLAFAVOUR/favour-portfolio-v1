@@ -15,7 +15,8 @@ module.exports = {
 				},
 			},
 			fontFamily: {
-				sans: ["Neue Haas Grotesk Display", "system-ui", "sans-serif"],
+				sans: ["Suisse Intl", "Inter", "system-ui", "sans-serif"],
+				display: ["Suisse Intl", "Inter", "system-ui", "sans-serif"],
 			},
 		},
 	},

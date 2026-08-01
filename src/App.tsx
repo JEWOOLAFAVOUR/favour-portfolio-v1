@@ -1,4 +1,4 @@
-import Navbar from './components/Navbar';
+import Navbar from "./components/Navbar";
 
 export default function App(): JSX.Element {
   return (
@@ -14,7 +14,8 @@ export default function App(): JSX.Element {
             Building sharp, modern experiences for ambitious brands.
           </h1>
           <p className="max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl">
-            I craft thoughtful interfaces, polished frontends, and landing pages that feel as refined as they perform.
+            I craft thoughtful interfaces, polished frontends, and landing pages
+            that feel as refined as they perform.
           </p>
         </section>
 
@@ -27,7 +28,8 @@ export default function App(): JSX.Element {
               Studio-led landing experience
             </h2>
             <p className="mt-3 text-base leading-7 text-slate-600">
-              A minimal, premium layout that balances clarity, motion, and simplicity.
+              A minimal, premium layout that balances clarity, motion, and
+              simplicity.
             </p>
           </article>
 
@@ -39,14 +41,21 @@ export default function App(): JSX.Element {
               Strong systems, thoughtful detail
             </h2>
             <p className="mt-3 text-base leading-7 text-slate-600">
-              Clean structure, responsive behavior, and carefully tuned interactions.
+              Clean structure, responsive behavior, and carefully tuned
+              interactions.
             </p>
           </article>
         </section>
       </main>
 
-      <footer id="contact" className="border-t border-slate-200 px-5 py-10 text-center text-sm text-slate-500 sm:px-6 lg:px-8">
-        <a href="mailto:hello@favour.dev" className="font-medium text-slate-950 transition-colors hover:text-slate-600">
+      <footer
+        id="contact"
+        className="border-t border-slate-200 px-5 py-10 text-center text-sm text-slate-500 sm:px-6 lg:px-8"
+      >
+        <a
+          href="mailto:hello@favour.dev"
+          className="font-medium text-slate-950 transition-colors hover:text-slate-600"
+        >
           hello@favour.dev
         </a>
       </footer>

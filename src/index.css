@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import './styles/fonts.css';
 
 @tailwind base;
 @tailwind components;
@@ -10,7 +10,7 @@
   }
 
   body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Suisse Intl', 'Inter', sans-serif;
     background-color: #ffffff;
     color: #0f172a;
   }

@@ -1,23 +1,23 @@
-import { Menu, X } from 'lucide-react';
-import { useState } from 'react';
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
 
 const links = [
-  { label: 'About', href: '#about' },
-  { label: 'Work', href: '#work' },
-  { label: 'Contact', href: '#contact' },
+  { label: "Work", href: "#work" },
+  { label: "About", href: "#about" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/80 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-50 px-3 pt-3 sm:px-4 lg:px-6">
+      <div className="mx-auto flex w-[88%] max-w-7xl items-center justify-between rounded-none border border-slate-200/80 bg-white/90 px-5 py-4 shadow-[0_0_0_1px_rgba(15,23,42,0.03)] backdrop-blur-xl sm:px-6 lg:px-8">
         <a
           href="#"
-          className="text-[0.72rem] font-semibold uppercase tracking-[0.35em] text-slate-950 transition-opacity hover:opacity-70"
+          className="font-display text-[0.82rem] font-semibold uppercase tracking-[0.35em] text-slate-950 transition-opacity hover:opacity-70"
         >
-          FAVOUR
+          Favour
         </a>
 
         <nav className="hidden items-center gap-8 md:flex">
@@ -25,7 +25,7 @@ export default function Navbar() {
             <a
               key={link.label}
               href={link.href}
-              className="text-[0.72rem] font-medium uppercase tracking-[0.28em] text-slate-600 transition-colors hover:text-slate-950"
+              className="font-display text-[0.72rem] font-medium uppercase tracking-[0.28em] text-slate-600 transition-colors hover:text-slate-950"
             >
               {link.label}
             </a>
@@ -33,7 +33,7 @@ export default function Navbar() {
 
           <a
             href="#contact"
-            className="rounded-full border border-slate-900 bg-slate-950 px-4 py-2 text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-white transition-transform duration-200 hover:-translate-y-0.5"
+            className="font-display border border-slate-900 bg-slate-950 px-4 py-2 text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-white transition-colors duration-200 hover:bg-slate-800"
           >
             Let&apos;s Talk
           </a>
@@ -57,7 +57,7 @@ export default function Navbar() {
                 key={link.label}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="text-[0.72rem] font-medium uppercase tracking-[0.28em] text-slate-600"
+                className="text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-black"
               >
                 {link.label}
               </a>
@@ -65,7 +65,7 @@ export default function Navbar() {
             <a
               href="#contact"
               onClick={() => setIsOpen(false)}
-              className="mt-2 w-fit rounded-full border border-slate-900 bg-slate-950 px-4 py-2 text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-white"
+              className="mt-2 w-fit border border-slate-900 bg-slate-950 px-4 py-2 text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-white transition-colors duration-200 hover:bg-slate-800"
             >
               Let&apos;s Talk
             </a>
