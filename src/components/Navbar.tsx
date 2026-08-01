@@ -9,23 +9,30 @@ export default function Navbar() {
         </div>
         <div className="hidden items-center gap-0 md:flex">
           <a
-            href="#work"
+            href="/about"
+            className="rounded-full border border-gray-300 px-6 py-3 text-[15px] transition-all duration-500 ease-in-out hover:border-black hover:text-[15.7px]"
+          >
+            About
+          </a>
+          <a
+            href="/work"
             className="rounded-full border border-gray-300 px-6 py-3 text-[15px] transition-all duration-500 ease-in-out hover:border-black hover:text-[15.7px]"
           >
             Work
           </a>
-
           <a
-            href="#experience"
+            href="/resume.pdf"
+            className="rounded-full border border-gray-300 px-6 py-3 text-[15px] transition-all duration-500 ease-in-out hover:border-black hover:text-[15.7px]"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            Resume
+          </a>
+          <a
+            href="/contact"
             className="rounded-full border border-gray-300 px-6 py-3 text-[15px] transition-all duration-500 ease-in-out hover:border-black hover:text-[15.7px]"
           >
             Experience
-          </a>
-          <a
-            href="#resume"
-            className="rounded-full border border-gray-300 px-6 py-3 text-[15px] transition-all duration-500 ease-in-out hover:border-black hover:text-[15.7px]"
-          >
-            Resume
           </a>
         </div>
         {/* Contact Button */}
