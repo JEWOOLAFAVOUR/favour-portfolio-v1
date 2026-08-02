@@ -14,7 +14,7 @@ export default function Navbar() {
           <span className="nav-pill-drop nav-pill-drop-one nav-pill-delay-1 inline-flex">
             <a
               href="/about"
-              className="rounded-full border border-gray-300 px-6 py-3 text-[15px] transition-all duration-500 ease-in-out hover:-translate-y-0.5 hover:border-black hover:text-[15.7px]"
+              className="rounded-full border-[1.5px] border-black bg-white px-6 py-3 text-[17px] transition-[transform,box-shadow,border-color] duration-300 ease-out hover:-translate-y-1 hover:border-slate-700 hover:shadow-[0_7px_16px_rgba(15,23,42,0.14)]"
             >
               About
             </a>
@@ -22,7 +22,7 @@ export default function Navbar() {
           <span className="nav-pill-drop nav-pill-drop-two nav-pill-delay-2 inline-flex">
             <a
               href="/work"
-              className="rounded-full border border-gray-300 px-6 py-3 text-[15px] transition-all duration-500 ease-in-out hover:-translate-y-0.5 hover:border-black hover:text-[15.7px]"
+              className="rounded-full border-[1.5px] border-black bg-white px-6 py-3 text-[17px] transition-[transform,box-shadow,border-color] duration-300 ease-out hover:-translate-y-1 hover:border-slate-700 hover:shadow-[0_7px_16px_rgba(15,23,42,0.14)]"
             >
               Projects
             </a>
@@ -30,7 +30,7 @@ export default function Navbar() {
           <span className="nav-pill-drop nav-pill-drop-three nav-pill-delay-3 inline-flex">
             <a
               href="/resume.pdf"
-              className="rounded-full border border-gray-300 px-6 py-3 text-[15px] transition-all duration-500 ease-in-out hover:-translate-y-0.5 hover:border-black hover:text-[15.7px]"
+              className="rounded-full border-[1.5px] border-black bg-white px-6 py-3 text-[17px] transition-[transform,box-shadow,border-color] duration-300 ease-out hover:-translate-y-1 hover:border-slate-700 hover:shadow-[0_7px_16px_rgba(15,23,42,0.14)]"
               target="_blank"
               rel="noreferrer noopener"
             >
@@ -40,7 +40,7 @@ export default function Navbar() {
           <span className="nav-pill-drop nav-pill-drop-four nav-pill-delay-4 inline-flex">
             <a
               href="/contact"
-              className="rounded-full border border-gray-300 px-6 py-3 text-[15px] transition-all duration-500 ease-in-out hover:-translate-y-0.5 hover:border-black hover:text-[15.7px]"
+              className="rounded-full border-[1.5px] border-black bg-white px-6 py-3 text-[17px] transition-[transform,box-shadow,border-color] duration-300 ease-out hover:-translate-y-1 hover:border-slate-700 hover:shadow-[0_7px_16px_rgba(15,23,42,0.14)]"
             >
               Experience
             </a>
