@@ -1,8 +1,9 @@
-import { ArrowUpRight, ExternalLink } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Footer from "../components/Footer";
 
 type ArchiveProject = {
   title: string;
+  description: string;
   madeAt: string;
   builtWith: string[];
   link: string | null;
@@ -13,7 +14,39 @@ type ArchiveProject = {
 const archive: Record<string, ArchiveProject[]> = {
   "2026": [
     {
+      title: "Irisi Fashion",
+      description:
+        "A contemporary fashion storefront designed to present collections through a polished and responsive shopping experience.",
+      madeAt: "Personal",
+      builtWith: ["React", "Tailwind CSS", "Vercel"],
+      link: "https://irisi-fashion.vercel.app/",
+      linkText: "irisi-fashion.vercel.app",
+      platform: "web",
+    },
+    {
+      title: "Kingdom Impact",
+      description:
+        "An animated organization website created to communicate its mission, programs, and community impact.",
+      madeAt: "Organization",
+      builtWith: ["React", "Tailwind CSS", "Vercel", "GSAP"],
+      link: "https://kingdom-impact.vercel.app/",
+      linkText: "kingdom-impact.vercel.app",
+      platform: "web",
+    },
+    {
+      title: "Iwadii Lab",
+      description:
+        "A modern digital studio website built to showcase creative services, capabilities, and selected work.",
+      madeAt: "Personal",
+      builtWith: ["React", "Tailwind CSS", "Vercel"],
+      link: "https://iwadii-lab.vercel.app/",
+      linkText: "iwadii-lab.vercel.app",
+      platform: "web",
+    },
+    {
       title: "Oreno",
+      description:
+        "A real-time web platform combining live updates with a scalable, database-backed application architecture.",
       madeAt: "Personal",
       builtWith: ["Next.js", "Redis", "Pusher", "PostgreSQL", "Prisma"],
       link: "https://oreno.vercel.app/",
@@ -22,6 +55,8 @@ const archive: Record<string, ArchiveProject[]> = {
     },
     {
       title: "Loop Chat",
+      description:
+        "A real-time messaging application that enables fast, seamless conversations through persistent socket connections.",
       madeAt: "Personal",
       builtWith: ["React", "Node.js", "Socket.io", "MongoDB"],
       link: "https://github.com/JEWOOLAFAVOUR/Loop-Chat",
@@ -30,32 +65,20 @@ const archive: Record<string, ArchiveProject[]> = {
     },
     {
       title: "Gilgal Tech",
+      description:
+        "A full-stack technology platform deployed with containerized services and cloud-based infrastructure.",
       madeAt: "Personal",
       builtWith: ["React", "Node.js", "Docker", "Azure", "PostgreSQL"],
       link: "http://gilgal.tech/",
       linkText: "gilgal.tech",
       platform: "web",
     },
-    {
-      title: "Irisi Fashion",
-      madeAt: "Personal",
-      builtWith: ["React", "Tailwind CSS", "Vercel"],
-      link: "https://irisi-fashion.vercel.app/",
-      linkText: "irisi-fashion.vercel.app",
-      platform: "web",
-    },
-    {
-      title: "Iwadii Lab",
-      madeAt: "Personal",
-      builtWith: ["React", "Tailwind CSS", "Vercel"],
-      link: "https://iwadii-lab.vercel.app/",
-      linkText: "iwadii-lab.vercel.app",
-      platform: "web",
-    },
   ],
   "2025": [
     {
       title: "StudyPady",
+      description:
+        "A student-focused learning platform that makes academic resources and study support easier to access.",
       madeAt: "Personal",
       builtWith: ["React", "Shadcn", "Tailwind CSS", "Vercel"],
       link: "https://www.studypady.com.ng/",
@@ -64,6 +87,8 @@ const archive: Record<string, ArchiveProject[]> = {
     },
     {
       title: "Ennovate Lab Projects",
+      description:
+        "A collection of production applications delivered within a collaborative product and engineering environment.",
       madeAt: "Ennovate Lab",
       builtWith: ["React", "Node.js", "TypeScript", "AWS", "PostgreSQL"],
       link: "https://www.ennovatelab.com/",
@@ -72,6 +97,8 @@ const archive: Record<string, ArchiveProject[]> = {
     },
     {
       title: "JTB Website",
+      description:
+        "A responsive institutional website developed to present services and information through a clear digital experience.",
       madeAt: "Cephas ICT Hub",
       builtWith: ["React", "Supabase", "Tailwind CSS", "Vercel"],
       link: "https://jtb-website-01.gilgal.tech/",
@@ -80,6 +107,8 @@ const archive: Record<string, ArchiveProject[]> = {
     },
     {
       title: "CAC Chapel LAUTECH Website",
+      description:
+        "A community website created to share church information, activities, and updates with students and members.",
       madeAt: "Personal",
       builtWith: ["React", "Tailwind CSS", "Vercel"],
       link: null,
@@ -89,6 +118,8 @@ const archive: Record<string, ArchiveProject[]> = {
   "2024": [
     {
       title: "HonourWorld",
+      description:
+        "A cross-platform mobile application that delivers a smooth, state-managed experience for users on the go.",
       madeAt: "Cephas ICT Hub",
       builtWith: ["React Native", "TanStack", "Redux", "API Integration"],
       link: "https://play.google.com/store/apps/details?id=com.ng.honourworld",
@@ -97,6 +128,8 @@ const archive: Record<string, ArchiveProject[]> = {
     },
     {
       title: "VickyBest Telecom",
+      description:
+        "A mobile telecom application designed to make digital service purchases simple, quick, and accessible.",
       madeAt: "Cephas ICT Hub",
       builtWith: ["React Native", "TanStack", "Redux", "API Integration"],
       link: "https://play.google.com/store/apps/details?id=com.vickybest",
@@ -105,6 +138,8 @@ const archive: Record<string, ArchiveProject[]> = {
     },
     {
       title: "Versecog Farm Mobile App",
+      description:
+        "A mobile solution developed to support farm operations and make essential agricultural workflows easier to manage.",
       madeAt: "Freelance",
       builtWith: ["React Native", "JavaScript", "Mobile Development"],
       link: null,
@@ -112,6 +147,8 @@ const archive: Record<string, ArchiveProject[]> = {
     },
     {
       title: "Compellers Digital Mobile App",
+      description:
+        "A Firebase-powered mobile application built to connect users with the brand's digital services and content.",
       madeAt: "Freelance",
       builtWith: ["React Native", "JavaScript", "Firebase"],
       link: "https://www.instagram.com/compellers_digitals/",
@@ -120,6 +157,8 @@ const archive: Record<string, ArchiveProject[]> = {
     },
     {
       title: "Skill Remit",
+      description:
+        "A service marketplace mobile app that helps users discover and connect with skilled artisans.",
       madeAt: "Cephas ICT Hub",
       builtWith: ["React Native", "Redux", "Node.js"],
       link: "https://play.google.com/store/apps/details?id=com.skillremitartisan",
@@ -130,6 +169,8 @@ const archive: Record<string, ArchiveProject[]> = {
   "2022": [
     {
       title: "Mobile App Development Projects",
+      description:
+        "A collection of full-stack mobile products developed with reusable interfaces and API-driven backend services.",
       madeAt: "Cephas Digital Technology",
       builtWith: ["React Native", "Node.js", "Express", "MongoDB"],
       link: "https://www.cephasict.com/",
@@ -158,16 +199,22 @@ function ProjectRow({ project }: { project: ArchiveProject }) {
           <h3 className="text-[clamp(1.5rem,2.7vw,2.6rem)] font-normal leading-none tracking-[-.055em]">
             {project.title}
           </h3>
-          <p className="mt-3 text-sm text-[#6c6c67]">
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-[#555550]">
+            {project.description}
+          </p>
+          <p className="mt-3 text-sm text-[#777771]">
             {project.builtWith.join(" · ")}
           </p>
         </div>
         {project.link && (
-          <ExternalLink
-            className="mt-1 shrink-0 text-[#ff542d]"
-            size={22}
-            strokeWidth={1.7}
-          />
+          <span className="mt-1 grid h-11 w-11 shrink-0 place-items-center overflow-hidden rounded-full border border-[#ff542d]/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+            <ArrowRight
+              aria-hidden="true"
+              className="archive-item-arrow text-[#ff542d]"
+              size={24}
+              strokeWidth={1.6}
+            />
+          </span>
         )}
       </div>
     </>
@@ -177,7 +224,7 @@ function ProjectRow({ project }: { project: ArchiveProject }) {
       href={project.link}
       target="_blank"
       rel="noreferrer"
-      className="group block border-t border-dashed border-[#383838]/20 py-8 transition-colors hover:bg-[#f3ddd4] sm:py-10"
+      className="group block border-t border-dashed border-[#383838]/20 py-8 sm:py-10"
     >
       {content}
     </a>

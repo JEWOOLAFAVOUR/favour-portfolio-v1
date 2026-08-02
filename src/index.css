@@ -217,3 +217,25 @@
   }
 
 }
+@keyframes archive-item-arrow-slide {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(6px);
+  }
+}
+
+.group:hover .archive-item-arrow,
+.group:focus-visible .archive-item-arrow {
+  animation: archive-item-arrow-slide 0.9s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .group:hover .archive-item-arrow,
+  .group:focus-visible .archive-item-arrow {
+    animation: none;
+  }
+}
