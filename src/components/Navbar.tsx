@@ -11,32 +11,40 @@ export default function Navbar() {
           Jewoola Favour
         </div>
         <div className="hidden items-center gap-0 md:flex">
-          <a
-            href="/about"
-            className="rounded-full border border-gray-300 px-6 py-3 text-[15px] transition-all duration-500 ease-in-out hover:border-black hover:text-[15.7px]"
-          >
-            About
-          </a>
-          <a
-            href="/work"
-            className="rounded-full border border-gray-300 px-6 py-3 text-[15px] transition-all duration-500 ease-in-out hover:border-black hover:text-[15.7px]"
-          >
-            Projects
-          </a>
-          <a
-            href="/resume.pdf"
-            className="rounded-full border border-gray-300 px-6 py-3 text-[15px] transition-all duration-500 ease-in-out hover:border-black hover:text-[15.7px]"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            Resume
-          </a>
-          <a
-            href="/contact"
-            className="rounded-full border border-gray-300 px-6 py-3 text-[15px] transition-all duration-500 ease-in-out hover:border-black hover:text-[15.7px]"
-          >
-            Experience
-          </a>
+          <span className="nav-pill-drop nav-pill-drop-one nav-pill-delay-1 inline-flex">
+            <a
+              href="/about"
+              className="rounded-full border border-gray-300 px-6 py-3 text-[15px] transition-all duration-500 ease-in-out hover:-translate-y-0.5 hover:border-black hover:text-[15.7px]"
+            >
+              About
+            </a>
+          </span>
+          <span className="nav-pill-drop nav-pill-drop-two nav-pill-delay-2 inline-flex">
+            <a
+              href="/work"
+              className="rounded-full border border-gray-300 px-6 py-3 text-[15px] transition-all duration-500 ease-in-out hover:-translate-y-0.5 hover:border-black hover:text-[15.7px]"
+            >
+              Projects
+            </a>
+          </span>
+          <span className="nav-pill-drop nav-pill-drop-three nav-pill-delay-3 inline-flex">
+            <a
+              href="/resume.pdf"
+              className="rounded-full border border-gray-300 px-6 py-3 text-[15px] transition-all duration-500 ease-in-out hover:-translate-y-0.5 hover:border-black hover:text-[15.7px]"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              Resume
+            </a>
+          </span>
+          <span className="nav-pill-drop nav-pill-drop-four nav-pill-delay-4 inline-flex">
+            <a
+              href="/contact"
+              className="rounded-full border border-gray-300 px-6 py-3 text-[15px] transition-all duration-500 ease-in-out hover:-translate-y-0.5 hover:border-black hover:text-[15.7px]"
+            >
+              Experience
+            </a>
+          </span>
         </div>
         {/* Contact Button */}
         <a

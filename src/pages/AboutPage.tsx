@@ -105,7 +105,7 @@ export default function AboutPage() {
         </section>
 
         <section className="px-6 py-20 sm:px-10 lg:px-[1.6vw] lg:py-32">
-          <h2 className="mb-20 px-[3vw] text-[clamp(3rem,8.5vw,10.5rem)] font-bold uppercase leading-[.84] tracking-[-0.08em]">
+          <h2 className="mb-20 px-[3vw] text-[clamp(2.4rem,6.5vw,7.5rem)] font-bold uppercase leading-[.88] tracking-[-0.07em]">
             Here&apos;s what
             <br />
             my process looks like
@@ -114,7 +114,7 @@ export default function AboutPage() {
             {journey.map((item) => (
               <article
                 key={item.number}
-                className={`relative flex min-h-[360px] w-full max-w-[1160px] rounded-[14px] px-8 py-9 transition-transform duration-500 hover:rotate-0 sm:min-h-[390px] sm:px-12 lg:px-16 ${item.position === "right" ? "ml-auto rotate-[2deg]" : "rotate-[-2deg]"}`}
+                className={`relative flex min-h-[240px] w-full max-w-[980px] rounded-[14px] px-6 py-6 transition-transform duration-500 hover:rotate-0 sm:min-h-[270px] sm:px-9 sm:py-7 lg:px-12 ${item.position === "right" ? "ml-auto rotate-[2deg]" : "rotate-[-2deg]"}`}
                 style={{
                   backgroundColor: item.color,
                   color: item.light ? "#f5f4f0" : "#383838",
@@ -125,8 +125,8 @@ export default function AboutPage() {
                     {item.number}
                   </span>
                   <div>
-                    <div className="mb-7 h-px w-full bg-current opacity-20" />
-                    <p className="max-w-5xl text-[clamp(1.45rem,2.55vw,3rem)] leading-[1.16] tracking-[-0.05em]">
+                    <div className="mb-5 h-px w-full bg-current opacity-20" />
+                    <p className="max-w-4xl text-[clamp(1.05rem,1.5vw,1.65rem)] leading-[1.2] tracking-[-0.03em]">
                       {item.text}
                     </p>
                   </div>
