@@ -2,9 +2,9 @@ export default function Footer() {
   return (
     <footer
       id="contact"
-      className="relative min-h-[90vh] overflow-hidden bg-[#0b0b0b] text-white"
+      className="relative min-h-[85vh] overflow-hidden bg-[#0b0b0b] text-white"
     >
-      <div className="mx-auto flex min-h-[90vh] flex-col justify-between px-8 pb-2 pt-14 lg:px-4 lg:pb-2 lg:pt-16">
+      <div className="mx-auto flex min-h-[90vh] flex-col justify-between px-8 pb-4 pt-14 lg:px-4 lg:pb-4 lg:pt-16">
         {/* Top */}
         <div className="grid gap-6 lg:grid-cols-12">
           {/* Left */}
@@ -25,7 +25,7 @@ export default function Footer() {
 
           {/* Navigation */}
           <div className="lg:col-span-1 lg:col-start-10">
-            <div className="space-y-1 text-[13px] font-light text-white">
+            <div className="space-y-1.5 text-[14px] font-light text-white">
               <a
                 href="#about"
                 className="block transition-opacity duration-300 hover:opacity-60 hover:underline hover:decoration-white hover:underline-offset-4"
@@ -57,8 +57,8 @@ export default function Footer() {
           </div>
 
           {/* Socials */}
-          <div className="lg:col-span-2 lg:col-start-11">
-            <div className="space-y-1 text-[13px] font-light text-white">
+          <div className="lg:col-span-2 lg:col-start-11 lg:pl-3">
+            <div className="space-y-1.5 text-[14px] font-light text-white">
               <a
                 href="https://github.com/JEWOOLAFAVOUR"
                 target="_blank"
@@ -87,7 +87,7 @@ export default function Footer() {
               </a>
 
               <a
-                href="https://instagram.com/jewoola.favour"
+                href="https://www.instagram.com/jewoolafavourgbemi/"
                 target="_blank"
                 rel="noreferrer"
                 className="block transition-opacity duration-300 hover:opacity-60 hover:underline hover:decoration-white hover:underline-offset-4"
@@ -101,17 +101,17 @@ export default function Footer() {
         {/* Huge Name */}
         <div className="mt-12 w-full select-none">
           <svg
-            viewBox="0 0 1200 205"
+            viewBox="0 0 1200 220"
             className="h-auto w-full"
             aria-label="Jewoola Favour"
           >
             <text
               x="0"
-              y="165"
+              y="180"
               textLength="1200"
               lengthAdjust="spacingAndGlyphs"
-              fontSize="165"
-              className="fill-[#f5f3ee] font-semibold uppercase tracking-[-0.02em]"
+              fontSize="180"
+              className="fill-[#f5f3ee] font-bold uppercase tracking-[-0.02em]"
               style={{ fontFamily: "inherit" }}
             >
               JEWOOLA FAVOUR
