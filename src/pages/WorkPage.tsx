@@ -9,6 +9,7 @@ type ArchiveProject = {
   link: string | null;
   linkText?: string;
   platform: "web" | "mobile";
+  image?: string;
 };
 
 const archive: Record<string, ArchiveProject[]> = {
@@ -84,6 +85,7 @@ const archive: Record<string, ArchiveProject[]> = {
       link: "https://www.studypady.com.ng/",
       linkText: "studypady.com.ng",
       platform: "web",
+      image: "/studypady_screenshot.png",
     },
     {
       title: "Ennovate Lab Projects",
@@ -104,6 +106,7 @@ const archive: Record<string, ArchiveProject[]> = {
       link: "https://jtb-website-01.gilgal.tech/",
       linkText: "jtb-website-01.gilgal.tech",
       platform: "web",
+      image: "/jtb_screenshot.png",
     },
     {
       title: "CAC Chapel LAUTECH Website",
@@ -125,6 +128,7 @@ const archive: Record<string, ArchiveProject[]> = {
       link: "https://play.google.com/store/apps/details?id=com.ng.honourworld",
       linkText: "Google Play",
       platform: "mobile",
+      image: "/honour_world_screenshot.png",
     },
     {
       title: "VickyBest Telecom",
@@ -135,6 +139,7 @@ const archive: Record<string, ArchiveProject[]> = {
       link: "https://play.google.com/store/apps/details?id=com.vickybest",
       linkText: "Google Play",
       platform: "mobile",
+      image: "/vicky_best_screenshot.png",
     },
     {
       title: "Versecog Farm Mobile App",
@@ -164,6 +169,7 @@ const archive: Record<string, ArchiveProject[]> = {
       link: "https://play.google.com/store/apps/details?id=com.skillremitartisan",
       linkText: "Google Play",
       platform: "mobile",
+      image: "/skill_remit_screenshot.png",
     },
   ],
   "2022": [
@@ -180,6 +186,8 @@ const archive: Record<string, ArchiveProject[]> = {
   ],
 };
 
+const defaultProjectImage = "/studypady_screenshot.png";
+
 function ProjectRow({ project }: { project: ArchiveProject }) {
   const content = (
     <>
@@ -195,7 +203,7 @@ function ProjectRow({ project }: { project: ArchiveProject }) {
         </span>
       </div>
       <div className="mt-5 flex items-start justify-between gap-5">
-        <div>
+        <div className="min-w-0">
           <h3 className="text-[clamp(1.5rem,2.7vw,2.6rem)] font-normal leading-none tracking-[-.055em]">
             {project.title}
           </h3>
@@ -206,16 +214,26 @@ function ProjectRow({ project }: { project: ArchiveProject }) {
             {project.builtWith.join(" · ")}
           </p>
         </div>
-        {project.link && (
-          <span className="mt-1 grid h-11 w-11 shrink-0 place-items-center overflow-hidden rounded-full border border-[#ff542d]/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
-            <ArrowRight
-              aria-hidden="true"
-              className="archive-item-arrow text-[#ff542d]"
-              size={24}
-              strokeWidth={1.6}
+        <div className="flex shrink-0 items-start gap-3">
+          <div className="hidden w-28 overflow-hidden rounded-xl border border-[#383838]/15 bg-[#e8e6df] sm:block lg:w-36">
+            <img
+              src={project.image ?? defaultProjectImage}
+              alt={`${project.title} preview`}
+              className="block aspect-[16/10] w-full object-cover"
+              loading="lazy"
             />
-          </span>
-        )}
+          </div>
+          {project.link && (
+            <span className="mt-1 grid h-11 w-11 shrink-0 place-items-center overflow-hidden rounded-full border border-[#ff542d]/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+              <ArrowRight
+                aria-hidden="true"
+                className="archive-item-arrow text-[#ff542d]"
+                size={24}
+                strokeWidth={1.6}
+              />
+            </span>
+          )}
+        </div>
       </div>
     </>
   );

@@ -4,9 +4,9 @@ export default function LoadingScreen() {
       {/* Logo */}
       <div className="absolute inset-0 z-30 flex items-center justify-center">
         <h1 className="text-center text-[58px] font-semibold leading-[0.9] tracking-[-0.06em] text-white">
-          Jewoola
+          JEWOOLA
           <br />
-          Favour
+          FAVOUR
         </h1>
       </div>
 
