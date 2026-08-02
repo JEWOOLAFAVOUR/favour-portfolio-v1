@@ -4,7 +4,10 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-white/95 py-3 backdrop-blur-xl">
       <div className="mx-auto flex w-full items-center justify-between px-5 sm:px-6 lg:px-4">
-        <div className="cursor-pointer text-[30px] font-medium text-slate-950 transition-transform duration-300 ease-out hover:scale-[1.02]">
+        <div
+          onClick={() => (window.location.href = "/")}
+          className="cursor-pointer text-[30px] font-medium text-slate-950 transition-transform duration-300 ease-out hover:scale-[1.02]"
+        >
           Jewoola Favour
         </div>
         <div className="hidden items-center gap-0 md:flex">
