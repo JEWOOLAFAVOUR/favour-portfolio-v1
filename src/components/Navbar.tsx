@@ -21,7 +21,7 @@ export default function Navbar() {
             href="/work"
             className="rounded-full border border-gray-300 px-6 py-3 text-[15px] transition-all duration-500 ease-in-out hover:border-black hover:text-[15.7px]"
           >
-            Work
+            Projects
           </a>
           <a
             href="/resume.pdf"

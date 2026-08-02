@@ -7,6 +7,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    background-color: #0b0b0b;
   }
 
   body {
