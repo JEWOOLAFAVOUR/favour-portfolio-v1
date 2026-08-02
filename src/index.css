@@ -217,14 +217,16 @@
   }
 
 }
+
 @keyframes archive-item-arrow-slide {
+
   0%,
   100% {
-    transform: translateX(0);
+    transform: translate(0, 0);
   }
 
   50% {
-    transform: translateX(6px);
+    transform: translate(5px, -5px);
   }
 }
 
@@ -234,6 +236,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .group:hover .archive-item-arrow,
   .group:focus-visible .archive-item-arrow {
     animation: none;

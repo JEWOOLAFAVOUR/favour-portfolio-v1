@@ -1,4 +1,4 @@
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import Footer from "../components/Footer";
 
 type ArchiveProject = {
@@ -214,18 +214,18 @@ function ProjectRow({ project }: { project: ArchiveProject }) {
             {project.builtWith.join(" · ")}
           </p>
         </div>
-        <div className="flex shrink-0 items-start gap-3">
-          <div className="hidden w-28 overflow-hidden rounded-xl border border-[#383838]/15 bg-[#e8e6df] sm:block lg:w-36">
+        <div className="flex shrink-0 items-start gap-6 lg:gap-8">
+          <div className="hidden h-32 w-44 overflow-hidden rounded-xl border border-[#383838]/15 bg-[#e8e6df] sm:block lg:h-40 lg:w-56">
             <img
               src={project.image ?? defaultProjectImage}
               alt={`${project.title} preview`}
-              className="block aspect-[16/10] w-full object-cover"
+              className="block h-full w-full object-cover"
               loading="lazy"
             />
           </div>
           {project.link && (
             <span className="mt-1 grid h-11 w-11 shrink-0 place-items-center overflow-hidden rounded-full border border-[#ff542d]/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
-              <ArrowRight
+              <ArrowUpRight
                 aria-hidden="true"
                 className="archive-item-arrow text-[#ff542d]"
                 size={24}

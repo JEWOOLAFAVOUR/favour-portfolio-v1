@@ -33,8 +33,7 @@ export default function Hero() {
           <div className="lg:col-span-7 lg:col-start-5">
             <p className="max-w-4xl text-[50px] font-medium leading-[1.15] tracking-[-0.04em] text-zinc-900">
               Built products used by 10K+ users.
-              <br />
-              web, mobile and backend software.
+              <br />I work with web, mobile and backend systems.
             </p>
 
             <ProcessLine />
