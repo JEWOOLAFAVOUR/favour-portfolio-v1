@@ -2,9 +2,9 @@ export default function Footer() {
   return (
     <footer
       id="contact"
-      className="relative min-h-[85vh] overflow-hidden bg-[#0b0b0b] text-white"
+      className="relative min-h-[90vh] overflow-hidden bg-[#0b0b0b] text-white"
     >
-      <div className="mx-auto flex min-h-[90vh] flex-col justify-between px-8 pb-4 pt-14 lg:px-4 lg:pb-4 lg:pt-16">
+      <div className="mx-auto flex min-h-[90vh] flex-col justify-between px-8 pb-8 pt-14 lg:px-4 lg:pb-8 lg:pt-16">
         {/* Top */}
         <div className="grid gap-6 lg:grid-cols-12">
           {/* Left */}
@@ -25,30 +25,30 @@ export default function Footer() {
 
           {/* Navigation */}
           <div className="lg:col-span-1 lg:col-start-10">
-            <div className="space-y-1.5 text-[14px] font-light text-white">
+            <div className="space-y-1.5 text-[15px] font-light text-white">
               <a
-                href="#about"
+                href="/about"
                 className="block transition-opacity duration-300 hover:opacity-60 hover:underline hover:decoration-white hover:underline-offset-4"
               >
                 About
               </a>
 
               <a
-                href="#projects"
+                href="/work"
                 className="block transition-opacity duration-300 hover:opacity-60 hover:underline hover:decoration-white hover:underline-offset-4"
               >
                 Projects
               </a>
 
               <a
-                href="#experience"
+                href="/contact"
                 className="block transition-opacity duration-300 hover:opacity-60 hover:underline hover:decoration-white hover:underline-offset-4"
               >
                 Experience
               </a>
 
               <a
-                href="#contact"
+                href="/#contact"
                 className="block transition-opacity duration-300 hover:opacity-60 hover:underline hover:decoration-white hover:underline-offset-4"
               >
                 Contact
@@ -57,8 +57,8 @@ export default function Footer() {
           </div>
 
           {/* Socials */}
-          <div className="lg:col-span-2 lg:col-start-11 lg:pl-3">
-            <div className="space-y-1.5 text-[14px] font-light text-white">
+          <div className="lg:col-span-2 lg:col-start-11">
+            <div className="space-y-1.5 text-[15px] font-light text-white">
               <a
                 href="https://github.com/JEWOOLAFAVOUR"
                 target="_blank"
@@ -117,6 +117,9 @@ export default function Footer() {
               JEWOOLA FAVOUR
             </text>
           </svg>
+          <p className="-mt-2 text-right text-[13px] font-light uppercase tracking-[0.04em] text-zinc-400">
+            Website designed and built by Favour
+          </p>
         </div>
       </div>
     </footer>
