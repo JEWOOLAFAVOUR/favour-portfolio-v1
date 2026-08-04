@@ -44,7 +44,7 @@ const journey = [
 export default function AboutPage() {
   return (
     <>
-      <main className="about-editorial overflow-hidden  text-[#383838]">
+      <main className="about-editorial overflow-hidden bg-white text-[#383838]">
         <section className="px-8 pb-24 pt-16 sm:px-14 lg:px-[7vw] lg:pb-32 lg:pt-24">
           <h1 className="max-w-[1100px] text-[clamp(2rem,3.35vw,4.25rem)] font-normal leading-[1.1] tracking-[-0.055em]">
             Hi! I&apos;m Favour, a Full-Stack Software Developer who enjoys

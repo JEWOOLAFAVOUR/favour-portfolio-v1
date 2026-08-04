@@ -256,7 +256,7 @@ function ProjectRow({ project }: { project: ArchiveProject }) {
 export default function WorkPage() {
   return (
     <>
-      <main className="min-h-screen bg-[#f5f4f0] px-6 pb-24 pt-12 text-[#383838] sm:px-10 lg:px-[4.7vw] lg:pt-20">
+      <main className="min-h-screen bg-white px-6 pb-24 pt-12 text-[#383838] sm:px-10 lg:px-[4.7vw] lg:pt-20">
         <section className="border-t border-[#383838]/25 pt-14 sm:pt-20 lg:pt-28">
           <div className="flex items-end justify-between gap-8">
             <h1 className="max-w-5xl text-[clamp(3rem,8vw,8.5rem)] font-normal leading-[.88] tracking-[-.075em]">
