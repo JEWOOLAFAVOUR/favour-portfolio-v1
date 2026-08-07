@@ -8,12 +8,14 @@
   html {
     scroll-behavior: smooth;
     background-color: #0b0b0b;
+    overscroll-behavior-y: none;
   }
 
   body {
     font-family: 'Suisse Intl', 'Inter', sans-serif;
     background-color: #f5f4f0;
     color: #0f172a;
+    overscroll-behavior-y: none;
   }
 
   .animate-shine {
