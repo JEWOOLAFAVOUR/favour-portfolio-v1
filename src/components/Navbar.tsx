@@ -29,7 +29,7 @@ export default function Navbar() {
           </span>
           <span className="nav-pill-drop nav-pill-drop-three nav-pill-delay-3 inline-flex">
             <a
-              href="/resume.pdf"
+              href="/Jewoola%20Favour%20Resume.pdf"
               className="rounded-full border-[1.5px] border-black bg-white px-6 py-3 text-[17px] transition-[transform,box-shadow,border-color] duration-300 ease-out hover:-translate-y-1 hover:border-slate-700 hover:shadow-[0_7px_16px_rgba(15,23,42,0.14)]"
               target="_blank"
               rel="noreferrer noopener"
