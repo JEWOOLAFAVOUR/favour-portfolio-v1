@@ -1,77 +1,246 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import './styles/fonts.css';
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --navy: #0e172a;
-    --navy-light: #112240;
-    --slate: #8892b0;
-    --slate-light: #a8b2d1;
-    --slate-lightest: #ccd6f6;
-    --teal: #64ffda;
-    --white: #e6f1ff;
-  }
-
   html {
     scroll-behavior: smooth;
+    background-color: #0b0b0b;
+    overscroll-behavior-y: none;
   }
 
   body {
-    font-family: 'Inter', sans-serif;
-    @apply bg-navy text-slate;
+    font-family: 'Suisse Intl', 'Inter', sans-serif;
+    background-color: #f5f4f0;
+    color: #0f172a;
+    overscroll-behavior-y: none;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply font-bold text-slate-lightest;
-  }
-}
-
-@layer components {
-
-  /* Smooth scrolling for navigation links */
-  a[href^="#"] {
-    @apply transition-all duration-300;
+  .animate-shine {
+    position: relative;
+    overflow: hidden;
   }
 
-  /* Custom scrollbar */
-  ::-webkit-scrollbar {
-    @apply w-3;
+  .animate-shine::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%) skewX(-20deg);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.65) 50%, rgba(255, 255, 255, 0) 100%);
+    animation: shine 2s ease-in-out infinite;
   }
 
-  ::-webkit-scrollbar-track {
-    @apply bg-navy;
-  }
+  @keyframes shine {
 
-  ::-webkit-scrollbar-thumb {
-    @apply bg-navy-light rounded;
-  }
+    0%,
+    100% {
+      transform: translateX(-100%) skewX(-20deg);
+    }
 
-  ::-webkit-scrollbar-thumb:hover {
-    @apply bg-slate;
+    50% {
+      transform: translateX(100%) skewX(-20deg);
+    }
   }
 }
 
-/* Animations */
-@keyframes float {
-
-  0%,
-  100% {
-    transform: translateY(0px);
+@keyframes pendulum {
+  0% {
+    transform: rotate(-18deg);
   }
 
   50% {
-    transform: translateY(-10px);
+    transform: rotate(18deg);
+  }
+
+  100% {
+    transform: rotate(-18deg);
   }
 }
 
-.animate-float {
-  animation: float 3s ease-in-out infinite;
+.animate-pendulum {
+  transform-origin: top center;
+  animation: pendulum 4.5s ease-in-out infinite;
+}
+
+/* Staggered navbar entrance after the opening loader clears. */
+.nav-pill-drop {
+  opacity: 0;
+  transform-origin: top center;
+  animation-duration: 1.05s;
+  animation-timing-function: cubic-bezier(0.2, 0.8, 0.25, 1);
+  animation-fill-mode: both;
+}
+
+.nav-pill-drop-one,
+.nav-pill-drop-two,
+.nav-pill-drop-three,
+.nav-pill-drop-four {
+  animation-name: navDropStraight;
+}
+
+.nav-pill-delay-1 {
+  animation-delay: 2.25s;
+}
+
+.nav-pill-delay-2 {
+  animation-delay: 2.4s;
+}
+
+.nav-pill-delay-3 {
+  animation-delay: 2.55s;
+}
+
+.nav-pill-delay-4 {
+  animation-delay: 2.7s;
+}
+
+@keyframes navDropStraight {
+  0% {
+    opacity: 0;
+    transform: translateY(-110px);
+  }
+
+  55% {
+    opacity: 1;
+    transform: translateY(9px);
+  }
+
+  73% {
+    transform: translateY(-4px);
+  }
+
+  87% {
+    transform: translateY(2px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-pill-drop {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
+
+.draw-line {
+  stroke-dasharray: 988;
+  stroke-dashoffset: 988;
+  animation: drawLine 3.5s ease-in-out infinite;
+}
+
+@keyframes drawLine {
+  0% {
+    stroke-dashoffset: 988;
+  }
+
+  70% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+
+
+/* --------------------------
+   ORANGE LAYER
+---------------------------*/
+
+.loader-orange {
+  position: absolute;
+  left: 0;
+  bottom: -100%;
+  width: 100%;
+  height: 100%;
+  background: #ff4d14;
+  z-index: 10;
+
+  border-radius: 50% 50% 0 0 / 65% 65% 0 0;
+
+  animation: orangeRise 2.6s cubic-bezier(.77, 0, .175, 1) forwards;
+}
+
+/* --------------------------
+   WHITE LAYER
+---------------------------*/
+
+.loader-white {
+  position: absolute;
+  left: 0;
+  bottom: -100%;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: 20;
+
+  border-radius: 50% 50% 0 0 / 65% 65% 0 0;
+
+  animation: whiteRise 2.4s cubic-bezier(.77, 0, .175, 1) forwards;
+  animation-delay: 1.35s;
+}
+
+/* --------------------------
+   ANIMATIONS
+---------------------------*/
+
+@keyframes orangeRise {
+
+  0% {
+    bottom: -100%;
+    border-radius: 50% 50% 0 0 / 65% 65% 0 0;
+  }
+
+  100% {
+    bottom: 0;
+    border-radius: 0;
+  }
+
+}
+
+@keyframes whiteRise {
+
+  0% {
+    bottom: -100%;
+    border-radius: 50% 50% 0 0 / 65% 65% 0 0;
+  }
+
+  100% {
+    bottom: 0;
+    border-radius: 0;
+  }
+
+}
+
+@keyframes archive-item-arrow-slide {
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(5px, -5px);
+  }
+}
+
+.group:hover .archive-item-arrow,
+.group:focus-visible .archive-item-arrow {
+  animation: archive-item-arrow-slide 0.9s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .group:hover .archive-item-arrow,
+  .group:focus-visible .archive-item-arrow {
+    animation: none;
+  }
 }
