@@ -19,7 +19,7 @@ const archive: Record<string, ArchiveProject[]> = {
       description:
         "A contemporary fashion storefront designed to present collections through a polished and responsive shopping experience.",
       madeAt: "Personal",
-      builtWith: ["React", "Tailwind CSS", "Vercel"],
+      builtWith: ["Next", "Tailwind CSS", "Vercel"],
       link: "https://irisi-fashion.vercel.app/",
       linkText: "irisi-fashion.vercel.app",
       platform: "web",
@@ -29,7 +29,7 @@ const archive: Record<string, ArchiveProject[]> = {
       description:
         "An animated organization website created to communicate its mission, programs, and community impact.",
       madeAt: "Organization",
-      builtWith: ["React", "Tailwind CSS", "Vercel", "GSAP"],
+      builtWith: ["Next", "Tailwind CSS", "Vercel", "GSAP"],
       link: "https://kingdom-impact.vercel.app/",
       linkText: "kingdom-impact.vercel.app",
       platform: "web",
@@ -39,7 +39,7 @@ const archive: Record<string, ArchiveProject[]> = {
       description:
         "A modern digital studio website built to showcase creative services, capabilities, and selected work.",
       madeAt: "Personal",
-      builtWith: ["React", "Tailwind CSS", "Vercel"],
+      builtWith: ["Next", "Tailwind CSS", "Vercel"],
       link: "https://iwadii-lab.vercel.app/",
       linkText: "iwadii-lab.vercel.app",
       platform: "web",
@@ -59,7 +59,7 @@ const archive: Record<string, ArchiveProject[]> = {
       description:
         "A real-time messaging application that enables fast, seamless conversations through persistent socket connections.",
       madeAt: "Personal",
-      builtWith: ["React", "Node.js", "Socket.io", "MongoDB"],
+      builtWith: ["React Native", "Node.js", "Socket.io", "MongoDB"],
       link: "https://github.com/JEWOOLAFAVOUR/Loop-Chat",
       linkText: "GitHub",
       platform: "web",
@@ -192,9 +192,9 @@ function ProjectRow({ project }: { project: ArchiveProject }) {
   const content = (
     <>
       <div className="flex flex-wrap items-center gap-2 text-xs uppercase tracking-[.12em] text-[#5d5d59] sm:text-sm">
-        <span className="rounded-full border border-[#383838]/55 px-3 py-1">
+        {/* <span className="rounded-full border border-[#383838]/55 px-3 py-1">
           {project.madeAt}
-        </span>
+        </span> */}
         <span className="rounded-full border border-[#383838]/55 px-3 py-1">
           {project.platform}
         </span>

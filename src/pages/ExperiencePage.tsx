@@ -1,4 +1,4 @@
-import { ArrowUpRight, BriefcaseBusiness, Dot } from "lucide-react";
+import { ArrowUpRight, Dot } from "lucide-react";
 import Footer from "../components/Footer";
 
 type Experience = {
@@ -91,35 +91,13 @@ export default function ExperiencePage() {
   return (
     <>
       <main className="overflow-hidden bg-white text-[#383838]">
-        <section className="border-b border-[#383838]/20 px-6 pb-20 pt-12 sm:px-10 lg:px-[4.7vw] lg:pb-32 lg:pt-24">
-          <div className="flex items-start justify-between gap-8">
-            <div>
-              <p className="mb-8 text-xs uppercase tracking-[.18em] text-[#777771]">
-                A record of the work
-              </p>
-              <h1 className="max-w-5xl text-[clamp(4rem,11vw,11rem)] font-normal leading-[.82] tracking-[-.09em]">
-                Experience
-              </h1>
-            </div>
-            <BriefcaseBusiness
-              className="mt-2 hidden text-[#ff542d] sm:block"
-              size={58}
-              strokeWidth={1.15}
-            />
-          </div>
-          <p className="mt-14 max-w-2xl text-[clamp(1.25rem,2.2vw,2.15rem)] leading-[1.13] tracking-[-.045em]">
-            A journey through building mobile and web products, collaborating
-            with good people, and making complex technology feel simple.
-          </p>
+        <section className="px-6 pb-20 pt-12 sm:px-10 lg:px-[4.7vw] lg:pb-32 lg:pt-24">
+          <h1 className="max-w-5xl text-[clamp(4rem,11vw,11rem)] font-normal leading-[.82] tracking-[-.09em]">
+            Experience
+          </h1>
         </section>
 
-        <section className="px-6 py-20 sm:px-10 lg:px-[4.7vw] lg:py-32">
-          <div className="mb-12 flex items-baseline justify-between border-b border-[#383838]/25 pb-5">
-            <h2 className="text-sm uppercase tracking-[.16em]">
-              Selected roles
-            </h2>
-            <span className="text-sm text-[#777771]">2022 — now</span>
-          </div>
+        <section className="px-6 pb-20 pt-0 sm:px-10 lg:px-[4.7vw] lg:py-32">
           <div className="relative">
             <div
               className="absolute bottom-0 left-[7px] top-0 w-px bg-[#383838]/20 sm:left-[calc(35%+1.25rem)]"
