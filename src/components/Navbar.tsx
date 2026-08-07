@@ -39,7 +39,7 @@ export default function Navbar() {
           </span>
           <span className="nav-pill-drop nav-pill-drop-four nav-pill-delay-4 inline-flex">
             <a
-              href="/contact"
+              href="/experience"
               className="rounded-full border-[1.5px] border-black bg-white px-6 py-3 text-[17px] transition-[transform,box-shadow,border-color] duration-300 ease-out hover:-translate-y-1 hover:border-slate-700 hover:shadow-[0_7px_16px_rgba(15,23,42,0.14)]"
             >
               Experience
@@ -48,7 +48,7 @@ export default function Navbar() {
         </div>
         {/* Contact Button */}
         <a
-          href="#contact"
+          href="/contact"
           className="
     group relative flex h-12 w-[130px]
     items-center overflow-hidden

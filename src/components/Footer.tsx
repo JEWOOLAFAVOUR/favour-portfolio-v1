@@ -41,14 +41,14 @@ export default function Footer() {
               </a>
 
               <a
-                href="/contact"
+                href="/experience"
                 className="block transition-opacity duration-300 hover:opacity-60 hover:underline hover:decoration-white hover:underline-offset-4"
               >
                 Experience
               </a>
 
               <a
-                href="/#contact"
+                href="/contact"
                 className="block transition-opacity duration-300 hover:opacity-60 hover:underline hover:decoration-white hover:underline-offset-4"
               >
                 Contact

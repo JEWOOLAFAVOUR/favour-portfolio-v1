@@ -5,6 +5,7 @@ import AboutPage from "./pages/AboutPage";
 import WorkPage from "./pages/WorkPage";
 import ContactPage from "./pages/ContactPage";
 import HomePage from "./pages/HomePage";
+import ExperiencePage from "./pages/ExperiencePage";
 import LoadingScreen from "./components/LoadingScreen";
 
 export default function App(): JSX.Element {
@@ -26,6 +27,7 @@ export default function App(): JSX.Element {
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/work" element={<WorkPage />} />
+        <Route path="/experience" element={<ExperiencePage />} />
         <Route path="/contact" element={<ContactPage />} />
       </Routes>
     </div>
