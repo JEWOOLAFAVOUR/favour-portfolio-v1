@@ -15,16 +15,6 @@ type ArchiveProject = {
 const archive: Record<string, ArchiveProject[]> = {
   "2026": [
     {
-      title: "Irisi Fashion",
-      description:
-        "A contemporary fashion storefront designed to present collections through a polished and responsive shopping experience.",
-      madeAt: "Personal",
-      builtWith: ["Next", "Tailwind CSS", "Vercel"],
-      link: "https://irisi-fashion.vercel.app/",
-      linkText: "irisi-fashion.vercel.app",
-      platform: "web",
-    },
-    {
       title: "Kingdom Impact",
       description:
         "An animated organization website created to communicate its mission, programs, and community impact.",
@@ -32,16 +22,6 @@ const archive: Record<string, ArchiveProject[]> = {
       builtWith: ["Next", "Tailwind CSS", "Vercel", "GSAP"],
       link: "https://kingdom-impact.vercel.app/",
       linkText: "kingdom-impact.vercel.app",
-      platform: "web",
-    },
-    {
-      title: "Iwadii Lab",
-      description:
-        "A modern digital studio website built to showcase creative services, capabilities, and selected work.",
-      madeAt: "Personal",
-      builtWith: ["Next", "Tailwind CSS", "Vercel"],
-      link: "https://iwadii-lab.vercel.app/",
-      linkText: "iwadii-lab.vercel.app",
       platform: "web",
     },
     {
@@ -54,6 +34,28 @@ const archive: Record<string, ArchiveProject[]> = {
       linkText: "oreno.vercel.app",
       platform: "web",
     },
+    {
+      title: "Irisi Fashion",
+      description:
+        "A contemporary fashion storefront designed to present collections through a polished and responsive shopping experience.",
+      madeAt: "Personal",
+      builtWith: ["Next", "Tailwind CSS", "Vercel"],
+      link: "https://irisi-fashion.vercel.app/",
+      linkText: "irisi-fashion.vercel.app",
+      platform: "web",
+    },
+
+    {
+      title: "Iwadii Lab",
+      description:
+        "A modern digital studio website built to showcase creative services, capabilities, and selected work.",
+      madeAt: "Personal",
+      builtWith: ["Next", "Tailwind CSS", "Vercel"],
+      link: "https://iwadii-lab.vercel.app/",
+      linkText: "iwadii-lab.vercel.app",
+      platform: "web",
+    },
+
     {
       title: "Loop Chat",
       description:
