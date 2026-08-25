@@ -217,6 +217,7 @@ function ProjectRow({ project }: { project: ArchiveProject }) {
           </p>
         </div>
         <div className="flex shrink-0 items-start gap-6 lg:gap-8">
+          {/* Removed image display - commented out
           <div className="hidden h-32 w-44 overflow-hidden rounded-xl border border-[#383838]/15 bg-[#e8e6df] sm:block lg:h-40 lg:w-56">
             <img
               src={project.image ?? defaultProjectImage}
@@ -225,6 +226,7 @@ function ProjectRow({ project }: { project: ArchiveProject }) {
               loading="lazy"
             />
           </div>
+          */}
           {project.link && (
             <span className="mt-1 grid h-11 w-11 shrink-0 place-items-center overflow-hidden rounded-full border border-[#ff542d]/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
               <ArrowUpRight
