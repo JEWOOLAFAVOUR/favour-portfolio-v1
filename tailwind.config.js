@@ -1,24 +1,23 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	darkMode: ["class"],
-	content: ["./src/**/*.{js,jsx,ts,tsx}", "*.{js,ts,jsx,tsx,mdx}", "app/**/*.{ts,tsx}", "components/**/*.{ts,tsx}"],
-	theme: {
-		extend: {
-			colors: {
-				black: "#000000",
-				white: "#ffffff",
-				purple: "#8B5CF6",
-				gray: {
-					DEFAULT: "#4A4A4A",
-					light: "#6B6B6B",
-					dark: "#1A1A1A",
-				},
-			},
-			fontFamily: {
-				sans: ["Suisse Intl", "Inter", "system-ui", "sans-serif"],
-				display: ["Suisse Intl", "Inter", "system-ui", "sans-serif"],
-			},
-		},
-	},
-	plugins: [require("tailwindcss-animate")],
+  darkMode: ["class"],
+  content: ["./src/**/*.{js,jsx,ts,tsx}", "*.{js,ts,jsx,tsx,mdx}"],
+  theme: {
+    extend: {
+      colors: {
+        ink: "#171717",
+        "ink-soft": "#1d1d1d",
+        "ink-card": "#202020",
+        cream: "#f5f5f3",
+        muted: "#a3a3a3",
+        "muted-dim": "#737373",
+        line: "rgba(255,255,255,0.08)",
+      },
+      fontFamily: {
+        sans: ["DM Sans", "Inter", "system-ui", "sans-serif"],
+        display: ["DM Sans", "Inter", "system-ui", "sans-serif"],
+      },
+    },
+  },
+  plugins: [],
 };
