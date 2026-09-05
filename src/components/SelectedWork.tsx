@@ -24,7 +24,7 @@ export default function SelectedWork(): JSX.Element {
                   src={project.image}
                   alt={project.title}
                   loading="lazy"
-                  className="aspect-[4/3] w-full object-cover object-top transition duration-500 group-hover:scale-[1.03]"
+                  className="h-auto w-full transition duration-500 group-hover:scale-[1.02]"
                 />
               </div>
               <div className="mt-3 flex w-full items-start justify-between gap-4">

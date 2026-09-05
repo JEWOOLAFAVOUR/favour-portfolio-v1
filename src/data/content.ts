@@ -54,8 +54,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     title: "Paystack",
-    blurb:
-      "Engineered a pixel-accurate recreation of Paystack's landing experience — responsive across every breakpoint, animated interactions, and performance-optimized assets for sub-second loads.",
+    blurb: "Engineered a engineer-accurate recreation of Paystack.",
     url: "https://paystack-fintech.vercel.app/",
     image: "/paystack_landing.jpeg",
     large: true,
