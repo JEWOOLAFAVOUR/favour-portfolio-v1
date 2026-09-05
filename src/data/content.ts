@@ -8,15 +8,39 @@ export const profile = {
 };
 
 export const bio = [
-  "I'm a Full-Stack Software Engineer at Ennovate Lab, designing and building end-to-end mobile and web applications that people rely on every day.",
+  "I'm a Software Engineer at Ennovate Lab, designing and building end-to-end mobile, web and backend applications that people rely on every day.",
   "I've shipped products at real scale — a fintech platform processing live payments, mobile apps with 10k+ Play Store downloads, and an education platform serving 30,000+ users.",
 ];
 
 export const socials = [
-  { label: "GitHub", short: "Gh", href: "https://github.com/JEWOOLAFAVOUR", color: "#e5e5e5", fg: "#171717" },
-  { label: "LinkedIn", short: "in", href: "https://www.linkedin.com/in/jewoola-favour-5b7607217", color: "#3b82f6", fg: "#ffffff" },
-  { label: "X", short: "𝕏", href: "https://x.com/favourlop", color: "#ef4444", fg: "#ffffff" },
-  { label: "Instagram", short: "Ig", href: "https://www.instagram.com/jewoolafavourgbemi", color: "#a855f7", fg: "#ffffff" },
+  {
+    label: "GitHub",
+    short: "Gh",
+    href: "https://github.com/JEWOOLAFAVOUR",
+    color: "#e5e5e5",
+    fg: "#171717",
+  },
+  {
+    label: "LinkedIn",
+    short: "in",
+    href: "https://www.linkedin.com/in/jewoola-favour-5b7607217",
+    color: "#3b82f6",
+    fg: "#ffffff",
+  },
+  {
+    label: "X",
+    short: "𝕏",
+    href: "https://x.com/favourlop",
+    color: "#ef4444",
+    fg: "#ffffff",
+  },
+  {
+    label: "Instagram",
+    short: "Ig",
+    href: "https://www.instagram.com/jewoolafavourgbemi",
+    color: "#a855f7",
+    fg: "#ffffff",
+  },
 ];
 
 export interface Project {
@@ -103,21 +127,89 @@ export interface ArchiveProject {
 }
 
 export const archiveProjects: ArchiveProject[] = [
-  { year: "2026", title: "Loop Chat", madeAt: "Personal", builtWith: ["React", "Node.js", "Socket.io", "Express", "MongoDB", "JWT"], link: "https://github.com/JEWOOLAFAVOUR/Loop-Chat" },
-  { year: "2026", title: "Gilgal Tech", madeAt: "Personal", builtWith: ["React", "Node.js", "Docker", "Azure", "PostgreSQL", "CI/CD"], link: "http://gilgal.tech/" },
-  { year: "2026", title: "Iwadii Lab", madeAt: "Personal", builtWith: ["React", "Tailwind CSS", "Vercel"], link: "https://iwadii-lab.vercel.app/" },
-  { year: "2025", title: "Ennovate Lab Projects", madeAt: "Ennovate Lab", builtWith: ["React", "Node.js", "TypeScript", "AWS", "PostgreSQL"], link: "https://www.ennovatelab.com/" },
-  { year: "2025", title: "CAC Chapel LAUTECH Website", madeAt: "Personal", builtWith: ["React", "Tailwind CSS", "Vercel"], link: null },
-  { year: "2024", title: "Versecog Farm Mobile App", madeAt: "Freelance", builtWith: ["React Native", "JavaScript", "Mobile Development"], link: null },
-  { year: "2024", title: "Compellers Digital Mobile App", madeAt: "Freelance", builtWith: ["React Native", "JavaScript", "Firebase"], link: "https://www.instagram.com/compellers_digitals/" },
-  { year: "2022", title: "Mobile App Development Projects", madeAt: "Cephas Digital Technology", builtWith: ["React Native", "Node.js", "Express", "MongoDB"], link: "https://www.cephasict.com/" },
+  {
+    year: "2026",
+    title: "Loop Chat",
+    madeAt: "Personal",
+    builtWith: ["React", "Node.js", "Socket.io", "Express", "MongoDB", "JWT"],
+    link: "https://github.com/JEWOOLAFAVOUR/Loop-Chat",
+  },
+  {
+    year: "2026",
+    title: "Gilgal Tech",
+    madeAt: "Personal",
+    builtWith: ["React", "Node.js", "Docker", "Azure", "PostgreSQL", "CI/CD"],
+    link: "http://gilgal.tech/",
+  },
+  {
+    year: "2026",
+    title: "Iwadii Lab",
+    madeAt: "Personal",
+    builtWith: ["React", "Tailwind CSS", "Vercel"],
+    link: "https://iwadii-lab.vercel.app/",
+  },
+  {
+    year: "2025",
+    title: "Ennovate Lab Projects",
+    madeAt: "Ennovate Lab",
+    builtWith: ["React", "Node.js", "TypeScript", "AWS", "PostgreSQL"],
+    link: "https://www.ennovatelab.com/",
+  },
+  {
+    year: "2025",
+    title: "CAC Chapel LAUTECH Website",
+    madeAt: "Personal",
+    builtWith: ["React", "Tailwind CSS", "Vercel"],
+    link: null,
+  },
+  {
+    year: "2024",
+    title: "Versecog Farm Mobile App",
+    madeAt: "Freelance",
+    builtWith: ["React Native", "JavaScript", "Mobile Development"],
+    link: null,
+  },
+  {
+    year: "2024",
+    title: "Compellers Digital Mobile App",
+    madeAt: "Freelance",
+    builtWith: ["React Native", "JavaScript", "Firebase"],
+    link: "https://www.instagram.com/compellers_digitals/",
+  },
+  {
+    year: "2022",
+    title: "Mobile App Development Projects",
+    madeAt: "Cephas Digital Technology",
+    builtWith: ["React Native", "Node.js", "Express", "MongoDB"],
+    link: "https://www.cephasict.com/",
+  },
 ];
 
 export const experiences: Experience[] = [
-  { period: "October 2025 — Present", company: "Ennovate Lab", title: "Software Developer", url: "https://www.ennovatelab.com/" },
-  { period: "March 2022 — September 2025", company: "Cephas Digital Technology", title: "Software Developer", url: "https://www.cephasict.com/" },
-  { period: "November 2024 — January 2025", company: "Versecog Farm Enterprise", title: "Freelance Mobile App Developer", url: null },
-  { period: "August 2024 — November 2024", company: "Compellers Digital", title: "Freelance Mobile Developer", url: "https://www.instagram.com/compellers_digitals/" },
+  {
+    period: "October 2025 — Present",
+    company: "Ennovate Lab",
+    title: "Software Developer",
+    url: "https://www.ennovatelab.com/",
+  },
+  {
+    period: "March 2022 — September 2025",
+    company: "Cephas Digital Technology",
+    title: "Software Developer",
+    url: "https://www.cephasict.com/",
+  },
+  {
+    period: "November 2024 — January 2025",
+    company: "Versecog Farm Enterprise",
+    title: "Freelance Mobile App Developer",
+    url: null,
+  },
+  {
+    period: "August 2024 — November 2024",
+    company: "Compellers Digital",
+    title: "Freelance Mobile Developer",
+    url: "https://www.instagram.com/compellers_digitals/",
+  },
 ];
 
 export const aboutParagraphs = [
@@ -129,11 +221,29 @@ export const aboutParagraphs = [
 export const skillGroups = [
   {
     label: "Frontend & Mobile",
-    tools: ["React", "React Native", "Next.js", "TypeScript", "JavaScript", "Redux / Zustand", "TanStack", "Tailwind CSS"],
+    tools: [
+      "React",
+      "React Native",
+      "Next.js",
+      "TypeScript",
+      "JavaScript",
+      "Redux / Zustand",
+      "TanStack",
+      "Tailwind CSS",
+    ],
   },
   {
     label: "Backend & Data",
-    tools: ["Node.js", "Golang", "Express", "PostgreSQL", "MongoDB", "Firebase / Supabase", "REST APIs", "Microservices"],
+    tools: [
+      "Node.js",
+      "Golang",
+      "Express",
+      "PostgreSQL",
+      "MongoDB",
+      "Firebase / Supabase",
+      "REST APIs",
+      "Microservices",
+    ],
   },
   {
     label: "Cloud & DevOps",

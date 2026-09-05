@@ -34,17 +34,17 @@ export default function Hero(): JSX.Element {
 
       <div className="mx-auto max-w-3xl px-6 pt-2 md:px-8 md:pt-4">
         <Reveal>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-5">
             <img
               src={profile.avatar}
               alt={profile.name}
-              className="h-14 w-14 rounded-full object-cover ring-1 ring-line"
+              className="h-20 w-20 rounded-full object-cover ring-1 ring-line md:h-24 md:w-24"
             />
             <div>
-              <h1 className="text-xl font-medium uppercase tracking-wide text-cream md:text-2xl">
+              <h1 className="text-2xl font-medium uppercase tracking-wide text-cream md:text-4xl">
                 {profile.name}
               </h1>
-              <p className="mt-0.5 text-sm text-neutral-400">{profile.role}</p>
+              <p className="mt-1 text-sm text-neutral-400 md:text-base">{profile.role}</p>
             </div>
           </div>
         </Reveal>
