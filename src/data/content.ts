@@ -188,7 +188,7 @@ export const experiences: Experience[] = [
   {
     period: "October 2025 — Present",
     company: "Ennovate Lab",
-    title: "Software Developer",
+    title: "Software Engineer",
     url: "https://www.ennovatelab.com/",
   },
   {
