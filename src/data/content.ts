@@ -9,7 +9,7 @@ export const profile = {
 
 export const bio = [
   "I'm a Software Engineer at Ennovate Lab, designing and building end-to-end mobile, web and backend applications that people rely on every day.",
-  "I've shipped products at real scale — a fintech platform processing live payments, mobile apps with 10k+ Play Store downloads, and an education platform serving 30,000+ users.",
+  "I've shipped products at real scale, building across fintech, education, commerce and mobile, with products processing live payments, apps reaching 10k+ downloads, and platforms serving 30,000+ users.",
 ];
 
 export const socials = [
@@ -213,10 +213,61 @@ export const experiences: Experience[] = [
 ];
 
 export const aboutParagraphs = [
-  "I like software that feels intentional — clean interfaces, tiny details people almost miss, and architecture that holds up when the product grows.",
-  "Outside building products, I spend my time mentoring junior developers, serving in student church, and organizing resources as a Library Unit Member.",
-  "I also enjoy exploring new tools and pushing side ideas further just to see how small details can completely change an experience.",
+  "I like software that feels intentional, timeless, clean interfaces, APIs, code that's easy to reason about step by step, and architecture that doesn't fall apart when the product grows.",
+  "I've worked across mobile, web, and backend — building user-facing products, designing APIs, working with databases, and figuring out the engineering behind features that need to work reliably in production.",
+  "I'm always exploring how things work under the hood, whether that's making a system faster, simplifying something that's gotten too complicated, or pushing a side project further just to learn something new.",
 ];
+
+// export const skillGroups = [
+//   {
+//     label: "Frontend & Mobile",
+//     tools: [
+//       "React",
+//       "React Native",
+//       "Next.js",
+//       "TypeScript",
+//       "JavaScript",
+//       "Redux / Zustand",
+//       "TanStack",
+//       "Tailwind CSS",
+//     ],
+//   },
+//   {
+//     label: "Backend & Data",
+//     tools: [
+//       "Node.js",
+//       "Golang",
+//       "Express",
+//       "PostgreSQL",
+//       "MongoDB",
+//       "Firebase / Supabase",
+//       "REST APIs",
+//       "Microservices",
+//     ],
+//   },
+//   {
+//     label: "Cloud & DevOps",
+//     tools: ["AWS", "Azure", "Docker", "Linux", "Git", "CI/CD", "DevOps"],
+//   },
+//   {
+//     label: "Agentic AI",
+//     tools: [
+//       "LangChain",
+//       "LangGraph",
+//       "RAG",
+//       "Tool/Function Calling",
+//       "Agent Workflows",
+//       "Agent Memory",
+//       "Reflection & Evaluation",
+//       "LLM Orchestration",
+//       "Structured Outputs",
+//       "Embeddings & Vector Search",
+//       "API/Tool Integration",
+//       "Human-in-the-Loop",
+//       "TypeScript AI Development",
+//     ],
+//   },
+// ];
 
 export const skillGroups = [
   {
@@ -226,45 +277,53 @@ export const skillGroups = [
       "React Native",
       "Next.js",
       "TypeScript",
-      "JavaScript",
-      "Redux / Zustand",
       "TanStack",
+      "Redux / Zustand",
       "Tailwind CSS",
     ],
   },
+
   {
     label: "Backend & Data",
     tools: [
       "Node.js",
-      "Golang",
       "Express",
+      "Golang",
       "PostgreSQL",
+      "MySQL",
       "MongoDB",
-      "Firebase / Supabase",
+      "Redis",
       "REST APIs",
+    ],
+  },
+
+  {
+    label: "Cloud & DevOps",
+    tools: ["AWS", "Docker", "Linux", "CI/CD", "Git / GitHub", "Observability"],
+  },
+
+  {
+    label: "Architecture & Security",
+    tools: [
+      "Clean Architecture",
+      "System Design",
+      "Authentication",
+      "API Security",
+      "OWASP",
       "Microservices",
     ],
   },
-  {
-    label: "Cloud & DevOps",
-    tools: ["AWS", "Azure", "Docker", "Linux", "Git", "CI/CD", "DevOps"],
-  },
+
   {
     label: "Agentic AI",
     tools: [
       "LangChain",
       "LangGraph",
       "RAG",
-      "Tool/Function Calling",
+      "Tool Calling",
       "Agent Workflows",
-      "Agent Memory",
-      "Reflection & Evaluation",
       "LLM Orchestration",
-      "Structured Outputs",
-      "Embeddings & Vector Search",
-      "API/Tool Integration",
-      "Human-in-the-Loop",
-      "TypeScript AI Development",
+      "Vector Search",
     ],
   },
 ];

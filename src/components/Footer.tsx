@@ -33,7 +33,7 @@ export default function Footer(): JSX.Element {
                 {group.tools.map((tool) => (
                   <span
                     key={tool}
-                    className="rounded-full bg-ink-card px-3.5 py-1.5 text-[13px] font-normal text-neutral-300 ring-1 ring-line transition hover:bg-[#2a2a2a]"
+                    className="rounded-full bg-ink-card px-3.5 py-1.5 text-[13px] font-normal text-neutral-300 ring-1 ring-line transition hover:bg-card-hover"
                   >
                     {tool}
                   </span>

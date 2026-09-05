@@ -21,7 +21,7 @@ export default function ExperienceSection(): JSX.Element {
             </div>
           );
           const arrow = (
-            <ArrowUpRight className="arrow-slide h-4 w-4 shrink-0 text-neutral-300 transition group-hover:text-white" />
+            <ArrowUpRight className="arrow-slide h-4 w-4 shrink-0 text-neutral-300 transition group-hover:text-cream" />
           );
 
           return (
@@ -31,7 +31,7 @@ export default function ExperienceSection(): JSX.Element {
                   href={experience.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="group -mx-4 flex items-start justify-between gap-6 rounded-2xl px-4 py-6 transition hover:bg-white/[0.03]"
+                  className="group -mx-4 flex items-start justify-between gap-6 rounded-2xl px-4 py-6 transition hover:bg-line"
                 >
                   {content}
                   {arrow}

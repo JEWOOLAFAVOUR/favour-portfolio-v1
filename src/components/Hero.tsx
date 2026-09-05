@@ -86,12 +86,21 @@ export default function Hero(): JSX.Element {
                     target="_blank"
                     rel="noreferrer"
                     aria-label={social.label}
-                    className="text-neutral-300 transition hover:scale-110 hover:text-white"
+                    className="text-neutral-300 transition hover:scale-110 hover:text-cream"
                   >
                     {socialIcons[social.label]("h-5 w-5")}
                   </a>
                 ))}
               </div>
+              <p className="mt-3 text-sm text-neutral-400">
+                Easy to reach at{" "}
+                <a
+                  href={`mailto:${profile.email}`}
+                  className="text-neutral-300 underline decoration-neutral-500 underline-offset-4 transition hover:text-cream hover:decoration-cream"
+                >
+                  {profile.email}
+                </a>
+              </p>
             </div>
             <a href={profile.resume} target="_blank" rel="noreferrer" className="btn-light rounded-full px-6 py-2.5 text-sm font-medium">
               View Resume

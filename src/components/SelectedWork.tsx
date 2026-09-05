@@ -19,7 +19,7 @@ export default function SelectedWork(): JSX.Element {
         {visibleProjects.map((project, index) => (
           <Reveal key={project.title} delay={(index % 2) * 80}>
             <a href={project.url} target="_blank" rel="noreferrer" className="group flex h-full flex-col">
-              <div className="overflow-hidden rounded-2xl bg-ink-card ring-1 ring-line transition duration-300 group-hover:ring-white/20">
+              <div className="overflow-hidden rounded-2xl bg-ink-card ring-1 ring-line transition duration-300 group-hover:ring-line-strong">
                 <img
                   src={project.image}
                   alt={project.title}
@@ -29,7 +29,7 @@ export default function SelectedWork(): JSX.Element {
               </div>
               <div className="mt-3 flex w-full items-start justify-between gap-4">
                 <h3 className="text-base font-normal text-cream">{project.title}</h3>
-                <ArrowUpRight className="arrow-slide mt-0.5 h-4 w-4 shrink-0 text-neutral-300 transition group-hover:text-white" />
+                <ArrowUpRight className="arrow-slide mt-0.5 h-4 w-4 shrink-0 text-neutral-300 transition group-hover:text-cream" />
               </div>
               <p className="mt-1 text-sm leading-relaxed text-neutral-400">{project.blurb}</p>
             </a>
@@ -80,7 +80,7 @@ export default function SelectedWork(): JSX.Element {
                   href={project.link}
                   target="_blank"
                   rel="noreferrer"
-                  className="group -mx-3 flex items-center justify-between gap-6 rounded-xl px-3 py-3.5 transition hover:bg-white/[0.03]"
+                  className="group -mx-3 flex items-center justify-between gap-6 rounded-xl px-3 py-3.5 transition hover:bg-line"
                 >
                   {row}
                 </a>

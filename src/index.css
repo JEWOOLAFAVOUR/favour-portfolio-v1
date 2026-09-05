@@ -3,22 +3,52 @@
 @tailwind utilities;
 
 @layer base {
+  /* Theme palette — dark is the default; `html.light` swaps every token. */
+  :root {
+    --c-bg: 23 23 23;
+    --c-card: 32 32 32;
+    --c-card-hover: 42 42 42;
+    --c-nav: 35 35 35;
+    --c-text: 245 245 243;
+    --c-line: 255 255 255;
+    --c-n200: 229 229 229;
+    --c-n300: 212 212 212;
+    --c-n400: 163 163 163;
+    --c-n500: 115 115 115;
+    --c-n600: 82 82 82;
+  }
+
+  html.light {
+    --c-bg: 245 244 240;
+    --c-card: 233 231 225;
+    --c-card-hover: 224 222 214;
+    --c-nav: 255 255 255;
+    --c-text: 23 23 23;
+    --c-line: 23 23 23;
+    --c-n200: 52 52 50;
+    --c-n300: 82 82 80;
+    --c-n400: 120 120 116;
+    --c-n500: 150 150 145;
+    --c-n600: 180 180 174;
+  }
+
   html {
     scroll-behavior: smooth;
-    background-color: #171717;
+    background-color: rgb(var(--c-bg));
     overscroll-behavior-y: none;
   }
 
   body {
     font-family: 'DM Sans', 'Inter', sans-serif;
-    background-color: #171717;
-    color: #f5f5f3;
+    background-color: rgb(var(--c-bg));
+    color: rgb(var(--c-text));
     overscroll-behavior-y: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   ::selection {
-    background: rgba(255, 255, 255, 0.9);
-    color: #171717;
+    background: rgb(var(--c-text));
+    color: rgb(var(--c-bg));
   }
 }
 
@@ -54,6 +84,10 @@
   .dot-grid {
     background-image: radial-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px);
     background-size: 26px 26px;
+  }
+
+  html.light .dot-grid {
+    background-image: radial-gradient(rgba(23, 23, 23, 0.08) 1px, transparent 1px);
   }
 
   .reveal {
