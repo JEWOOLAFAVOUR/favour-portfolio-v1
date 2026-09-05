@@ -11,7 +11,7 @@ const socialIcons: Record<string, (className?: string) => JSX.Element> = {
 
 export default function Hero(): JSX.Element {
   return (
-    <header className="pt-24">
+    <header className="pt-16">
       {/* Auto-scrolling strip of work — temporarily disabled, kept for reference.
       <div className="overflow-hidden py-6">
         <div className="marquee-track gap-5 pr-5">
@@ -32,7 +32,7 @@ export default function Hero(): JSX.Element {
       </div>
       */}
 
-      <div className="mx-auto max-w-3xl px-6 pt-10 md:px-8 md:pt-14">
+      <div className="mx-auto max-w-3xl px-6 pt-2 md:px-8 md:pt-4">
         <Reveal>
           <div className="flex items-center gap-4">
             <img
@@ -41,7 +41,7 @@ export default function Hero(): JSX.Element {
               className="h-14 w-14 rounded-full object-cover ring-1 ring-line"
             />
             <div>
-              <h1 className="text-xl font-semibold uppercase tracking-wide text-cream md:text-2xl">
+              <h1 className="text-xl font-medium uppercase tracking-wide text-cream md:text-2xl">
                 {profile.name}
               </h1>
               <p className="mt-0.5 text-sm text-neutral-400">{profile.role}</p>
@@ -49,16 +49,33 @@ export default function Hero(): JSX.Element {
           </div>
         </Reveal>
 
-        <div className="mt-8 space-y-5 text-base leading-relaxed text-neutral-300">
+        <div className="mt-6 space-y-4 text-base font-light leading-relaxed text-neutral-300">
           {bio.map((paragraph, index) => (
             <Reveal key={index} delay={index * 90}>
-              <p>{paragraph}</p>
+              <p>
+                {index === 0 ? (
+                  <>
+                    {paragraph.split("Ennovate Lab")[0]}
+                    <a
+                      href="https://www.ennovatelab.com/"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="underline decoration-neutral-500 underline-offset-4 transition hover:decoration-cream hover:text-cream"
+                    >
+                      Ennovate Lab
+                    </a>
+                    {paragraph.split("Ennovate Lab")[1]}
+                  </>
+                ) : (
+                  paragraph
+                )}
+              </p>
             </Reveal>
           ))}
         </div>
 
         <Reveal delay={150}>
-          <div className="mt-10 flex flex-wrap items-end justify-between gap-6 pb-6">
+          <div className="mt-8 flex flex-wrap items-end justify-between gap-6 pb-6">
             <div>
               <p className="text-sm text-neutral-400">Find me on:</p>
               <div className="mt-3 flex items-center gap-5">

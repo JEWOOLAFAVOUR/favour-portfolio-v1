@@ -10,12 +10,12 @@ export default function SelectedWork(): JSX.Element {
   const visibleProjects = showAll ? projects : projects.slice(0, INITIAL_COUNT);
 
   return (
-    <section id="work" className="mx-auto max-w-3xl scroll-mt-24 px-6 py-16 md:px-8 md:py-20">
+    <section id="work" className="mx-auto max-w-3xl scroll-mt-24 px-6 py-12 md:px-8 md:py-14">
       <Reveal>
-        <h2 className="text-lg font-semibold text-cream">Selected Works</h2>
+        <h2 className="text-lg font-medium text-cream">Selected Works</h2>
       </Reveal>
 
-      <div className="mt-8 grid gap-x-8 gap-y-10 md:grid-cols-2">
+      <div className="mt-7 grid gap-x-8 gap-y-10 md:grid-cols-2">
         {visibleProjects.map((project, index) => (
           <Reveal key={project.title} delay={(index % 2) * 80}>
             <a href={project.url} target="_blank" rel="noreferrer" className="group flex h-full flex-col">
@@ -28,7 +28,7 @@ export default function SelectedWork(): JSX.Element {
                 />
               </div>
               <div className="mt-3 flex w-full items-start justify-between gap-4">
-                <h3 className="text-base font-medium text-cream">{project.title}</h3>
+                <h3 className="text-base font-normal text-cream">{project.title}</h3>
                 <ArrowUpRight className="arrow-slide mt-0.5 h-4 w-4 shrink-0 text-neutral-300 transition group-hover:text-white" />
               </div>
               <p className="mt-1 text-sm leading-relaxed text-neutral-400">{project.blurb}</p>

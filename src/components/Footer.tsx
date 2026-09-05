@@ -20,12 +20,12 @@ const floatingIcons = [
 export default function Footer(): JSX.Element {
   return (
     <footer id="contact" className="scroll-mt-24">
-      <div className="mx-auto max-w-3xl px-6 pb-32 pt-16 md:px-8 md:pt-20">
+      <div className="mx-auto max-w-3xl px-6 pb-28 pt-12 md:px-8 md:pt-14">
         <Reveal>
           <h2 className="text-lg font-medium text-cream">Tools & Workflow</h2>
         </Reveal>
 
-        <div className="mt-6 space-y-6">
+        <div className="mt-5 space-y-5">
           {skillGroups.map((group, groupIndex) => (
             <Reveal key={group.label} delay={groupIndex * 80}>
               <p className="text-sm font-normal text-neutral-500">{group.label}</p>
@@ -44,7 +44,7 @@ export default function Footer(): JSX.Element {
         </div>
 
         <Reveal delay={120}>
-          <div className="relative mt-16 select-none text-center">
+          <div className="relative mt-12 select-none text-center">
             {floatingIcons.map((icon) => {
               const social = socials.find((s) => s.label === icon.label);
               if (!social) return null;
@@ -55,14 +55,14 @@ export default function Footer(): JSX.Element {
                   target="_blank"
                   rel="noreferrer"
                   aria-label={icon.label}
-                  className={`absolute z-10 flex items-center justify-center rounded-full shadow-xl shadow-black/40 transition hover:scale-110 ${icon.className} ${icon.rotate}`}
+                  className={`absolute z-10 hidden items-center justify-center rounded-full shadow-xl shadow-black/40 transition hover:scale-110 sm:flex ${icon.className} ${icon.rotate}`}
                   style={{ backgroundColor: social.color, color: social.fg }}
                 >
                   {socialIcons[icon.label]("h-5 w-5")}
                 </a>
               );
             })}
-            <p className="text-[15vw] font-black leading-none tracking-tight text-cream md:text-7xl">
+            <p className="whitespace-nowrap text-[11vw] font-bold leading-none tracking-tight text-cream md:text-7xl">
               LET&rsquo;S CONNECT
             </p>
           </div>

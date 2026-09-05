@@ -35,7 +35,7 @@ export default function PillNav(): JSX.Element {
           <li key={id}>
             <a
               href={`#${id}`}
-              className={`block whitespace-nowrap rounded-full px-3 py-2 text-sm transition sm:px-4 ${
+              className={`block whitespace-nowrap rounded-full px-2.5 py-2 text-[13px] transition sm:px-4 sm:text-sm ${
                 active === id ? "btn-light font-medium" : "text-neutral-300 hover:text-white"
               }`}
             >

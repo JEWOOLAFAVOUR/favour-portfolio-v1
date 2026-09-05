@@ -4,9 +4,9 @@ import { ArrowUpRight } from "./icons";
 
 export default function ExperienceSection(): JSX.Element {
   return (
-    <section id="experience" className="mx-auto max-w-3xl scroll-mt-24 px-6 py-16 md:px-8 md:py-20">
+    <section id="experience" className="mx-auto max-w-3xl scroll-mt-24 px-6 py-12 md:px-8 md:py-14">
       <Reveal>
-        <h2 className="text-lg font-semibold text-cream">Work Experience</h2>
+        <h2 className="text-lg font-medium text-cream">Work Experience</h2>
       </Reveal>
 
       <div className="mt-10">

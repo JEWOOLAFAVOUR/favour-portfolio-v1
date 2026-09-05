@@ -1,15 +1,15 @@
 export const profile = {
   name: "Jewoola Favour",
   firstName: "Favour",
-  role: "Full-Stack Software Developer",
+  role: "Full-Stack Software Engineer",
   avatar: "/profile_pic.jpg",
   email: "jewoolafavour2020@gmail.com",
   resume: "/Jewoola Favour Resume.pdf",
 };
 
 export const bio = [
-  "I'm a Full-Stack Software Developer at Ennovate Lab, designing and building end-to-end mobile and web applications that people rely on every day.",
-  "I'm the creator of StudyPadi, a growing education platform helping over 2000+ students access free CBTs and past questions.",
+  "I'm a Full-Stack Software Engineer at Ennovate Lab, designing and building end-to-end mobile and web applications that people rely on every day.",
+  "I've shipped products at real scale — a fintech platform processing live payments, mobile apps with 10k+ Play Store downloads, and an education platform serving 30,000+ users.",
 ];
 
 export const socials = [
@@ -29,46 +29,59 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "Paystack",
+    blurb:
+      "Engineered a pixel-accurate recreation of Paystack's landing experience — responsive across every breakpoint, animated interactions, and performance-optimized assets for sub-second loads.",
+    url: "https://paystack-fintech.vercel.app/",
+    image: "/paystack_landing.jpeg",
+    large: true,
+  },
+  {
     title: "Oreno",
-    blurb: "Your daily standup companion — track progress, manage tasks, walk in prepared.",
+    blurb:
+      "Designed and built the real-time core — websocket live updates, Redis-backed presence, and a PostgreSQL/Prisma data layer powering the daily standup workflow.",
     url: "https://oreno.vercel.app/",
     image: "/oreno_screenshot.app.jpeg",
-    large: true,
   },
   {
     title: "StudyPadi",
-    blurb: "Free CBT practice and past questions for 2000+ students.",
+    blurb:
+      "Architected the platform end-to-end: CBT exam engine, authentication, timed scoring, and result analytics — serving 2,000+ students with free past questions.",
     url: "https://study-pady-website.vercel.app/",
     image: "/studypady_screenshot.png",
-    large: true,
   },
   {
     title: "HonourWorld",
-    blurb: "VTU services app with 10k+ downloads on the Play Store.",
+    blurb:
+      "Built the React Native app solo — Redux state management, secure VTU transaction APIs, offline-tolerant flows — shipping 10k+ downloads on the Play Store.",
     url: "https://play.google.com/store/apps/details?id=com.ng.honourworld",
     image: "/honour_world_screenshot.png",
   },
   {
     title: "Skill Remit",
-    blurb: "Freelancer-focused mobile app for Ghana and Nigeria markets.",
+    blurb:
+      "Implemented the marketplace backend and mobile client — artisan discovery, booking, and payment flows on Node.js services behind a React Native app.",
     url: "https://play.google.com/store/apps/details?id=com.skillremitartisan",
     image: "/skill_remit_screenshot.png",
   },
   {
     title: "Irisi Fashion",
-    blurb: "A modern fashion brand website with a seamless shopping experience.",
+    blurb:
+      "Developed the storefront from scratch — cart and checkout flows, SEO-ready product pages, and a fully responsive Tailwind UI tuned for conversion.",
     url: "https://irisi-fashion.vercel.app/",
     image: "/irisi_fashion_screenshot.png",
   },
   {
     title: "VickyBest Telecom",
-    blurb: "VTU services app with 1k+ downloads, built at Cephas ICT Hub.",
+    blurb:
+      "Delivered the VTU purchase pipeline with TanStack Query caching, Redux state, and resilient API retry logic, built at Cephas ICT Hub.",
     url: "https://play.google.com/store/apps/details?id=com.vickybest",
     image: "/vicky_best_screenshot.png",
   },
   {
     title: "JTB Website",
-    blurb: "A comprehensive website developed for a state government.",
+    blurb:
+      "Built a responsive institutional website for a state government with a Supabase-backed content layer and CI deploy pipeline.",
     url: "https://jtb-website-01.gilgal.tech/",
     image: "/jtb_screenshot.png",
   },
@@ -125,5 +138,23 @@ export const skillGroups = [
   {
     label: "Cloud & DevOps",
     tools: ["AWS", "Azure", "Docker", "Linux", "Git", "CI/CD", "DevOps"],
+  },
+  {
+    label: "Agentic AI",
+    tools: [
+      "LangChain",
+      "LangGraph",
+      "RAG",
+      "Tool/Function Calling",
+      "Agent Workflows",
+      "Agent Memory",
+      "Reflection & Evaluation",
+      "LLM Orchestration",
+      "Structured Outputs",
+      "Embeddings & Vector Search",
+      "API/Tool Integration",
+      "Human-in-the-Loop",
+      "TypeScript AI Development",
+    ],
   },
 ];
