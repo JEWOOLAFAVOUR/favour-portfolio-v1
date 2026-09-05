@@ -1,126 +1,93 @@
-export default function Footer() {
+import { profile, skillGroups, socials } from "../data/content";
+import Reveal from "./Reveal";
+import { GithubIcon, InstagramIcon, LinkedinIcon, XIcon } from "./icons";
+
+const socialIcons: Record<string, (className?: string) => JSX.Element> = {
+  GitHub: (c) => <GithubIcon className={c} />,
+  LinkedIn: (c) => <LinkedinIcon className={c} />,
+  X: (c) => <XIcon className={c} />,
+  Instagram: (c) => <InstagramIcon className={c} />,
+};
+
+/* Colorful circles scattered over the giant heading, like the reference footer. */
+const floatingIcons = [
+  { label: "LinkedIn", className: "-top-5 left-[8%] h-14 w-14 md:h-16 md:w-16", rotate: "-rotate-6" },
+  { label: "Instagram", className: "top-1/2 left-[16%] h-12 w-12 md:h-14 md:w-14", rotate: "rotate-3" },
+  { label: "GitHub", className: "-top-7 right-[38%] h-12 w-12 md:h-14 md:w-14", rotate: "rotate-6" },
+  { label: "X", className: "bottom-0 right-[30%] h-14 w-14 md:h-16 md:w-16", rotate: "-rotate-3" },
+];
+
+export default function Footer(): JSX.Element {
   return (
-    <footer
-      id="contact"
-      className="relative min-h-[90vh] overflow-hidden bg-[#0b0b0b] text-white"
-    >
-      <div className="mx-auto flex min-h-[90vh] flex-col justify-between px-8 pb-8 pt-14 lg:px-4 lg:pb-8 lg:pt-16">
-        {/* Top */}
-        <div className="grid gap-6 lg:grid-cols-12">
-          {/* Left */}
-          <div className="lg:col-span-5">
-            <h2 className="text-[28px] font-normal leading-[0.95] tracking-[-0.05em] lg:text-[36px]">
-              Let's build
-              <br />
-              something great.
-            </h2>
+    <footer id="contact" className="scroll-mt-24">
+      <div className="mx-auto max-w-3xl px-6 pb-28 pt-12 md:px-8 md:pt-14">
+        <Reveal>
+          <h2 className="text-lg font-medium text-cream">Tools & Workflow</h2>
+        </Reveal>
 
-            <a
-              href="mailto:jewoolafavour2020@gmail.com"
-              className="mt-6 inline-block text-[16px] font-normal text-zinc-400 underline underline-offset-4 transition-colors duration-300 hover:text-white"
-            >
-              jewoolafavour2020@gmail.com
+        <div className="mt-5 space-y-5">
+          {skillGroups.map((group, groupIndex) => (
+            <Reveal key={group.label} delay={groupIndex * 80}>
+              <p className="text-sm font-normal text-neutral-500">{group.label}</p>
+              <div className="mt-2.5 flex flex-wrap gap-2.5">
+                {group.tools.map((tool) => (
+                  <span
+                    key={tool}
+                    className="rounded-full bg-ink-card px-3.5 py-1.5 text-[13px] font-normal text-neutral-300 ring-1 ring-line transition hover:bg-card-hover"
+                  >
+                    {tool}
+                  </span>
+                ))}
+              </div>
+            </Reveal>
+          ))}
+        </div>
+
+        <Reveal delay={120}>
+          <div className="relative mt-12 select-none text-center">
+            {floatingIcons.map((icon) => {
+              const social = socials.find((s) => s.label === icon.label);
+              if (!social) return null;
+              return (
+                <a
+                  key={icon.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={icon.label}
+                  className={`absolute z-10 hidden items-center justify-center rounded-full shadow-xl shadow-black/40 transition hover:scale-110 sm:flex ${icon.className} ${icon.rotate}`}
+                  style={{ backgroundColor: social.color, color: social.fg }}
+                >
+                  {socialIcons[icon.label]("h-5 w-5")}
+                </a>
+              );
+            })}
+            <p className="whitespace-nowrap text-[11vw] font-bold leading-none tracking-tight text-cream md:text-7xl">
+              LET&rsquo;S CONNECT
+            </p>
+          </div>
+        </Reveal>
+
+        <Reveal delay={150}>
+          <div className="mt-8 flex flex-col items-center gap-5">
+            <a href={`mailto:${profile.email}`} className="btn-light rounded-full px-6 py-2.5 text-sm font-medium">
+              Get in touch
             </a>
+            <p className="text-xs font-normal text-neutral-500">
+              © {new Date().getFullYear()} {profile.name}. Designed and built by {profile.firstName}.
+              <br />
+              Inspired by{" "}
+              <a
+                href="https://mercydesigns.framer.website/"
+                target="_blank"
+                rel="noreferrer"
+                className="text-neutral-400 underline decoration-neutral-600 underline-offset-2 transition hover:text-cream"
+              >
+                Mercy Asuquo
+              </a>
+            </p>
           </div>
-
-          {/* Navigation */}
-          <div className="lg:col-span-1 lg:col-start-10">
-            <div className="space-y-1.5 text-[15px] font-light text-white">
-              <a
-                href="/about"
-                className="block transition-opacity duration-300 hover:opacity-60 hover:underline hover:decoration-white hover:underline-offset-4"
-              >
-                About
-              </a>
-
-              <a
-                href="/work"
-                className="block transition-opacity duration-300 hover:opacity-60 hover:underline hover:decoration-white hover:underline-offset-4"
-              >
-                Projects
-              </a>
-
-              <a
-                href="/experience"
-                className="block transition-opacity duration-300 hover:opacity-60 hover:underline hover:decoration-white hover:underline-offset-4"
-              >
-                Experience
-              </a>
-
-              <a
-                href="/contact"
-                className="block transition-opacity duration-300 hover:opacity-60 hover:underline hover:decoration-white hover:underline-offset-4"
-              >
-                Contact
-              </a>
-            </div>
-          </div>
-
-          {/* Socials */}
-          <div className="lg:col-span-2 lg:col-start-11">
-            <div className="space-y-1.5 text-[15px] font-light text-white">
-              <a
-                href="https://github.com/JEWOOLAFAVOUR"
-                target="_blank"
-                rel="noreferrer"
-                className="block transition-opacity duration-300 hover:opacity-60 hover:underline hover:decoration-white hover:underline-offset-4"
-              >
-                GitHub
-              </a>
-
-              <a
-                href="https://www.linkedin.com/in/jewoola-favour-5b7607217"
-                target="_blank"
-                rel="noreferrer"
-                className="block transition-opacity duration-300 hover:opacity-60 hover:underline hover:decoration-white hover:underline-offset-4"
-              >
-                LinkedIn
-              </a>
-
-              <a
-                href="https://x.com/favourlop"
-                target="_blank"
-                rel="noreferrer"
-                className="block transition-opacity duration-300 hover:opacity-60 hover:underline hover:decoration-white hover:underline-offset-4"
-              >
-                X (Twitter)
-              </a>
-
-              <a
-                href="https://www.instagram.com/jewoolafavourgbemi/"
-                target="_blank"
-                rel="noreferrer"
-                className="block transition-opacity duration-300 hover:opacity-60 hover:underline hover:decoration-white hover:underline-offset-4"
-              >
-                Instagram
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* Huge Name */}
-        <div className="mt-12 w-full select-none">
-          <svg
-            viewBox="0 0 1200 220"
-            className="h-auto w-full"
-            aria-label="Jewoola Favour"
-          >
-            <text
-              x="0"
-              y="180"
-              textLength="1200"
-              lengthAdjust="spacingAndGlyphs"
-              fontSize="180"
-              className="fill-[#f5f3ee] font-bold uppercase tracking-[-0.02em]"
-              style={{ fontFamily: "inherit" }}
-            >
-              JEWOOLA FAVOUR
-            </text>
-          </svg>
-          <p className="-mt-2 text-right text-[13px] font-light uppercase tracking-[0.04em] text-zinc-400">
-            Website designed and built by Favour
-          </p>
-        </div>
+        </Reveal>
       </div>
     </footer>
   );

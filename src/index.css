@@ -1,226 +1,164 @@
-@import './styles/fonts.css';
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  /* Theme palette — dark is the default; `html.light` swaps every token. */
+  :root {
+    --c-bg: 23 23 23;
+    --c-card: 32 32 32;
+    --c-card-hover: 42 42 42;
+    --c-nav: 35 35 35;
+    --c-text: 245 245 243;
+    --c-line: 255 255 255;
+    --c-n200: 229 229 229;
+    --c-n300: 212 212 212;
+    --c-n400: 163 163 163;
+    --c-n500: 115 115 115;
+    --c-n600: 82 82 82;
+  }
+
+  html.light {
+    --c-bg: 245 244 240;
+    --c-card: 233 231 225;
+    --c-card-hover: 224 222 214;
+    --c-nav: 255 255 255;
+    --c-text: 23 23 23;
+    --c-line: 23 23 23;
+    --c-n200: 52 52 50;
+    --c-n300: 82 82 80;
+    --c-n400: 120 120 116;
+    --c-n500: 150 150 145;
+    --c-n600: 180 180 174;
+  }
+
   html {
     scroll-behavior: smooth;
-    background-color: #0b0b0b;
+    background-color: rgb(var(--c-bg));
     overscroll-behavior-y: none;
   }
 
   body {
-    font-family: 'Suisse Intl', 'Inter', sans-serif;
-    background-color: #f5f4f0;
-    color: #0f172a;
+    font-family: 'DM Sans', 'Inter', sans-serif;
+    background-color: rgb(var(--c-bg));
+    color: rgb(var(--c-text));
     overscroll-behavior-y: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
-  .animate-shine {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .animate-shine::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    transform: translateX(-100%) skewX(-20deg);
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.65) 50%, rgba(255, 255, 255, 0) 100%);
-    animation: shine 2s ease-in-out infinite;
-  }
-
-  @keyframes shine {
-
-    0%,
-    100% {
-      transform: translateX(-100%) skewX(-20deg);
-    }
-
-    50% {
-      transform: translateX(100%) skewX(-20deg);
-    }
+  ::selection {
+    background: rgb(var(--c-text));
+    color: rgb(var(--c-bg));
   }
 }
 
-@keyframes pendulum {
-  0% {
-    transform: rotate(-18deg);
+@layer components {
+  /* Light pill button — matches the reference's white/silver gradient shade. */
+  .btn-light {
+    background: linear-gradient(180deg, #ffffff 0%, #d6d6d4 100%);
+    color: #171717;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.85),
+      0 10px 24px rgba(0, 0, 0, 0.35);
   }
 
-  50% {
-    transform: rotate(18deg);
+  .btn-light:hover {
+    background: linear-gradient(180deg, #ffffff 0%, #e6e6e4 100%);
   }
 
-  100% {
-    transform: rotate(-18deg);
+  /* Outlined dark pill — matches the reference's "Hire me on contra" shade. */
+  .btn-ghost {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: #c9c9c7;
+  }
+
+  .btn-ghost:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #f5f5f3;
   }
 }
 
-.animate-pendulum {
-  transform-origin: top center;
-  animation: pendulum 4.5s ease-in-out infinite;
-}
+@layer utilities {
+  /* Subtle dot-grid texture over the whole page, like the reference. */
+  .dot-grid {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+    background-size: 26px 26px;
+  }
 
-/* Staggered navbar entrance after the opening loader clears. */
-.nav-pill-drop {
-  opacity: 0;
-  transform-origin: top center;
-  animation-duration: 1.05s;
-  animation-timing-function: cubic-bezier(0.2, 0.8, 0.25, 1);
-  animation-fill-mode: both;
-}
+  html.light .dot-grid {
+    background-image: radial-gradient(rgba(23, 23, 23, 0.08) 1px, transparent 1px);
+  }
 
-.nav-pill-drop-one,
-.nav-pill-drop-two,
-.nav-pill-drop-three,
-.nav-pill-drop-four {
-  animation-name: navDropStraight;
-}
-
-.nav-pill-delay-1 {
-  animation-delay: 2.25s;
-}
-
-.nav-pill-delay-2 {
-  animation-delay: 2.4s;
-}
-
-.nav-pill-delay-3 {
-  animation-delay: 2.55s;
-}
-
-.nav-pill-delay-4 {
-  animation-delay: 2.7s;
-}
-
-@keyframes navDropStraight {
-  0% {
+  .reveal {
     opacity: 0;
-    transform: translateY(-110px);
+    transform: translateY(28px);
+    transition:
+      opacity 0.9s cubic-bezier(0.2, 0.7, 0.25, 1),
+      transform 0.9s cubic-bezier(0.2, 0.7, 0.25, 1);
   }
 
-  55% {
-    opacity: 1;
-    transform: translateY(9px);
-  }
-
-  73% {
-    transform: translateY(-4px);
-  }
-
-  87% {
-    transform: translateY(2px);
-  }
-
-  100% {
+  .reveal.is-visible {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
+/* --------------------------
+   HERO WORK MARQUEE
+---------------------------*/
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 42s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .nav-pill-drop {
-    opacity: 1;
-    transform: none;
+  .marquee-track {
     animation: none;
   }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
-.draw-line {
-  stroke-dasharray: 988;
-  stroke-dashoffset: 988;
-  animation: drawLine 3.5s ease-in-out infinite;
+/* Gentle pulse for the "Available for work" dot. */
+.pulse-dot {
+  animation: pulseDot 2s ease-in-out infinite;
 }
 
-@keyframes drawLine {
-  0% {
-    stroke-dashoffset: 988;
-  }
+@keyframes pulseDot {
 
-  70% {
-    stroke-dashoffset: 0;
-  }
-
+  0%,
   100% {
-    stroke-dashoffset: 0;
+    box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.45);
+  }
+
+  50% {
+    box-shadow: 0 0 0 5px rgba(74, 222, 128, 0);
   }
 }
 
-
-
-/* --------------------------
-   ORANGE LAYER
----------------------------*/
-
-.loader-orange {
-  position: absolute;
-  left: 0;
-  bottom: -100%;
-  width: 100%;
-  height: 100%;
-  background: #ff4d14;
-  z-index: 10;
-
-  border-radius: 50% 50% 0 0 / 65% 65% 0 0;
-
-  animation: orangeRise 2.6s cubic-bezier(.77, 0, .175, 1) forwards;
-}
-
-/* --------------------------
-   WHITE LAYER
----------------------------*/
-
-.loader-white {
-  position: absolute;
-  left: 0;
-  bottom: -100%;
-  width: 100%;
-  height: 100%;
-  background: white;
-  z-index: 20;
-
-  border-radius: 50% 50% 0 0 / 65% 65% 0 0;
-
-  animation: whiteRise 2.4s cubic-bezier(.77, 0, .175, 1) forwards;
-  animation-delay: 1.35s;
-}
-
-/* --------------------------
-   ANIMATIONS
----------------------------*/
-
-@keyframes orangeRise {
-
-  0% {
-    bottom: -100%;
-    border-radius: 50% 50% 0 0 / 65% 65% 0 0;
-  }
-
-  100% {
-    bottom: 0;
-    border-radius: 0;
-  }
-
-}
-
-@keyframes whiteRise {
-
-  0% {
-    bottom: -100%;
-    border-radius: 50% 50% 0 0 / 65% 65% 0 0;
-  }
-
-  100% {
-    bottom: 0;
-    border-radius: 0;
-  }
-
-}
-
-@keyframes archive-item-arrow-slide {
+/* Arrow slide used on work/experience rows. */
+@keyframes arrow-slide {
 
   0%,
   100% {
@@ -228,19 +166,19 @@
   }
 
   50% {
-    transform: translate(5px, -5px);
+    transform: translate(4px, -4px);
   }
 }
 
-.group:hover .archive-item-arrow,
-.group:focus-visible .archive-item-arrow {
-  animation: archive-item-arrow-slide 0.9s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+.group:hover .arrow-slide,
+.group:focus-visible .arrow-slide {
+  animation: arrow-slide 0.9s cubic-bezier(0.65, 0, 0.35, 1) infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
 
-  .group:hover .archive-item-arrow,
-  .group:focus-visible .archive-item-arrow {
+  .group:hover .arrow-slide,
+  .group:focus-visible .arrow-slide {
     animation: none;
   }
 }

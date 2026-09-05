@@ -1,45 +1,113 @@
-import Pendulum from "./Pendulum";
-import ProcessLine from "./ProcessLine";
+import { bio, profile, socials } from "../data/content";
+import Reveal from "./Reveal";
+import { GithubIcon, InstagramIcon, LinkedinIcon, XIcon } from "./icons";
 
-export default function Hero() {
+const socialIcons: Record<string, (className?: string) => JSX.Element> = {
+  GitHub: (c) => <GithubIcon className={c} />,
+  LinkedIn: (c) => <LinkedinIcon className={c} />,
+  X: (c) => <XIcon className={c} />,
+  Instagram: (c) => <InstagramIcon className={c} />,
+};
+
+export default function Hero(): JSX.Element {
   return (
-    <section className="relative overflow-hidden bg-white px-6 pb-28 pt-24 lg:px-4">
-      <div className="mx-auto">
-        {/* Heading */}
-        <div className="flex flex-col gap-5">
-          <h1 className="text-6xl font-medium leading-none tracking-[-0.05em] text-zinc-900 sm:text-7xl lg:text-[84px]">
-            Full-stack engineer
-          </h1>
-
-          <h1 className="text-6xl font-medium leading-none tracking-[-0.05em] text-zinc-900 sm:text-7xl lg:text-[84px]">
-            building modern software
-          </h1>
-        </div>
-
-        {/* Bottom */}
-        <div className="mt-44 grid items-start gap-12 lg:grid-cols-12">
-          {/* Left */}
-          <div className="flex justify-center lg:col-span-3 lg:justify-start">
-            <div className="mt-2 flex items-start gap-4">
-              <Pendulum length={60} duration={3.6} angle={8} delay={0} />
-              <Pendulum length={72} duration={4} angle={10} delay={0.2} />
-              <Pendulum length={84} duration={4.4} angle={12} delay={0.4} />
-              <Pendulum length={96} duration={4.8} angle={14} delay={0.6} />
-              <Pendulum length={108} duration={5.2} angle={16} delay={0.8} />
+    <header className="pt-16">
+      {/* Auto-scrolling strip of work — temporarily disabled, kept for reference.
+      <div className="overflow-hidden py-6">
+        <div className="marquee-track gap-5 pr-5">
+          {[...projects, ...projects].map((project, index) => (
+            <div
+              key={`${project.title}-${index}`}
+              className={`h-56 shrink-0 overflow-hidden rounded-xl bg-ink-card md:h-72 ${marqueeWidths[index % marqueeWidths.length]}`}
+            >
+              <img
+                src={project.image}
+                alt={project.title}
+                className="h-full w-full object-cover object-top"
+                loading={index < projects.length ? "eager" : "lazy"}
+              />
             </div>
-          </div>
-
-          {/* Right */}
-          <div className="lg:col-span-7 lg:col-start-5">
-            <p className="max-w-4xl text-[50px] font-medium leading-[1.15] tracking-[-0.04em] text-zinc-900">
-              Built products used by 10K+ users.
-              <br />I work with web, mobile and backend systems.
-            </p>
-
-            <ProcessLine />
-          </div>
+          ))}
         </div>
       </div>
-    </section>
+      */}
+
+      <div className="mx-auto max-w-3xl px-6 pt-2 md:px-8 md:pt-4">
+        <Reveal>
+          <div className="flex items-center gap-5">
+            <img
+              src={profile.avatar}
+              alt={profile.name}
+              className="h-20 w-20 rounded-full object-cover ring-1 ring-line md:h-24 md:w-24"
+            />
+            <div>
+              <h1 className="text-2xl font-medium uppercase tracking-wide text-cream md:text-4xl">
+                {profile.name}
+              </h1>
+              <p className="mt-1 text-sm text-neutral-400 md:text-base">{profile.role}</p>
+            </div>
+          </div>
+        </Reveal>
+
+        <div className="mt-6 space-y-4 text-base font-light leading-relaxed text-neutral-300">
+          {bio.map((paragraph, index) => (
+            <Reveal key={index} delay={index * 90}>
+              <p>
+                {index === 0 ? (
+                  <>
+                    {paragraph.split("Ennovate Lab")[0]}
+                    <a
+                      href="https://www.ennovatelab.com/"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="underline decoration-neutral-500 underline-offset-4 transition hover:decoration-cream hover:text-cream"
+                    >
+                      Ennovate Lab
+                    </a>
+                    {paragraph.split("Ennovate Lab")[1]}
+                  </>
+                ) : (
+                  paragraph
+                )}
+              </p>
+            </Reveal>
+          ))}
+        </div>
+
+        <Reveal delay={150}>
+          <div className="mt-8 flex flex-wrap items-end justify-between gap-6 pb-6">
+            <div>
+              <p className="text-sm text-neutral-400">Find me on:</p>
+              <div className="mt-3 flex items-center gap-5">
+                {socials.map((social) => (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={social.label}
+                    className="text-neutral-300 transition hover:scale-110 hover:text-cream"
+                  >
+                    {socialIcons[social.label]("h-5 w-5")}
+                  </a>
+                ))}
+              </div>
+              <p className="mt-3 text-sm text-neutral-400">
+                Easy to reach at{" "}
+                <a
+                  href={`mailto:${profile.email}`}
+                  className="text-neutral-300 underline decoration-neutral-500 underline-offset-4 transition hover:text-cream hover:decoration-cream"
+                >
+                  {profile.email}
+                </a>
+              </p>
+            </div>
+            <a href={profile.resume} target="_blank" rel="noreferrer" className="btn-light rounded-full px-6 py-2.5 text-sm font-medium">
+              View Resume
+            </a>
+          </div>
+        </Reveal>
+      </div>
+    </header>
   );
 }
