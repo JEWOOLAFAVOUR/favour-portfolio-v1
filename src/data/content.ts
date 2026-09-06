@@ -55,7 +55,7 @@ export const projects: Project[] = [
   {
     title: "Paystack",
     blurb: "Engineered a engineer-accurate recreation of Paystack.",
-    url: "https://paystack-fintech.vercel.app/",
+    url: "https://favour-paystack-fintech.vercel.app/",
     image: "/paystack_landing.jpeg",
     large: true,
   },
