@@ -53,11 +53,26 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "HonourWorld",
+    blurb:
+      "Built the React Native app solo — Redux state management, secure VTU transaction APIs, offline-tolerant flows — shipping 10k+ downloads on the Play Store.",
+    url: "https://play.google.com/store/apps/details?id=com.ng.honourworld",
+    image: "/honour_world_screenshot.png",
+  },
+
+  {
     title: "Paystack",
     blurb: "Engineered a engineer-accurate recreation of Paystack.",
     url: "https://favour-paystack-fintech.vercel.app/",
     image: "/paystack_landing.jpeg",
     large: true,
+  },
+  {
+    title: "Skill Remit",
+    blurb:
+      "Implemented the marketplace backend and mobile client — artisan discovery, booking, and payment flows on Node.js services behind a React Native app.",
+    url: "https://play.google.com/store/apps/details?id=com.skillremitartisan",
+    image: "/skill_remit_screenshot.png",
   },
   {
     title: "Oreno",
@@ -73,20 +88,7 @@ export const projects: Project[] = [
     url: "https://study-pady-website.vercel.app/",
     image: "/studypady_screenshot.png",
   },
-  {
-    title: "HonourWorld",
-    blurb:
-      "Built the React Native app solo — Redux state management, secure VTU transaction APIs, offline-tolerant flows — shipping 10k+ downloads on the Play Store.",
-    url: "https://play.google.com/store/apps/details?id=com.ng.honourworld",
-    image: "/honour_world_screenshot.png",
-  },
-  {
-    title: "Skill Remit",
-    blurb:
-      "Implemented the marketplace backend and mobile client — artisan discovery, booking, and payment flows on Node.js services behind a React Native app.",
-    url: "https://play.google.com/store/apps/details?id=com.skillremitartisan",
-    image: "/skill_remit_screenshot.png",
-  },
+
   {
     title: "Irisi Fashion",
     blurb:
