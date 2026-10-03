@@ -20,7 +20,7 @@ const floatingIcons = [
 export default function Footer(): JSX.Element {
   return (
     <footer id="contact" className="scroll-mt-24">
-      <div className="mx-auto max-w-3xl px-6 pb-28 pt-12 md:px-8 md:pt-14">
+      <div className="mx-auto max-w-3xl px-6 pb-28 pt-6 md:px-8 md:pt-8">
         <Reveal>
           <h2 className="text-lg font-medium text-cream">Tools & Workflow</h2>
         </Reveal>

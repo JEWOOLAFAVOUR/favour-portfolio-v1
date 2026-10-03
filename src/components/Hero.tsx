@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { Check, Copy } from "lucide-react";
 import { bio, profile, socials } from "../data/content";
 import Reveal from "./Reveal";
 import { GithubIcon, InstagramIcon, LinkedinIcon, XIcon } from "./icons";
@@ -10,6 +12,23 @@ const socialIcons: Record<string, (className?: string) => JSX.Element> = {
 };
 
 export default function Hero(): JSX.Element {
+  const [copied, setCopied] = useState(false);
+
+  const copyEmail = async (): Promise<void> => {
+    try {
+      await navigator.clipboard.writeText(profile.email);
+    } catch {
+      const textarea = document.createElement("textarea");
+      textarea.value = profile.email;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textarea);
+    }
+    setCopied(true);
+    window.setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
     <header className="pt-16">
       {/* Auto-scrolling strip of work — temporarily disabled, kept for reference.
@@ -92,14 +111,26 @@ export default function Hero(): JSX.Element {
                   </a>
                 ))}
               </div>
-              <p className="mt-3 text-sm text-neutral-400">
-                Easy to reach at{" "}
-                <a
-                  href={`mailto:${profile.email}`}
-                  className="text-neutral-300 underline decoration-neutral-500 underline-offset-4 transition hover:text-cream hover:decoration-cream"
+              <p className="mt-3 flex items-center gap-1 text-sm text-neutral-400">
+                <span>
+                  Easy to reach at{" "}
+                  <a
+                    href={`mailto:${profile.email}`}
+                    className="text-neutral-300 underline decoration-neutral-500 underline-offset-4 transition hover:text-cream hover:decoration-cream"
+                  >
+                    {profile.email}
+                  </a>
+                </span>
+                <button
+                  type="button"
+                  onClick={copyEmail}
+                  aria-label={copied ? "Email copied" : "Copy email address"}
+                  title={copied ? "Copied!" : "Copy email"}
+                  className="flex h-6 w-6 items-center justify-center text-neutral-400 transition hover:scale-110 hover:text-cream"
                 >
-                  {profile.email}
-                </a>
+                  {copied ? <Check className="h-3.5 w-3.5 text-green-400" /> : <Copy className="h-3.5 w-3.5" />}
+                </button>
+                {copied && <span className="text-xs text-green-400">Copied!</span>}
               </p>
             </div>
             <a href={profile.resume} target="_blank" rel="noreferrer" className="btn-light rounded-full px-6 py-2.5 text-sm font-medium">
