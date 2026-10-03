@@ -10,7 +10,7 @@ export default function SelectedWork(): JSX.Element {
   const visibleProjects = showAll ? projects : projects.slice(0, INITIAL_COUNT);
 
   return (
-    <section id="work" className="mx-auto max-w-3xl scroll-mt-24 px-6 py-12 md:px-8 md:py-14">
+    <section id="work" className="mx-auto max-w-3xl scroll-mt-24 px-6 py-6 md:px-8 md:py-8">
       <Reveal>
         <h2 className="text-lg font-medium text-cream">Selected Works</h2>
       </Reveal>

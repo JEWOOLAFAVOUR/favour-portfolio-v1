@@ -3,7 +3,7 @@ import Reveal from "./Reveal";
 
 export default function AboutSection(): JSX.Element {
   return (
-    <section id="about" className="mx-auto max-w-3xl scroll-mt-24 px-6 py-12 md:px-8 md:py-14">
+    <section id="about" className="mx-auto max-w-3xl scroll-mt-24 px-6 py-6 md:px-8 md:py-8">
       <Reveal>
         <h2 className="text-lg font-medium text-cream">About Me</h2>
         <p className="mt-1 text-sm text-neutral-400">Here's a little bit more about me</p>
